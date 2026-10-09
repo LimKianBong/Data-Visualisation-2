@@ -1,0 +1,13 @@
+source,style_group,catalogue_records,share_percent,source_name,style_order,source_order
+NMA,Colour,769,20.2,National Museum of Australia,1,1
+NMA,Monochrome / toned,2825,74.2,National Museum of Australia,2,1
+NMA,Mixed,127,3.3,National Museum of Australia,3,1
+NMA,Unknown,84,2.2,National Museum of Australia,4,1
+SLNSW,Colour,628,40.3,State Library of New South Wales,1,2
+SLNSW,Monochrome / toned,605,38.8,State Library of New South Wales,2,2
+SLNSW,Mixed,74,4.7,State Library of New South Wales,3,2
+SLNSW,Unknown,252,16.2,State Library of New South Wales,4,2
+AKON,Colour,7667,22.0,AKON Historical Postcards,1,3
+AKON,Monochrome / toned,27179,78.0,AKON Historical Postcards,2,3
+AKON,Mixed,0,0.0,AKON Historical Postcards,3,3
+AKON,Unknown,0,0.0,AKON Historical Postcards,4,3

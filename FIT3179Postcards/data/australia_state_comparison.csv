@@ -1,0 +1,17 @@
+state_clean,state_abbr,state_order,postcard_records,share_percent,rank,source,source_name,measure_note,record_label
+New South Wales,NSW,1,1425,67.8,1,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,1425 mapped records
+Victoria,VIC,2,290,13.8,2,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,290 mapped records
+Queensland,QLD,3,58,2.8,5,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,58 mapped records
+South Australia,SA,4,183,8.7,3,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,183 mapped records
+Western Australia,WA,5,50,2.4,6,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,50 mapped records
+Tasmania,TAS,6,62,3.0,4,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,62 mapped records
+Northern Territory,NT,7,3,0.1,8,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,3 mapped records
+Australian Capital Territory,ACT,8,30,1.4,7,NMA,National Museum of Australia,Unique postcard records with a depicted place assigned to this state,30 mapped records
+New South Wales,NSW,1,1036,86.7,1,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,1036 mapped records
+Victoria,VIC,2,98,8.2,2,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,98 mapped records
+Queensland,QLD,3,0,0.0,8,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,0 mapped records
+South Australia,SA,4,11,0.9,4,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,11 mapped records
+Western Australia,WA,5,1,0.1,7,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,1 mapped records
+Tasmania,TAS,6,42,3.5,3,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,42 mapped records
+Northern Territory,NT,7,3,0.3,6,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,3 mapped records
+Australian Capital Territory,ACT,8,4,0.3,5,SLNSW,State Library of New South Wales,High-confidence title-derived catalogue records geocoded to this state,4 mapped records

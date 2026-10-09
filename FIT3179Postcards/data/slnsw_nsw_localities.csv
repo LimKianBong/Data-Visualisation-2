@@ -1,0 +1,245 @@
+map_place_name,latitude,longitude,catalogue_records,individual_records,multi_item_records,colour_records,black_white_records,sepia_records,mixed_colour_records,unknown_colour_records,records_with_year,earliest_reference_year,latest_reference_year,state_clean,state_abbr,share_of_nsw_percent,colour_percent,year_coverage_percent,locality_rank,record_label
+Sydney,-33.8698439,151.2082848,65,51,12,38,11,5,5,6,11,1905.0,2000.0,New South Wales,NSW,6.3,58.5,16.9,1,65 catalogue records
+Newcastle,-32.9192953,151.7795348,41,35,6,17,23,0,1,0,26,1870.0,1997.0,New South Wales,NSW,4.0,41.5,63.4,2,41 catalogue records
+Albury,-36.0737734,146.9135265,34,24,10,11,12,0,0,11,3,1945.0,1958.0,New South Wales,NSW,3.3,32.4,8.8,3,34 catalogue records
+Grafton,-29.6816773,152.9336357,23,14,8,10,8,5,0,0,2,1908.0,1930.0,New South Wales,NSW,2.2,43.5,8.7,4,23 catalogue records
+Port Macquarie,-31.4299499,152.9103525,21,11,10,14,7,0,0,0,1,1959.0,1959.0,New South Wales,NSW,2.0,66.7,4.8,5,21 catalogue records
+Goulburn,-34.7523871,149.7198009,20,16,4,9,5,1,0,5,4,1887.0,1910.0,New South Wales,NSW,1.9,45.0,20.0,6,20 catalogue records
+Armidale,-30.5144881,151.6656564,17,11,6,7,4,0,3,3,1,1906.0,1906.0,New South Wales,NSW,1.6,41.2,5.9,7,17 catalogue records
+Tamworth,-31.0900743,150.9290159,17,10,6,5,9,0,3,0,4,1905.0,1967.0,New South Wales,NSW,1.6,29.4,23.5,7,17 catalogue records
+Tumut,-35.3015747,148.2226744,16,14,2,13,3,0,0,0,4,1864.0,1910.0,New South Wales,NSW,1.5,81.2,25.0,8,16 catalogue records
+Tweed Heads,-28.1786639,153.5369986,16,13,3,6,1,6,2,1,0,,,New South Wales,NSW,1.5,37.5,0.0,8,16 catalogue records
+Glen Innes,-29.7379146,151.7356326,15,11,4,5,3,6,0,1,1,1905.0,1905.0,New South Wales,NSW,1.4,33.3,6.7,9,15 catalogue records
+Mosman,-33.8283536,151.2476855,15,15,0,10,3,0,2,0,5,1906.0,1908.0,New South Wales,NSW,1.4,66.7,33.3,9,15 catalogue records
+Broken Hill,-31.965,141.4511111,14,10,4,5,6,2,1,0,3,1906.0,1994.0,New South Wales,NSW,1.4,35.7,21.4,10,14 catalogue records
+Bulli,-34.3329033,150.9125015,14,12,2,1,3,8,0,2,1,1939.0,1939.0,New South Wales,NSW,1.4,7.1,7.1,10,14 catalogue records
+Manly,-33.7971937,151.2879845,14,13,1,6,4,0,2,2,2,1907.0,1963.0,New South Wales,NSW,1.4,42.9,14.3,10,14 catalogue records
+Orange,-33.2820463,149.0971567,14,2,12,4,6,1,0,3,2,1905.0,1959.0,New South Wales,NSW,1.4,28.6,14.3,10,14 catalogue records
+Coffs Harbour,-30.2985996,153.1094116,13,9,4,3,0,2,1,7,1,2010.0,2010.0,New South Wales,NSW,1.3,23.1,7.7,11,13 catalogue records
+Jenolan,-33.8163865,150.0677748,13,12,1,1,10,0,0,2,0,,,New South Wales,NSW,1.3,7.7,0.0,11,13 catalogue records
+Bathurst,-33.4166482,149.5803725,12,5,7,5,4,1,0,2,2,1909.0,1911.0,New South Wales,NSW,1.2,41.7,16.7,12,12 catalogue records
+Wollongong,-34.4278083,150.893054,12,5,7,3,6,0,2,1,0,,,New South Wales,NSW,1.2,25.0,0.0,12,12 catalogue records
+Kempsey,-30.9056457,152.5228021,11,10,1,2,2,5,1,1,5,1906.0,1946.0,New South Wales,NSW,1.1,18.2,45.5,13,11 catalogue records
+Kiama,-34.6958202,150.7959123,11,9,2,0,5,5,1,0,0,,,New South Wales,NSW,1.1,0.0,0.0,13,11 catalogue records
+Lismore,-28.8077608,153.2791883,11,6,5,5,3,3,0,0,2,1908.0,1950.0,New South Wales,NSW,1.1,45.5,18.2,13,11 catalogue records
+Tenterfield,-28.83843,152.2813166,11,8,3,4,6,1,0,0,0,,,New South Wales,NSW,1.1,36.4,0.0,13,11 catalogue records
+Byron Bay,-28.6483333,153.6177778,10,10,0,2,2,5,0,1,0,,,New South Wales,NSW,1.0,20.0,0.0,14,10 catalogue records
+Coogee,-33.9217004,151.2557975,10,9,1,5,4,1,0,0,3,1905.0,1909.0,New South Wales,NSW,1.0,50.0,30.0,14,10 catalogue records
+Parramatta,-33.8139843,151.002666,10,8,2,4,3,0,3,0,5,1905.0,1906.0,New South Wales,NSW,1.0,40.0,50.0,14,10 catalogue records
+Bourke,-29.9960307,145.2940392,9,8,1,3,3,0,0,3,0,,,New South Wales,NSW,0.9,33.3,0.0,15,9 catalogue records
+Murwillumbah,-28.3267617,153.3971541,9,9,0,2,6,1,0,0,1,1981.0,1981.0,New South Wales,NSW,0.9,22.2,11.1,15,9 catalogue records
+North Sydney,-33.8343157,151.2091974,9,9,0,5,0,1,2,1,2,1905.0,1911.0,New South Wales,NSW,0.9,55.6,22.2,15,9 catalogue records
+Taree,-31.912864,152.4608481,9,6,3,2,5,0,0,2,1,1928.0,1928.0,New South Wales,NSW,0.9,22.2,11.1,15,9 catalogue records
+Thirroul,-34.3164691,150.918932,9,6,0,1,0,1,6,1,0,,,New South Wales,NSW,0.9,11.1,0.0,15,9 catalogue records
+Wellington,-32.5542815,148.9515327,9,7,2,6,2,0,1,0,2,1906.0,1906.0,New South Wales,NSW,0.9,66.7,22.2,15,9 catalogue records
+Ballina,-28.8526846,153.4906247,8,4,4,5,2,0,1,0,0,,,New South Wales,NSW,0.8,62.5,0.0,16,8 catalogue records
+Cobar,-31.9666628,145.3045054,8,7,1,2,1,3,0,2,0,,,New South Wales,NSW,0.8,25.0,0.0,16,8 catalogue records
+Lane Cove,-33.8232026,151.1697148,8,8,0,7,0,0,1,0,1,1907.0,1907.0,New South Wales,NSW,0.8,87.5,12.5,16,8 catalogue records
+Yamba,-29.44,153.3594444,8,4,4,3,3,1,1,0,0,,,New South Wales,NSW,0.8,37.5,0.0,16,8 catalogue records
+Bondi Beach,-33.8906977,151.2724119,7,7,0,4,2,1,0,0,2,1905.0,1943.0,New South Wales,NSW,0.7,57.1,28.6,17,7 catalogue records
+Bundanoon,-34.6562168,150.2997071,7,5,1,0,3,3,0,1,1,1910.0,1910.0,New South Wales,NSW,0.7,0.0,14.3,17,7 catalogue records
+Canada Bay,-33.8485127,151.097582,7,7,0,0,7,0,0,0,5,1906.0,1970.0,New South Wales,NSW,0.7,0.0,71.4,17,7 catalogue records
+Dubbo,-32.2478964,148.6026502,7,1,6,1,5,1,0,0,0,,,New South Wales,NSW,0.7,14.3,0.0,17,7 catalogue records
+Eden,-37.0640494,149.9035118,7,3,4,2,3,0,2,0,0,,,New South Wales,NSW,0.7,28.6,0.0,17,7 catalogue records
+Gundagai,-35.0627335,148.1006777,7,3,4,4,3,0,0,0,1,1954.0,1954.0,New South Wales,NSW,0.7,57.1,14.3,17,7 catalogue records
+Jamberoo,-34.6470241,150.7762599,7,7,0,0,6,0,0,1,0,,,New South Wales,NSW,0.7,0.0,0.0,17,7 catalogue records
+Maitland,-32.7316683,151.5511123,7,6,1,5,0,2,0,0,5,1893.0,1911.0,New South Wales,NSW,0.7,71.4,71.4,17,7 catalogue records
+Wagga Wagga,-35.115,147.3677778,7,2,5,4,3,0,0,0,2,1974.0,1989.0,New South Wales,NSW,0.7,57.1,28.6,17,7 catalogue records
+Balmoral,-33.0460986,151.5802626,6,6,0,5,1,0,0,0,0,,,New South Wales,NSW,0.6,83.3,0.0,18,6 catalogue records
+Cooma,-36.2359015,149.1263121,6,6,0,0,3,2,0,1,0,,,New South Wales,NSW,0.6,0.0,0.0,18,6 catalogue records
+Forster,-32.1820852,152.5131155,6,6,0,4,2,0,0,0,0,,,New South Wales,NSW,0.6,66.7,0.0,18,6 catalogue records
+Lightning Ridge,-29.4285482,147.9779283,6,5,1,6,0,0,0,0,0,,,New South Wales,NSW,0.6,100.0,0.0,18,6 catalogue records
+Narooma,-36.2190152,150.1317243,6,3,3,2,2,0,0,2,1,1980.0,1980.0,New South Wales,NSW,0.6,33.3,16.7,18,6 catalogue records
+Bega,-36.674107,149.8420374,5,3,2,0,1,0,0,4,1,1922.0,1922.0,New South Wales,NSW,0.5,0.0,20.0,19,5 catalogue records
+Bondi,-33.8930556,151.2633333,5,3,1,3,1,0,1,0,1,1909.0,1909.0,New South Wales,NSW,0.5,60.0,20.0,19,5 catalogue records
+Forbes,-33.378772,147.9534388,5,3,2,0,5,0,0,0,0,,,New South Wales,NSW,0.5,0.0,0.0,19,5 catalogue records
+Lake Macquarie,-33.0374325,151.5294684,5,3,2,3,1,1,0,0,2,1905.0,1908.0,New South Wales,NSW,0.5,60.0,40.0,19,5 catalogue records
+Molong,-33.0923817,148.8638613,5,0,0,0,5,0,0,0,5,1990.0,1990.0,New South Wales,NSW,0.5,0.0,100.0,19,5 catalogue records
+Moss Vale,-34.5486089,150.37271,5,5,0,4,0,0,0,1,0,,,New South Wales,NSW,0.5,80.0,0.0,19,5 catalogue records
+Mudgee,-32.5980702,149.5886383,5,4,1,1,2,1,0,1,0,,,New South Wales,NSW,0.5,20.0,0.0,19,5 catalogue records
+Neutral Bay,-33.8342887,151.2182049,5,5,0,4,0,0,0,1,2,1907.0,1907.0,New South Wales,NSW,0.5,80.0,40.0,19,5 catalogue records
+Sawtell,-30.3689782,153.1002694,5,3,2,4,1,0,0,0,1,1962.0,1962.0,New South Wales,NSW,0.5,80.0,20.0,19,5 catalogue records
+Terrigal,-33.4483315,151.4427717,5,4,1,1,2,1,1,0,1,1909.0,1909.0,New South Wales,NSW,0.5,20.0,20.0,19,5 catalogue records
+Thredbo,-36.5047751,148.3057091,5,5,0,4,0,0,0,1,1,1975.0,1975.0,New South Wales,NSW,0.5,80.0,20.0,19,5 catalogue records
+Warrumbungle,-31.4551249,149.4633221,5,5,0,3,2,0,0,0,0,,,New South Wales,NSW,0.5,60.0,0.0,19,5 catalogue records
+Cowra,-33.8111285,148.6935649,4,3,1,3,1,0,0,0,0,,,New South Wales,NSW,0.4,75.0,0.0,20,4 catalogue records
+Cronulla,-34.0575259,151.1523851,4,3,1,2,1,0,1,0,1,1908.0,1908.0,New South Wales,NSW,0.4,50.0,25.0,20,4 catalogue records
+Dungog,-32.3472009,151.6262439,4,4,0,4,0,0,0,0,0,,,New South Wales,NSW,0.4,100.0,0.0,20,4 catalogue records
+Gloucester,-32.0067278,151.9595082,4,2,2,1,3,0,0,0,1,1909.0,1909.0,New South Wales,NSW,0.4,25.0,25.0,20,4 catalogue records
+Gosford,-33.4240979,151.3411475,4,2,2,2,1,0,1,0,2,1907.0,1944.0,New South Wales,NSW,0.4,50.0,50.0,20,4 catalogue records
+Gulgong,-32.3624999,149.5335213,4,4,0,3,0,0,0,1,0,,,New South Wales,NSW,0.4,75.0,0.0,20,4 catalogue records
+Lavender Bay,-33.8432002,151.2074155,4,4,0,2,1,0,1,0,2,1906.0,1907.0,New South Wales,NSW,0.4,50.0,50.0,20,4 catalogue records
+Lithgow,-33.481536,150.1564887,4,2,2,0,3,1,0,0,2,1907.0,1914.0,New South Wales,NSW,0.4,0.0,50.0,20,4 catalogue records
+Milsons Point,-33.8471255,151.2115234,4,4,0,3,1,0,0,0,0,,,New South Wales,NSW,0.4,75.0,0.0,20,4 catalogue records
+Mulgoa,-33.8371562,150.6504013,4,4,0,0,4,0,0,0,0,,,New South Wales,NSW,0.4,0.0,0.0,20,4 catalogue records
+Rose Bay,-33.8741644,151.265471,4,4,0,3,1,0,0,0,1,1905.0,1905.0,New South Wales,NSW,0.4,75.0,25.0,20,4 catalogue records
+South West Rocks,-30.8943859,153.040677,4,1,3,2,1,0,1,0,0,,,New South Wales,NSW,0.4,50.0,0.0,20,4 catalogue records
+Ulladulla,-35.3621503,150.4751713,4,1,3,2,2,0,0,0,0,,,New South Wales,NSW,0.4,50.0,0.0,20,4 catalogue records
+Vaucluse,-33.8558564,151.2761018,4,3,1,1,1,0,1,1,0,,,New South Wales,NSW,0.4,25.0,0.0,20,4 catalogue records
+Bell,-33.5033574,150.2797612,3,3,0,0,0,1,1,1,1,1947.0,1947.0,New South Wales,NSW,0.3,0.0,33.3,21,3 catalogue records
+Bowral,-34.4816626,150.4177868,3,1,2,1,1,0,0,1,1,1909.0,1909.0,New South Wales,NSW,0.3,33.3,33.3,21,3 catalogue records
+Brunswick Heads,-28.538885,153.5483811,3,1,2,2,1,0,0,0,0,,,New South Wales,NSW,0.3,66.7,0.0,21,3 catalogue records
+Cambewarra,-34.813737,150.5619744,3,2,1,0,3,0,0,0,1,1905.0,1905.0,New South Wales,NSW,0.3,0.0,33.3,21,3 catalogue records
+Carcoar,-33.6112943,149.139503,3,3,0,1,2,0,0,0,2,1839.0,1907.0,New South Wales,NSW,0.3,33.3,66.7,21,3 catalogue records
+Como,-34.0032179,151.0631257,3,3,0,2,1,0,0,0,0,,,New South Wales,NSW,0.3,66.7,0.0,21,3 catalogue records
+Coonabarabran,-31.2728076,149.2733225,3,1,2,3,0,0,0,0,0,,,New South Wales,NSW,0.3,100.0,0.0,21,3 catalogue records
+Coonamble,-30.8652096,148.2623773,3,3,0,3,0,0,0,0,2,1907.0,1907.0,New South Wales,NSW,0.3,100.0,66.7,21,3 catalogue records
+Deniliquin,-35.528783,144.9628047,3,1,2,2,1,0,0,0,1,1908.0,1908.0,New South Wales,NSW,0.3,66.7,33.3,21,3 catalogue records
+Griffith,-34.2870772,146.0551022,3,1,2,1,1,1,0,0,0,,,New South Wales,NSW,0.3,33.3,0.0,21,3 catalogue records
+Inverell,-29.436798,151.1770693,3,2,1,2,0,1,0,0,1,1906.0,1906.0,New South Wales,NSW,0.3,66.7,33.3,21,3 catalogue records
+Leeton,-34.5297533,146.293258,3,2,1,2,1,0,0,0,2,1954.0,1969.0,New South Wales,NSW,0.3,66.7,66.7,21,3 catalogue records
+Mittagong,-34.4500664,150.4473469,3,3,0,2,0,0,0,1,1,1982.0,1982.0,New South Wales,NSW,0.3,66.7,33.3,21,3 catalogue records
+Namoi River,-30.3251565,149.737731,3,3,0,3,0,0,0,0,1,1907.0,1907.0,New South Wales,NSW,0.3,100.0,33.3,21,3 catalogue records
+Nowra,-34.8741198,150.6004709,3,0,3,0,3,0,0,0,0,,,New South Wales,NSW,0.3,0.0,0.0,21,3 catalogue records
+Paddington,-33.8841572,151.2272766,3,3,0,0,2,1,0,0,0,,,New South Wales,NSW,0.3,0.0,0.0,21,3 catalogue records
+Picton,-34.1693445,150.6114983,3,3,0,2,0,1,0,0,0,,,New South Wales,NSW,0.3,66.7,0.0,21,3 catalogue records
+Port Stephens,-32.728465,151.9380101,3,2,1,3,0,0,0,0,0,,,New South Wales,NSW,0.3,100.0,0.0,21,3 catalogue records
+Sofala,-33.0804671,149.6914789,3,3,0,0,3,0,0,0,1,1850.0,1850.0,New South Wales,NSW,0.3,0.0,33.3,21,3 catalogue records
+Wallacia,-33.8653337,150.6409771,3,3,0,0,3,0,0,0,0,,,New South Wales,NSW,0.3,0.0,0.0,21,3 catalogue records
+Wauchope,-31.4557879,152.734664,3,2,1,3,0,0,0,0,0,,,New South Wales,NSW,0.3,100.0,0.0,21,3 catalogue records
+Wilcannia,-31.5591717,143.3745777,3,3,0,3,0,0,0,0,0,,,New South Wales,NSW,0.3,100.0,0.0,21,3 catalogue records
+Wombeyan Caves,-34.3084619,149.9688296,3,3,0,0,3,0,0,0,0,,,New South Wales,NSW,0.3,0.0,0.0,21,3 catalogue records
+Auburn,-33.8545702,151.0255673,2,2,0,0,2,0,0,0,1,1909.0,1909.0,New South Wales,NSW,0.2,0.0,50.0,22,2 catalogue records
+Austinmer,-34.3064757,150.9292241,2,2,0,0,0,2,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Bellingen,-30.3739913,152.71921,2,2,0,1,0,1,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Berry,-34.7753238,150.697722,2,1,1,0,1,0,0,1,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Blackheath,-33.6338889,150.2847222,2,2,0,0,2,0,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Camden,-34.016087,150.7198849,2,0,2,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Casino,-28.8629114,153.0483736,2,1,1,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Chatswood,-33.7967377,151.1814306,2,2,0,0,0,1,1,0,2,1907.0,1907.0,New South Wales,NSW,0.2,0.0,100.0,22,2 catalogue records
+Clifton,-34.2580556,150.9686111,2,2,0,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Coolangatta,-34.8538772,150.7227206,2,2,0,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Coramba,-30.2208606,153.0148823,2,2,0,0,1,1,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Cremorne,-33.8260081,151.2254326,2,2,0,1,0,1,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Double Bay,-33.8766373,151.24245,2,2,0,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Drummoyne,-33.8520678,151.153689,2,0,2,0,0,1,1,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Fitzroy Falls,-34.6552065,150.4530143,2,1,1,0,1,1,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Gunnedah,-31.0237593,150.2036527,2,1,1,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Huskisson,-35.0384877,150.670708,2,0,2,0,1,1,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Kangaroo Valley,-34.7351573,150.5325429,2,1,1,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Kingscliff,-28.2566667,153.5761111,2,2,0,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Kyogle,-28.6462917,152.7444244,2,2,0,0,1,1,0,0,1,1907.0,1907.0,New South Wales,NSW,0.2,0.0,50.0,22,2 catalogue records
+Long Jetty,-33.3566667,151.4844444,2,0,2,2,0,0,0,0,1,1944.0,1944.0,New South Wales,NSW,0.2,100.0,50.0,22,2 catalogue records
+Lord Howe Island,-31.5543099,159.0859655,2,1,1,1,0,0,1,0,1,1984.0,1984.0,New South Wales,NSW,0.2,50.0,50.0,22,2 catalogue records
+Manilla,-30.7465571,150.7218323,2,2,0,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Maroubra,-33.9453441,151.2456824,2,0,2,0,1,0,1,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Marrickville,-33.9104,151.1560775,2,2,0,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Minnamurra,-34.6280742,150.8563805,2,0,2,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Murrurundi,-31.7656468,150.8388618,2,1,1,1,0,1,0,0,1,1910.0,1910.0,New South Wales,NSW,0.2,50.0,50.0,22,2 catalogue records
+Muswellbrook,-32.4881159,150.516408,2,1,1,0,2,0,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Narrabri,-30.3278407,149.5571542,2,0,2,1,0,0,1,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Newtown,-33.8961132,151.1801893,2,2,0,0,1,0,0,1,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Old Adaminaby,-36.0318,148.7012,2,2,0,0,0,0,0,2,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Palm Beach,-33.6005473,151.3231536,2,1,1,2,0,0,0,0,1,1968.0,1968.0,New South Wales,NSW,0.2,100.0,50.0,22,2 catalogue records
+Potts Point,-33.867522,151.2243115,2,2,0,0,1,0,1,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Royal National Park,-34.1121995,151.0267269,2,2,0,2,0,0,0,0,1,1911.0,1911.0,New South Wales,NSW,0.2,100.0,50.0,22,2 catalogue records
+Saratoga,-33.4747222,151.3483333,2,2,0,0,2,0,0,0,0,,,New South Wales,NSW,0.2,0.0,0.0,22,2 catalogue records
+Shelly Beach,-34.0641462,151.1554649,2,2,0,2,0,0,0,0,1,1911.0,1911.0,New South Wales,NSW,0.2,100.0,50.0,22,2 catalogue records
+Singleton,-32.602355,151.1132887,2,2,0,1,0,0,0,1,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Swansea,-33.0866519,151.6346059,2,1,1,1,0,0,0,1,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Tuggerah,-33.3038927,151.4205193,2,2,0,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Tuncurry,-32.1755506,152.4982615,2,0,1,1,0,0,1,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Walgett,-29.7882659,148.2389866,2,2,0,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Warragamba,-33.8890386,150.6039175,2,1,1,2,0,0,0,0,0,,,New South Wales,NSW,0.2,100.0,0.0,22,2 catalogue records
+Wentworth,-33.6766099,142.0114988,2,2,0,0,1,0,1,0,1,1956.0,1956.0,New South Wales,NSW,0.2,0.0,50.0,22,2 catalogue records
+Woy Woy,-33.4880548,151.3274925,2,1,1,0,2,0,0,0,1,1911.0,1911.0,New South Wales,NSW,0.2,0.0,50.0,22,2 catalogue records
+Wyong,-33.2825132,151.4256691,2,1,1,0,2,0,0,0,1,1907.0,1907.0,New South Wales,NSW,0.2,0.0,50.0,22,2 catalogue records
+Yarrangobilly,-35.6483333,148.4677778,2,1,1,1,0,0,1,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Yass,-34.8418629,148.9110055,2,1,1,1,1,0,0,0,0,,,New South Wales,NSW,0.2,50.0,0.0,22,2 catalogue records
+Young,-34.3129164,148.2955025,2,1,1,0,2,0,0,0,1,1906.0,1906.0,New South Wales,NSW,0.2,0.0,50.0,22,2 catalogue records
+Avoca,-34.6130929,150.4790842,1,1,0,0,0,1,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Avoca Beach,-33.465,151.4344444,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Balgowlah,-33.7943622,151.2644605,1,1,0,0,0,1,0,0,1,1949.0,1949.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Barellan,-34.2873964,146.5739571,1,1,0,0,0,1,0,0,1,1910.0,1910.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Bendemeer,-30.8825826,151.1557903,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Bilgola Beach,-33.6443165,151.324484,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Bodalla,-36.0907228,150.0485496,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Bombo,-34.655184,150.8533278,1,1,0,1,0,0,0,0,1,1908.0,1908.0,New South Wales,NSW,0.1,100.0,100.0,23,1 catalogue records
+Bowraville,-30.6464838,152.8528424,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Budgewoi,-33.2378117,151.5646664,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Burrawang,-34.5934823,150.517518,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Campbelltown,-34.0737892,150.8536614,1,1,0,0,0,1,0,0,1,1910.0,1910.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Candelo,-36.7655731,149.6946357,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Centennial Park,-33.8977778,151.2338889,1,1,0,0,0,1,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Collarenebri,-29.542365,148.5777288,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Concord West,-33.8484033,151.0856114,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Coolah,-31.8230012,149.7205444,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Cootamundra,-34.6387195,148.0240804,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Dangar Island,-33.5387077,151.239494,1,0,1,0,1,0,0,0,1,1964.0,1964.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Dorrigo,-30.3399677,152.7120341,1,1,0,1,0,0,0,0,1,1977.0,1977.0,New South Wales,NSW,0.1,100.0,100.0,23,1 catalogue records
+Gerringong,-34.7461982,150.8278546,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Gilgandra,-31.6325818,148.7044489,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Gladesville,-33.8275,151.1263889,1,1,0,0,0,1,0,0,1,1906.0,1906.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Glebe,-33.8777782,151.1862377,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Granville,-33.8345097,151.0060111,1,1,0,0,0,1,0,0,1,1908.0,1908.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Greenwell Point,-34.9051299,150.7304626,1,1,0,0,0,1,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Grenfell,-33.8935296,148.1600985,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Guildford,-33.8561049,150.9939232,1,1,0,0,1,0,0,0,1,1937.0,1937.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Hammondville,-33.9511518,150.9608619,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Hartley,-33.5483333,150.1844444,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Henley,-33.8423815,151.1360364,1,1,0,0,0,0,1,0,1,1906.0,1906.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Holbrook,-35.7149999,147.3177777,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Holroyd,-33.8297155,150.9974898,1,1,0,0,1,0,0,0,1,1938.0,1938.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Ironbark,-30.2983333,150.8088889,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Jerilderie,-35.3564307,145.7292771,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Kanimbla,-33.6386111,150.2075,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Katoomba,-33.7140402,150.3116007,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Kirribilli,-33.8476659,151.2158138,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Lambton,-32.9133333,151.7055556,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Limestone,-29.2025,151.0225,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Lorne,-31.6483333,152.6177778,1,0,1,0,0,0,1,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Merimbula,-36.8882027,149.909846,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Milton,-35.3169793,150.4375645,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Moree,-29.4617202,149.8407153,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Morpeth,-32.7261111,151.6316667,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Mount Kembla,-34.4421839,150.8067132,1,1,0,0,0,1,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Mylestom,-30.4650354,153.0442062,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Nambucca Heads,-30.6449458,152.9924524,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Narrabeen,-33.7135699,151.2978164,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Narrandera,-34.5926463,146.7000438,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Nimbin,-28.5940455,153.2229752,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+O'Connell,-33.5323698,149.7275067,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Parkes,-32.8225409,147.9761363,1,1,0,0,0,1,0,0,1,1906.0,1906.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Paterson,-32.6014802,151.6161377,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Penrith,-33.7511954,150.6941711,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Port Hacking,-34.07353,151.12613,1,1,0,0,1,0,0,0,1,1910.0,1910.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Portland,-33.3483333,149.9844444,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Providence Portal,-35.9485,148.6346,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Queenscliff,-33.7823916,151.2854011,1,1,0,0,1,0,0,0,1,1952.0,1952.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Randwick,-33.9458375,151.2431948,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Razorback,-34.1485,150.6346,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Red Rock,-29.9832606,153.229068,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Redfern,-33.8931044,151.2040292,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Richmond,-33.6009721,150.7496405,1,1,0,0,0,1,0,0,1,1907.0,1907.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+Rob Roy,-29.7127,151.004,1,1,0,1,0,0,0,0,1,1910.0,1910.0,New South Wales,NSW,0.1,100.0,100.0,23,1 catalogue records
+Robertson,-34.59,150.5927778,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Rosehill,-33.8263889,151.0305556,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Roseville,-33.784545,151.1778441,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Ryde,-33.8015751,151.1046052,1,1,0,1,0,0,0,0,1,1907.0,1907.0,New South Wales,NSW,0.1,100.0,100.0,23,1 catalogue records
+Scone,-32.0468773,150.866996,1,1,0,0,0,1,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Seal Rocks,-32.4361913,152.5299305,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Shoal Bay,-32.7244066,152.1748558,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Stanwell Park,-34.228928,150.9881239,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Stuarts Point,-30.8209314,152.9933138,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Surfside,-35.6952,150.1998,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Sussex Inlet,-35.156352,150.5989124,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Tantangara,-35.7225,148.6717,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Tathra,-36.7284498,149.9850271,1,0,1,0,0,0,1,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Tea Gardens,-32.6622727,152.155692,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Temora,-34.3830356,147.468586,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+The Entrance,-33.3440586,151.4960171,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+The Gap,-34.9983333,147.2677778,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+The Rocks,-33.859992,151.2083216,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Tocumwal,-35.8114914,145.5653797,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Toronto,-33.013441,151.5942043,1,1,0,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Tuross,-36.2925693,149.5022756,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Tuross Head,-36.0594486,150.1381172,1,0,1,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Uralla,-30.4855111,151.3022202,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Urunga,-30.4983386,153.0166289,1,0,1,1,0,0,0,0,0,,,New South Wales,NSW,0.1,100.0,0.0,23,1 catalogue records
+Walcha,-31.1975806,151.7491266,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Waterfall,-34.1347694,150.9931332,1,1,0,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Waterloo,-33.9002762,151.2073137,1,1,0,1,0,0,0,0,1,1858.0,1858.0,New South Wales,NSW,0.1,100.0,100.0,23,1 catalogue records
+Wattle Flat,-33.1409597,149.6900861,1,1,0,0,1,0,0,0,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Waverley,-33.8839305,151.2769347,1,0,1,0,1,0,0,0,1,1930.0,1930.0,New South Wales,NSW,0.1,0.0,100.0,23,1 catalogue records
+West Wyalong,-33.923661,147.2050849,1,0,1,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
+Wilberforce,-33.549451,150.8474116,1,0,1,0,0,0,0,1,0,,,New South Wales,NSW,0.1,0.0,0.0,23,1 catalogue records
