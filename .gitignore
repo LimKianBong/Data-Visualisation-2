@@ -1,0 +1,16 @@
+/*
+!/.gitignore
+!/FIT3179Postcards/
+
+.vscode/
+.idea/
+node_modules/
+__pycache__/
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+.env.*
+*.log
+*.tmp
+*.bak
