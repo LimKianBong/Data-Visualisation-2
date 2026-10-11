@@ -145,17 +145,17 @@
           "filter": "datum.catalogue_records >= minimum_records"
         },
         {
-          "filter": "datum.locality_rank <= 5"
+          "filter": "datum.locality_rank <= 4"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 8,
-        "dy": -8,
-        "fontSize": 11,
-        "fontWeight": 500,
+        "dx": 7,
+        "dy": -7,
+        "fontSize": 10,
+        "fontWeight": 600,
         "color": "#333333"
       },
       "encoding": {
