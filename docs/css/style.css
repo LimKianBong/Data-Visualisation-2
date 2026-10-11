@@ -1,6 +1,4 @@
 
-/* General settings */
-
 *,
 *::before,
 *::after {
@@ -13,19 +11,16 @@ html {
 
 body {
     margin: 0;
-    background-color: #f5f3ef;
+    background-color: #f3f1ed;
     color: #29333a;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-
-/* Page layout */
-
 .page {
-    width: calc(100% - 36px);
-    max-width: 1080px;
-    margin: 26px auto;
-    padding: 44px 52px 56px;
+    width: calc(100% - 24px);
+    max-width: 1040px;
+    margin: 22px auto;
+    padding: 42px 42px 54px;
     background-color: #ffffff;
 }
 
@@ -37,15 +32,13 @@ body {
     min-width: 0;
 }
 
-
-/* Typography */
-
 h1 {
     font-family: 'Lora', Georgia, serif;
-    font-size: 44px;
+    font-size: 42px;
     font-weight: 700;
     line-height: 1.2;
-    margin: 0 0 16px;
+    margin: 0 0 14px;
+    color: #24313b;
 }
 
 h2 {
@@ -53,86 +46,77 @@ h2 {
     font-size: 29px;
     font-weight: 600;
     line-height: 1.35;
-    margin: 0 0 16px;
+    margin: 0 0 17px;
+    color: #24313b;
 }
 
 h3 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 21px;
     font-weight: 700;
-    line-height: 1.35;
-    margin: 30px 0 12px;
+    line-height: 1.4;
+    margin: 32px 0 12px;
+    color: #293e4b;
 }
 
 p {
-    max-width: 65ch;
+    max-width: 66ch;
     font-size: 16px;
+    font-weight: 400;
     line-height: 1.65;
-    margin: 0 0 15px;
+    margin: 0 0 14px;
 }
 
 .subtitle {
+    max-width: 66ch;
     font-size: 20px;
+    font-weight: 600;
     line-height: 1.5;
-    color: #606a70;
-    max-width: 62ch;
+    color: #61717b;
     margin-bottom: 24px;
 }
 
 .section-kicker {
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: #736756;
-    margin-bottom: 10px;
+    color: #8b674d;
+    margin: 0 0 12px;
 }
 
 .section-intro {
+    max-width: 68ch;
     font-size: 17px;
-    line-height: 1.65;
-    max-width: 65ch;
-    margin-bottom: 26px;
+    line-height: 1.7;
+    color: #46565f;
+    margin-bottom: 22px;
 }
-
-
-/* Chart containers */
 
 .vis-container {
     width: 100%;
     min-width: 0;
+    padding: 10px 0 6px;
+    margin-bottom: 15px;
     overflow-x: auto;
-    padding: 12px 0 6px;
-    margin-bottom: 18px;
 }
 
-
-/* Source text and notes */
-
-.small-font,
-.small-font p,
-.small-font a {
-    font-size: 13px;
-    line-height: 1.55;
+.small-font {
+    color: #606b73;
 }
 
 .small-font p {
-    max-width: 85ch;
-    color: #5d656a;
-    margin-bottom: 9px;
+    max-width: 86ch;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
 }
-
-
-/* Section dividers */
 
 .hr3 {
     border: 0;
-    border-top: 1px solid #dadbd9;
-    margin: 52px 0 38px;
+    border-top: 1px solid #dededb;
+    margin: 48px 0 36px;
 }
-
-
-/* Interactive controls */
 
 .vega-bindings {
     font-family: 'Source Sans Pro', sans-serif;
@@ -142,15 +126,17 @@ p {
 .vega-bindings select {
     max-width: 100%;
     padding: 6px 8px;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     color: #29333a;
     background-color: #ffffff;
-    border: 1px solid #adb8bf;
+    border: 1px solid #aab6bd;
     border-radius: 4px;
 }
 
-
-/* Hyperlinks */
+.vega-embed {
+    max-width: 100%;
+}
 
 a {
     color: #245e83;
@@ -162,43 +148,8 @@ a:hover {
     color: #173f5b;
 }
 
-a:focus-visible {
-    outline: 2px solid #245e83;
-    outline-offset: 3px;
-}
-
-
-/* Responsive layout */
-
-@media (max-width: 700px) {
-
+@media (max-width: 1100px) {
     .page {
-        width: calc(100% - 16px);
-        margin: 8px auto;
-        padding: 24px 18px 36px;
-    }
-
-    h1 {
-        font-size: 33px;
-    }
-
-    h2 {
-        font-size: 25px;
-    }
-
-    h3 {
-        font-size: 19px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 15px;
-    }
-
-    .hr3 {
-        margin: 38px 0 28px;
+        padding: 32px 30px 42px;
     }
 }

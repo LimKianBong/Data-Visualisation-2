@@ -43,7 +43,7 @@
 
   "vconcat": [
     {
-      "width": "container",
+      "width": 700,
       "height": 290,
 
       "mark": {

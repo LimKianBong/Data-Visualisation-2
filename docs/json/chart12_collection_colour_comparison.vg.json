@@ -2,8 +2,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "width": "container",
-  "height": 250,
+"width": 600,
+"height": 250,
 
   "data": {
     "url": "data/collection_colour_comparison.csv",

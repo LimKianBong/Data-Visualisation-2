@@ -4,8 +4,8 @@
 
   "description": "SLNSW catalogue record scope and format treemap.",
 
-  "width": 900,
-  "height": 480,
+"width": 820,
+"height": 480,
   "padding": 5,
   "autosize": "pad",
 
