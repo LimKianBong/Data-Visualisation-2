@@ -17,7 +17,8 @@
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
         crossorigin="anonymous">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1">
 
     <!-- Google fonts -->
     <link
@@ -25,8 +26,10 @@
         rel="stylesheet">
 
     <!-- CSS file -->
-    <link rel="stylesheet" type="text/css"
-        href="css/style.css" media="all">
+    <link rel="stylesheet"
+        type="text/css"
+        href="css/style.css"
+        media="all">
 
 </head>
 
@@ -128,7 +131,7 @@
         <hr class="hr3">
 
 
-        <!-- Chart 3: AKON world point-distribution map -->
+        <!-- Chart 3: AKON world location map -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
@@ -158,6 +161,7 @@
                     AKON Historical Postcards.
                     Points show geocoded collection places,
                     not worldwide postcard production.
+                    The dashed line marks the prime meridian.
                 </p>
 
                 <p>
@@ -171,7 +175,7 @@
         <hr class="hr3">
 
 
-        <!-- Chart 4: Australian equal-area hexbin map -->
+        <!-- Chart 4: Equal-area hexbin map -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
@@ -201,14 +205,12 @@
                     Miscellaneous Australian Postcards.
                     The map aggregates 1,195 mapped catalogue records
                     into 145 occupied equal-area hexagons.
-                    Only high-confidence title-based locations are included.
                 </p>
 
                 <p>
-                    Hexagons were constructed in an Australian equal-area
-                    coordinate system at approximately 50 km width.
+                    Only high-confidence title-based locations are included.
+                    Hexagons were constructed at approximately 50 km width.
                     Coastal cells may extend beyond the shoreline.
-                    Counts do not represent postcard production or population.
                 </p>
 
             </div>
@@ -217,7 +219,7 @@
         <hr class="hr3">
 
 
-        <!-- Chart 5: SLNSW catalogue-format treemap -->
+        <!-- Chart 5: SLNSW catalogue treemap -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
@@ -251,14 +253,111 @@
                     Source: State Library of New South Wales,
                     Miscellaneous Australian Postcards.
                     The treemap covers 1,559 catalogue records.
-                    Counts are grouped using catalogue scope and format labels.
                 </p>
 
                 <p>
-                    A grouped or folder record may describe multiple postcards.
-                    Rectangle area therefore represents catalogue records,
+                    Grouped or folder records may describe multiple postcards.
+                    Rectangle area represents catalogue records,
                     not the number of physical postcards.
-                    Tooltip percentages refer to all 1,559 records.
+                </p>
+
+            </div>
+        </div>
+
+        <hr class="hr3">
+
+
+        <!-- Chart 6: Format and visual style heatmap -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>Format and Visual Style</h2>
+
+                <p>
+                    How do recorded visual styles differ across formats?<br>
+                    Darker cells indicate a larger share within each format.<br>
+                    Use the dropdown to exclude small catalogue categories.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis6" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+
+                <p>
+                    Source: State Library of New South Wales,
+                    Miscellaneous Australian Postcards.
+                    Percentages use the total records of each format
+                    as their denominator.
+                </p>
+
+                <p>
+                    Zero indicates no records for a style-format combination.
+                    Small categories may produce unstable percentages.
+                    Unknown is a recorded metadata category.
+                </p>
+
+            </div>
+        </div>
+
+        <hr class="hr3">
+
+
+        <!-- Chart 7: AKON country-ranking bump chart -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>Changing Geographic Prominence</h2>
+
+                <p>
+                    How did country rankings change across AKON's dated records?<br>
+                    Each line traces a country's rank across decades.<br>
+                    Rank 1 is highest; lower positions indicate less representation.
+                </p>
+
+                <p>
+                    Select a country to highlight its ranking trajectory.<br>
+                    Hover over points for record counts and collection shares.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis7" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+
+                <p>
+                    Source: Austrian National Library,
+                    AKON Historical Postcards.
+                    Rankings use exactly dated records only.
+                    Country names follow present-day geographic boundaries.
+                </p>
+
+                <p>
+                    The 1890s include only 1893–1899.
+                    The 1920s include only 1920–1925.
+                    These partial periods should not be compared as full decades.
+                </p>
+
+                <p>
+                    Eight selected countries are displayed.
+                    Original ranks are preserved across all AKON countries.
+                    Ranking does not measure historical postcard production.
                 </p>
 
             </div>
@@ -312,12 +411,16 @@
         var specVis3 = "json/map3_akon_world.vg.json";
         var specVis4 = "json/map4_slnsw_hexbin.vg.json";
         var specVis5 = "json/chart5_slnsw_treemap.vg.json";
+        var specVis6 = "json/chart6_slnsw_format_colour.vg.json";
+        var specVis7 = "json/chart7_akon_country_bump.vg.json";
 
-        vegaEmbed('#vis1', specVis1).catch(console.error);
-        vegaEmbed('#vis2', specVis2).catch(console.error);
-        vegaEmbed('#vis3', specVis3).catch(console.error);
-        vegaEmbed('#vis4', specVis4).catch(console.error);
-        vegaEmbed('#vis5', specVis5).catch(console.error);
+        vegaEmbed('#vis1', specVis1);
+        vegaEmbed('#vis2', specVis2);
+        vegaEmbed('#vis3', specVis3);
+        vegaEmbed('#vis4', specVis4);
+        vegaEmbed('#vis5', specVis5);
+        vegaEmbed('#vis6', specVis6);
+        vegaEmbed('#vis7', specVis7);
 
     </script>
 
