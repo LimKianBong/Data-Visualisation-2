@@ -1,65 +1,204 @@
-body * {
-    font-family: 'Source Sans Pro', sans-serif;
+
+/* General settings */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f3f3f3;
+    margin: 0;
+    background-color: #f5f3ef;
+    color: #29333a;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
-h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 42px;
-    font-weight: 600;
-    margin-top: 0;
-}
 
-h2 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 28px;
-    font-weight: 600;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.5;
-}
+/* Page layout */
 
 .page {
-    width: 1000px;
-    background-color: white;
-    margin: auto;
-    padding: 50px;
-    padding-top: 35px;
-}
-
-.vis-container {
-    width: 100%;
-}
-
-.description h2,
-h1 {
-    margin-top: 0px;
-}
-
-.description-right {
-    padding-left: 20px;
-}
-
-.description-left {
-    padding-right: 20px;
+    width: calc(100% - 36px);
+    max-width: 1080px;
+    margin: 26px auto;
+    padding: 44px 52px 56px;
+    background-color: #ffffff;
 }
 
 .pure-g {
-    margin-bottom: 25px;
+    margin-bottom: 0;
 }
 
-.small-font {
-    font-size: 14px;
+.pure-u-1-1 {
+    min-width: 0;
 }
+
+
+/* Typography */
+
+h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+}
+
+h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 29px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 16px;
+}
+
+h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 30px 0 12px;
+}
+
+p {
+    max-width: 65ch;
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0 0 15px;
+}
+
+.subtitle {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #606a70;
+    max-width: 62ch;
+    margin-bottom: 24px;
+}
+
+.section-kicker {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #736756;
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 65ch;
+    margin-bottom: 26px;
+}
+
+
+/* Chart containers */
+
+.vis-container {
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 12px 0 6px;
+    margin-bottom: 18px;
+}
+
+
+/* Source text and notes */
+
+.small-font,
+.small-font p,
+.small-font a {
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.small-font p {
+    max-width: 85ch;
+    color: #5d656a;
+    margin-bottom: 9px;
+}
+
+
+/* Section dividers */
 
 .hr3 {
     border: 0;
-    border-top: 1px solid #d9d9d9;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    border-top: 1px solid #dadbd9;
+    margin: 52px 0 38px;
+}
+
+
+/* Interactive controls */
+
+.vega-bindings {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+}
+
+.vega-bindings select {
+    max-width: 100%;
+    padding: 6px 8px;
+    font-size: 14px;
+    color: #29333a;
+    background-color: #ffffff;
+    border: 1px solid #adb8bf;
+    border-radius: 4px;
+}
+
+
+/* Hyperlinks */
+
+a {
+    color: #245e83;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: #173f5b;
+}
+
+a:focus-visible {
+    outline: 2px solid #245e83;
+    outline-offset: 3px;
+}
+
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+
+    .page {
+        width: calc(100% - 16px);
+        margin: 8px auto;
+        padding: 24px 18px 36px;
+    }
+
+    h1 {
+        font-size: 33px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .hr3 {
+        margin: 38px 0 28px;
+    }
 }
