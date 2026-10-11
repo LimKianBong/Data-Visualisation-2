@@ -1,0 +1,145 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": "container",
+  "height": 500,
+
+  "params": [
+    {
+      "name": "collection_select",
+      "value": "NMA",
+      "bind": {
+        "input": "select",
+        "options": [
+          "NMA",
+          "SLNSW"
+        ],
+        "labels": [
+          "National Museum of Australia",
+          "State Library of New South Wales"
+        ],
+        "name": "Collection: "
+      }
+    }
+  ],
+
+  "projection": {
+    "type": "equirectangular",
+    "center": [134, -28],
+    "scale": 800
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "australia_states"
+        }
+      },
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#eeeeee",
+        "stroke": "white",
+        "strokeWidth": 1
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/australia_state_comparison.csv"
+      },
+
+      "transform": [
+        {
+          "lookup": "state_clean",
+          "from": {
+            "data": {
+              "url": "data/australia_states.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "australia_states"
+              }
+            },
+            "key": "properties.STATE_NAME"
+          },
+          "as": "geo"
+        },
+
+        {
+          "filter": "datum.source == collection_select"
+        }
+      ],
+
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.8
+      },
+
+      "encoding": {
+        "shape": {
+          "field": "geo",
+          "type": "geojson"
+        },
+
+        "color": {
+          "field": "share_percent",
+          "type": "quantitative",
+          "title": "Share of mapped records (%)",
+
+          "scale": {
+            "domain": [
+              0,
+              100
+            ],
+            "scheme": "oranges"
+          },
+
+          "legend": {
+            "title": "Share of mapped records (%)",
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100
+            ]
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "state_clean",
+            "type": "nominal",
+            "title": "State or territory"
+          },
+
+          {
+            "field": "source_name",
+            "type": "nominal",
+            "title": "Postcard collection"
+          },
+
+          {
+            "field": "postcard_records",
+            "type": "quantitative",
+            "title": "Mapped postcard records",
+            "format": ","
+          },
+
+          {
+            "field": "share_percent",
+            "type": "quantitative",
+            "title": "Share of mapped collection (%)",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {}
+}
