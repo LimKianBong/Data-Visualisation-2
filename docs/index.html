@@ -10,10 +10,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
+    <!-- Import Pure.css -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
+        crossorigin="anonymous">
 
-    <!-- Import pure.css -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google fonts -->
@@ -21,8 +23,9 @@
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="css/style.css" media="all">
 
 </head>
 
@@ -30,73 +33,84 @@
 
     <div class="page">
 
-        <div class="pure-g">
+        <!-- Main title -->
 
+        <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h1>
-                    Postcards Through Place and Time
-                </h1>
+                <h1>Postcards Through Place and Time</h1>
 
                 <p class="subtitle">
-                    Exploring how postcard collections
+                    Exploring how postcard collections<br>
                     documented places, culture and history.
                 </p>
 
             </div>
-
         </div>
-
 
         <hr class="hr3">
 
-        <div class="pure-g">
 
+        <!-- Chart 1: Australian choropleth -->
+
+        <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>
-                    Australia Across Two Collections
-                </h2>
+                <h2>Australia Across Two Collections</h2>
 
                 <p>
-                    Compare how Australian states are
-                    represented in the NMA and SLNSW
-                    postcard collections.
+                    Compare how Australian states are represented<br>
+                    in the NMA and SLNSW collections.<br>
+                    Colours show each state's share of mapped records.
                 </p>
 
             </div>
-
         </div>
 
         <div class="pure-g">
-
             <div class="pure-u-1-1">
 
-                <div id="vis1" class="vis-container">
-                </div>
+                <div id="vis1" class="vis-container"></div>
 
             </div>
-
         </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+
+                <p>
+                    Sources: National Museum of Australia and
+                    State Library of New South Wales.
+                    Shares are calculated separately within each collection.
+                </p>
+
+            </div>
+        </div>
+
         <hr class="hr3">
 
+
+        <!-- Chart 2: NSW proportional-symbol map -->
+
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                    <h2>Postcard Places Across New South Wales</h2>
+                <h2>Postcard Places Across New South Wales</h2>
 
-                    <p>
-                        Circles show mapped SLNSW catalogue records by locality.<br>
-                        Larger circles mean more catalogue records.<br>
-                        Points represent matched localities, not exact postcard sites.
-                    </p>
+                <p>
+                    Circles show mapped SLNSW catalogue records by locality.<br>
+                    Larger circles represent more catalogue records.<br>
+                    Locations are matched localities, not exact postcard sites.
+                </p>
 
             </div>
         </div>
 
         <div class="pure-g">
             <div class="pure-u-1-1">
+
                 <div id="vis2" class="vis-container"></div>
+
             </div>
         </div>
 
@@ -113,12 +127,58 @@
             </div>
         </div>
 
-        <br>
+        <hr class="hr3">
+
+
+        <!-- Chart 3: AKON international point map -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>Postcard Places Beyond Australia</h2>
+
+                <p>
+                    Explore places represented in the AKON historical collection.<br>
+                    Each dot represents one distinct mapped place.<br>
+                    Switch to Europe to inspect the denser clusters.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <div id="vis3" class="vis-container"></div>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+
+                <p>
+                    Source: Austrian National Library,
+                    AKON Historical Postcards.
+                    Points represent geocoded collection places,
+                    not global postcard production.
+                    Dashed line indicates the prime meridian (0°).
+                </p>
+
+                <p>
+                    World boundaries: Natural Earth,
+                    via the FIT3179 Week 8 map example.
+                </p>
+
+            </div>
+        </div>
+
+
+        <!-- Footer -->
 
         <hr class="hr3">
 
         <div class="pure-g">
-
             <div class="pure-u-1-1 small-font">
 
                 <p>
@@ -129,24 +189,37 @@
                 </p>
 
                 <p>
+                    <a href="https://github.com/limkianbong/Data-Visualisation-2"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View GitHub repository
+                    </a>
+                </p>
+
+                <p>
                     FIT3179 Data Visualisation 2
                 </p>
 
             </div>
-
         </div>
 
     </div>
+
+
+    <!-- Vega-Lite visualisations -->
 
     <script type="text/javascript">
 
         var specVis1 = "json/map1_australia.vg.json";
         var specVis2 = "json/map2_slnsw_localities.vg.json";
+        var specVis3 = "json/map3_akon_world.vg.json";
 
-        vegaEmbed('#vis1', specVis1);
-        vegaEmbed('#vis2', specVis2);
+        vegaEmbed('#vis1', specVis1).catch(console.error);
+        vegaEmbed('#vis2', specVis2).catch(console.error);
+        vegaEmbed('#vis3', specVis3).catch(console.error);
 
     </script>
+
 </body>
 
 </html>
