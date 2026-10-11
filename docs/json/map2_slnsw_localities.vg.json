@@ -1,0 +1,185 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": "container",
+  "height": 520,
+
+  "params": [
+    {
+      "name": "minimum_records",
+      "value": 1,
+      "bind": {
+        "input": "range",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "name": "Minimum catalogue records: "
+      }
+    }
+  ],
+
+  "projection": {
+    "type": "equirectangular",
+    "center": [147, -32.7],
+    "scale": 2300
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "data/australia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "australia_states"
+        }
+      },
+
+      "transform": [
+        {
+          "filter": "datum.properties.STATE_NAME == 'New South Wales'"
+        }
+      ],
+
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f1efe9",
+        "stroke": "#777777",
+        "strokeWidth": 0.8
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/slnsw_nsw_localities.csv"
+      },
+
+      "transform": [
+        {
+          "filter": "datum.catalogue_records >= minimum_records"
+        }
+      ],
+
+      "mark": {
+        "type": "circle",
+        "color": "#2f6f73",
+        "opacity": 0.72,
+        "stroke": "white",
+        "strokeWidth": 0.8
+      },
+
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+
+        "size": {
+          "field": "catalogue_records",
+          "type": "quantitative",
+          "title": "Catalogue records",
+
+          "scale": {
+            "domain": [0, 65],
+            "range": [20, 1800]
+          },
+
+          "legend": {
+            "title": "Catalogue records",
+            "values": [1, 10, 25, 50],
+            "orient": "right"
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "map_place_name",
+            "type": "nominal",
+            "title": "Locality"
+          },
+
+          {
+            "field": "catalogue_records",
+            "type": "quantitative",
+            "title": "Catalogue records",
+            "format": ","
+          },
+
+          {
+            "field": "share_of_nsw_percent",
+            "type": "quantitative",
+            "title": "Share of mapped NSW records (%)",
+            "format": ".1f"
+          },
+
+          {
+            "field": "individual_records",
+            "type": "quantitative",
+            "title": "Individual records",
+            "format": ","
+          },
+
+          {
+            "field": "multi_item_records",
+            "type": "quantitative",
+            "title": "Multi-item or grouped records",
+            "format": ","
+          }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "url": "data/slnsw_nsw_localities.csv"
+      },
+
+      "transform": [
+        {
+          "filter": "datum.catalogue_records >= minimum_records"
+        },
+        {
+          "filter": "datum.locality_rank <= 5"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "dy": -8,
+        "fontSize": 11,
+        "fontWeight": 500,
+        "color": "#333333"
+      },
+
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+
+        "text": {
+          "field": "map_place_name",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
