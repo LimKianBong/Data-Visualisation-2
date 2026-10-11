@@ -1,0 +1,192 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": "container",
+  "height": 250,
+
+  "data": {
+    "url": "data/collection_colour_comparison.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "catalogue_records": "number",
+        "share_percent": "number",
+        "style_order": "number",
+        "source_order": "number"
+      }
+    }
+  },
+
+  "params": [
+    {
+      "name": "style_highlight",
+      "select": {
+        "type": "point",
+        "fields": ["style_group"]
+      },
+      "bind": "legend"
+    }
+  ],
+
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "catalogue_records",
+          "as": "collection_total"
+        }
+      ],
+      "groupby": ["source"]
+    },
+    {
+      "calculate": "datum.catalogue_records / datum.collection_total * 100",
+      "as": "exact_percent"
+    },
+    {
+      "calculate": "format(datum.exact_percent, '.1f') + '%'",
+      "as": "percent_label"
+    }
+  ],
+
+  "mark": {
+    "type": "bar",
+    "size": 48,
+    "stroke": "#ffffff",
+    "strokeWidth": 1.2
+  },
+
+  "encoding": {
+    "y": {
+      "field": "source_name",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "source_order",
+        "op": "min",
+        "order": "ascending"
+      },
+      "axis": {
+        "labelFontSize": 13,
+        "labelLimit": 245,
+        "labelPadding": 10,
+        "ticks": false,
+        "domain": false
+      }
+    },
+
+    "x": {
+      "field": "catalogue_records",
+      "type": "quantitative",
+      "stack": "normalize",
+      "title": "Share of each collection",
+
+      "scale": {
+        "domain": [0, 1],
+        "nice": false
+      },
+
+      "axis": {
+        "values": [0, 0.25, 0.5, 0.75, 1],
+        "format": ".0%",
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titlePadding": 14,
+        "grid": true,
+        "gridColor": "#e7e7e7"
+      }
+    },
+
+    "color": {
+      "field": "style_group",
+      "type": "nominal",
+      "title": "Recorded visual style",
+
+      "scale": {
+        "domain": [
+          "Colour",
+          "Monochrome / toned",
+          "Mixed",
+          "Unknown"
+        ],
+        "range": [
+          "#bd7847",
+          "#657f91",
+          "#689481",
+          "#c6b6a2"
+        ]
+      },
+
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "columns": 2,
+        "symbolType": "square",
+        "symbolSize": 160,
+        "labelFontSize": 12,
+        "titleFontSize": 13
+      }
+    },
+
+    "order": {
+      "field": "style_order",
+      "type": "quantitative",
+      "sort": "ascending"
+    },
+
+    "opacity": {
+      "condition": {
+        "param": "style_highlight",
+        "value": 1
+      },
+      "value": 0.2
+    },
+
+    "tooltip": [
+      {
+        "field": "source_name",
+        "type": "nominal",
+        "title": "Postcard collection"
+      },
+      {
+        "field": "style_group",
+        "type": "nominal",
+        "title": "Recorded visual style"
+      },
+      {
+        "field": "catalogue_records",
+        "type": "quantitative",
+        "title": "Records in category",
+        "format": ","
+      },
+      {
+        "field": "collection_total",
+        "type": "quantitative",
+        "title": "Total collection records",
+        "format": ","
+      },
+      {
+        "field": "percent_label",
+        "type": "nominal",
+        "title": "Share of collection"
+      }
+    ]
+  },
+
+  "config": {
+    "background": "#ffffff",
+    "view": {
+      "stroke": null
+    },
+    "font": "Source Sans Pro",
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    },
+    "legend": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    }
+  }
+}

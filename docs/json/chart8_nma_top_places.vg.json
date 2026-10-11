@@ -1,0 +1,160 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": "container",
+  "height": 600,
+
+  "data": {
+    "url": "data/nma_top_depicted_places.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "postcard_records": "number",
+        "rank": "number",
+        "share_percent": "number"
+      }
+    }
+  },
+
+  "params": [
+    {
+      "name": "minimum_records",
+      "value": 0,
+      "bind": {
+        "input": "select",
+        "options": [0, 25, 50, 100],
+        "labels": [
+          "All 20 places",
+          "25 or more records",
+          "50 or more records",
+          "100 or more records"
+        ],
+        "name": "Display: "
+      }
+    }
+  ],
+
+  "transform": [
+    {
+      "filter": "datum.postcard_records >= minimum_records"
+    }
+  ],
+
+  "encoding": {
+    "x": {
+      "field": "postcard_records",
+      "type": "quantitative",
+      "title": "NMA postcard records",
+
+      "scale": {
+        "domain": [0, 150],
+        "nice": false,
+        "zero": true
+      },
+
+      "axis": {
+        "values": [0, 25, 50, 75, 100, 125, 150],
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titlePadding": 15,
+        "grid": true,
+        "gridColor": "#e7e7e7",
+        "gridDash": [3, 3]
+      }
+    },
+
+    "y": {
+      "field": "display_place",
+      "type": "nominal",
+      "title": null,
+
+      "sort": {
+        "field": "postcard_records",
+        "op": "max",
+        "order": "descending"
+      },
+
+      "axis": {
+        "labelFontSize": 12,
+        "labelLimit": 230,
+        "labelPadding": 9,
+        "ticks": false,
+        "domain": false
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#aebbc3",
+        "strokeWidth": 2
+      },
+
+      "encoding": {
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "color": "#376579",
+        "size": 145,
+        "opacity": 0.95,
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "display_place",
+            "type": "nominal",
+            "title": "Depicted place"
+          },
+
+          {
+            "field": "state_clean",
+            "type": "nominal",
+            "title": "Australian state or territory"
+          },
+
+          {
+            "field": "postcard_records",
+            "type": "quantitative",
+            "title": "NMA postcard records",
+            "format": ","
+          },
+
+          {
+            "field": "rank",
+            "type": "quantitative",
+            "title": "Rank by record count",
+            "format": ".0f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "background": "#ffffff",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Source Sans Pro",
+
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    }
+  }
+}

@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Postcards Through Place and Time</title>
+    <title>Postcards of Australia</title>
 
     <!-- Import Vega & Vega-Lite -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -17,8 +17,7 @@
         integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
         crossorigin="anonymous">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google fonts -->
     <link
@@ -37,16 +36,40 @@
 
     <div class="page">
 
-        <!-- Main title -->
+        <!-- Introduction -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h1>Postcards Through Place and Time</h1>
+                <h1>
+                    Postcards of Australia
+                </h1>
 
                 <p class="subtitle">
-                    Exploring how postcard collections<br>
-                    documented places, culture and history.
+                    Places, Collections and Visual Culture
+                </p>
+
+                <p>
+                    Historical postcards capture how places were documented
+                    and remembered.<br>
+                    This visual story explores Australian postcard collections
+                    through geography,<br>
+                    catalogue formats and recorded visual styles.
+                </p>
+
+                <p>
+                    We begin with two Australian collections:
+                    NMA and SLNSW.<br>
+                    AKON provides an international perspective
+                    for comparison.
+                </p>
+
+                <p class="small-font">
+                    Explore:
+                    <a href="#australia">Australian places</a> |
+                    <a href="#collections">Visual culture</a> |
+                    <a href="#international">International context</a> |
+                    <a href="#conclusion">Conclusions</a>
                 </p>
 
             </div>
@@ -55,17 +78,35 @@
         <hr class="hr3">
 
 
-        <!-- Chart 1: Australian choropleth -->
+        <!-- Section 1: Australian geography -->
+
+        <div id="australia" class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>
+                    1. Australia Through Postcards
+                </h2>
+
+                <p>
+                    Where does Australia appear in historical postcard collections?<br>
+                    Begin with states, then examine localities and clusters.
+                </p>
+
+            </div>
+        </div>
+
+
+        <!-- Chart 1 -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>Australia Across Two Collections</h2>
+                <h3>Australia Across Two Collections</h3>
 
                 <p>
-                    Compare how Australian states are represented<br>
-                    in the NMA and SLNSW postcard collections.<br>
-                    Colours show each state's share of mapped records.
+                    New South Wales dominates the mapped records
+                    in both collections.<br>
+                    Compare each state's share using the collection selector.
                 </p>
 
             </div>
@@ -79,31 +120,27 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
-
                 <p>
-                    Sources: National Museum of Australia and
-                    State Library of New South Wales.
-                    Percentages are calculated separately
-                    within each collection.
+                    Sources: National Museum of Australia (NMA)
+                    and State Library of New South Wales (SLNSW).
+                    Percentages refer to each collection's mapped records.
+                    They are not population-adjusted rates.
                 </p>
-
             </div>
         </div>
 
-        <hr class="hr3">
 
-
-        <!-- Chart 2: NSW proportional-symbol map -->
+        <!-- Chart 2 -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>Postcard Places Across New South Wales</h2>
+                <h3>Postcard Places Across New South Wales</h3>
 
                 <p>
-                    Circles show mapped SLNSW catalogue records by locality.<br>
-                    Larger circles represent more catalogue records.<br>
-                    Locations are matched localities, not exact postcard sites.
+                    The state-level picture hides variation between individual localities.<br>
+                    Larger circles indicate more SLNSW catalogue records.<br>
+                    Filter the map to identify stronger concentrations.
                 </p>
 
             </div>
@@ -117,75 +154,27 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
-
                 <p>
-                    Source: State Library of New South Wales,
-                    Miscellaneous Australian Postcards.
+                    Source: SLNSW, Miscellaneous Australian Postcards.
                     Localities use high-confidence title-based matches.
-                    Counts refer to catalogue records, not physical postcards.
+                    Points indicate mapped localities, not exact postcard sites.
+                    Counts represent catalogue records, not physical postcards.
                 </p>
-
             </div>
         </div>
 
-        <hr class="hr3">
 
-
-        <!-- Chart 3: AKON world location map -->
+        <!-- Chart 4 -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>Postcard Places Beyond Australia</h2>
+                <h3>Where Australian Postcards Cluster</h3>
 
                 <p>
-                    Explore places represented in the AKON historical collection.<br>
-                    Each dot represents one distinct mapped place.<br>
-                    Switch to Europe to inspect denser geographic clusters.
-                </p>
-
-            </div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-                <div id="vis3" class="vis-container"></div>
-            </div>
-        </div>
-
-        <div class="pure-g">
-            <div class="pure-u-1-1 small-font">
-
-                <p>
-                    Source: Austrian National Library,
-                    AKON Historical Postcards.
-                    Points show geocoded collection places,
-                    not worldwide postcard production.
-                    The dashed line marks the prime meridian.
-                </p>
-
-                <p>
-                    World boundaries: Natural Earth,
-                    via the FIT3179 Week 8 map example.
-                </p>
-
-            </div>
-        </div>
-
-        <hr class="hr3">
-
-
-        <!-- Chart 4: Equal-area hexbin map -->
-
-        <div class="pure-g">
-            <div class="pure-u-1-1">
-
-                <h2>Where Australian Postcards Cluster</h2>
-
-                <p>
-                    Discover geographic concentrations in the SLNSW collection.<br>
-                    Each hexagon covers approximately the same ground area.<br>
-                    Darker blue indicates more catalogue records in that cell.
+                    Nearby locations may overlap on a proportional-symbol map.<br>
+                    Equal-area hexagons reveal broader geographic concentrations.<br>
+                    Darker cells contain more mapped SLNSW records.
                 </p>
 
             </div>
@@ -199,42 +188,92 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
-
                 <p>
-                    Source: State Library of New South Wales,
-                    Miscellaneous Australian Postcards.
-                    The map aggregates 1,195 mapped catalogue records
-                    into 145 occupied equal-area hexagons.
+                    Source: SLNSW.
+                    This map aggregates 1,195 high-confidence mapped
+                    catalogue records into 145 occupied equal-area hexagons.
+                    Each cell is approximately 50 km wide.
                 </p>
 
                 <p>
-                    Only high-confidence title-based locations are included.
-                    Hexagons were constructed at approximately 50 km width.
                     Coastal cells may extend beyond the shoreline.
+                    These are collection concentrations,
+                    not evidence of historical postcard production.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Chart 8 -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h3>Most Depicted Australian Places</h3>
+
+                <p>
+                    The NMA collection offers another view of Australian places.<br>
+                    Sydney leads its depicted-place records,
+                    followed by Mount Gambier and Adelaide.<br>
+                    Compare the leading locations below.
                 </p>
 
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis8" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>
+                    Source: National Museum of Australia,
+                    Josef Lebovic Gallery collection no. 1.
+                    Records may depict more than one place.
+                    Counts across locations must not be added together.
+                </p>
             </div>
         </div>
 
         <hr class="hr3">
 
 
-        <!-- Chart 5: SLNSW catalogue treemap -->
+        <!-- Section 2: Australian visual culture -->
+
+        <div id="collections" class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>
+                    2. Australian Collections and Visual Culture
+                </h2>
+
+                <p>
+                    Geography is only part of the postcard story.<br>
+                    Catalogue formats and recorded visual styles offer
+                    another perspective.<br>
+                    They also reveal differences in how institutions
+                    describe their collections.
+                </p>
+
+            </div>
+        </div>
+
+
+        <!-- Chart 5 -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>How SLNSW Postcards Are Catalogued</h2>
+                <h3>How SLNSW Postcards Are Catalogued</h3>
 
                 <p>
-                    Explore how SLNSW records are organised by scope and format.<br>
-                    Each rectangle represents a catalogue format.<br>
-                    Larger rectangles contain more catalogue records.
-                </p>
-
-                <p>
-                    Select a record scope to examine its formats.<br>
-                    Hover over rectangles for exact counts and percentages.
+                    SLNSW records include individual cards
+                    and grouped materials.<br>
+                    Rectangle area shows how catalogue records
+                    are distributed across formats.
                 </p>
 
             </div>
@@ -248,36 +287,27 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
-
                 <p>
-                    Source: State Library of New South Wales,
-                    Miscellaneous Australian Postcards.
+                    Source: SLNSW, Miscellaneous Australian Postcards.
                     The treemap covers 1,559 catalogue records.
+                    Folders and grouped records may describe multiple postcards.
+                    Area represents record counts, not individual physical cards.
                 </p>
-
-                <p>
-                    Grouped or folder records may describe multiple postcards.
-                    Rectangle area represents catalogue records,
-                    not the number of physical postcards.
-                </p>
-
             </div>
         </div>
 
-        <hr class="hr3">
 
-
-        <!-- Chart 6: Format and visual style heatmap -->
+        <!-- Chart 6 -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>Format and Visual Style</h2>
+                <h3>Format and Visual Style</h3>
 
                 <p>
-                    How do recorded visual styles differ across formats?<br>
-                    Darker cells indicate a larger share within each format.<br>
-                    Use the dropdown to exclude small catalogue categories.
+                    Recorded visual styles vary between catalogue formats.<br>
+                    Each cell shows the percentage within its format.<br>
+                    Filter out small formats to focus on larger groups.
                 </p>
 
             </div>
@@ -291,42 +321,132 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
+                <p>
+                    Source: SLNSW.
+                    Each percentage uses its catalogue format's
+                    total records as the denominator.
+                    Unknown is a metadata category.
+                    Small format groups may produce unstable percentages.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Chart 12: Cross-collection comparison -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h3>Visual Style Across Collections</h3>
 
                 <p>
-                    Source: State Library of New South Wales,
-                    Miscellaneous Australian Postcards.
-                    Percentages use the total records of each format
-                    as their denominator.
+                    How do the Australian collections compare
+                    with an international example?<br>
+                    SLNSW records a greater Colour share
+                    than NMA or AKON.<br>
+                    Click the legend to highlight a visual-style category.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis12" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>
+                    Sources: NMA, SLNSW and Austrian National Library AKON.
+                    Percentages use each collection's full record count.
+                    All three bars total 100%.
                 </p>
 
                 <p>
-                    Zero indicates no records for a style-format combination.
-                    Small categories may produce unstable percentages.
-                    Unknown is a recorded metadata category.
+                    Visual-style categories were harmonised from differing metadata.
+                    AKON's non-colour records are grouped under
+                    Monochrome / toned for comparison.
+                    Different cataloguing practices limit direct comparability.
                 </p>
-
             </div>
         </div>
 
         <hr class="hr3">
 
 
-        <!-- Chart 7: AKON country-ranking bump chart -->
+        <!-- Section 3: International perspective -->
+
+        <div id="international" class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>
+                    3. An International Perspective
+                </h2>
+
+                <p>
+                    How does Australia's collection story compare internationally?<br>
+                    AKON provides one European-centred reference collection.<br>
+                    Its geography and dates reveal a different
+                    pattern of archival coverage.
+                </p>
+
+            </div>
+        </div>
+
+
+        <!-- Chart 3 -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
 
-                <h2>Changing Geographic Prominence</h2>
+                <h3>Postcard Places Beyond Australia</h3>
 
                 <p>
-                    How did country rankings change across AKON's dated records?<br>
-                    Each line traces a country's rank across decades.<br>
-                    Rank 1 is highest; lower positions indicate less representation.
+                    AKON contains mapped places across several countries.<br>
+                    Its geographic concentration is strongest in Central Europe.<br>
+                    Switch to Europe for more detailed inspection.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis3" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>
+                    Source: Austrian National Library, AKON Historical Postcards.
+                    Each dot represents one distinct geocoded place.
+                    The distribution reflects collection coverage,
+                    not worldwide postcard production.
                 </p>
 
                 <p>
-                    Select a country to highlight its ranking trajectory.<br>
-                    Hover over points for record counts and collection shares.
+                    World boundaries: Natural Earth,
+                    via the FIT3179 Week 8 map example.
+                    The dashed line marks the prime meridian.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Chart 7 -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h3>Changing Geographic Prominence</h3>
+
+                <p>
+                    Country rankings differ across AKON's dated records.<br>
+                    Austria remains first throughout the selected decades.<br>
+                    Highlight another country to compare ranking movements.
                 </p>
 
             </div>
@@ -340,24 +460,122 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
-
                 <p>
-                    Source: Austrian National Library,
-                    AKON Historical Postcards.
-                    Rankings use exactly dated records only.
-                    Country names follow present-day geographic boundaries.
-                </p>
-
-                <p>
-                    The 1890s include only 1893–1899.
-                    The 1920s include only 1920–1925.
-                    These partial periods should not be compared as full decades.
-                </p>
-
-                <p>
+                    Source: AKON, exactly dated records only.
                     Eight selected countries are displayed.
-                    Original ranks are preserved across all AKON countries.
-                    Ranking does not measure historical postcard production.
+                    Original country ranks are retained.
+                    The 1890s cover 1893–1899;
+                    the 1920s cover 1920–1925.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Chart 10 -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h3>Postcard Records Through Time</h3>
+
+                <p>
+                    AKON's exactly dated records also vary by year.<br>
+                    The 1914 marker identifies the beginning of World War I.<br>
+                    This supplies context without implying a causal relationship.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis10" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>
+                    Source: AKON, exactly dated records from 1893–1925.
+                    Approximate dates are excluded.
+                    Years 1894 and 1896 have no supplied observations.
+                    The chart interpolates between surrounding records.
+                </p>
+
+                <p>
+                    Annual holdings do not measure historical
+                    printing volumes or worldwide postcard popularity.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Supplementary international analysis: Chart 9 -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h3>Further Exploration: Buildings, Mountains and Water</h3>
+
+                <p>
+                    An additional AKON comparison explores selected metadata tags.<br>
+                    The UpSet plot shows how three tags overlap.<br>
+                    This supplements the geographic and temporal comparisons.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis9" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+                <p>
+                    Source: AKON Historical Postcards.
+                    Only Building, Mountain and Water tags are analysed.
+                    Records without these tags may have other metadata themes.
+                    Percentages use all 34,846 AKON records.
+                </p>
+            </div>
+        </div>
+
+        <hr class="hr3">
+
+
+        <!-- Section 4: Conclusion -->
+
+        <div id="conclusion" class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>
+                    4. What Do These Collections Reveal?
+                </h2>
+
+                <p>
+                    Australian postcard representation is geographically uneven.<br>
+                    New South Wales has a particularly large presence
+                    in the collections examined.<br>
+                    Locality and hexbin maps reveal concentrations
+                    within that broader pattern.
+                </p>
+
+                <p>
+                    Catalogue structure also shapes our interpretation.<br>
+                    Collections classify cards, grouped materials
+                    and visual styles differently.<br>
+                    Their percentages are comparable only with
+                    these differences in mind.
+                </p>
+
+                <p>
+                    AKON provides a useful international contrast.<br>
+                    Its strong European concentration illustrates
+                    why archival coverage matters.<br>
+                    No single collection represents all historical postcards.
                 </p>
 
             </div>
@@ -366,29 +584,46 @@
         <hr class="hr3">
 
 
-        <!-- Footer -->
+        <!-- Sources and methodology -->
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
 
+                <h3>Data Sources and Methodology</h3>
+
                 <p>
-                    Data sources:
+                    Australian sources:
                     National Museum of Australia,
+                    Josef Lebovic Gallery collection no. 1;
                     State Library of New South Wales,
-                    and Austrian National Library AKON.
+                    Miscellaneous Australian Postcards.
                 </p>
 
                 <p>
-                    Map boundaries:
-                    Australian states GeoJSON/TopoJSON;
+                    International source:
+                    Austrian National Library,
+                    AKON Historical Postcards.
+                </p>
+
+                <p>
+                    Geographic boundaries:
+                    Australian states data converted to TopoJSON;
                     Natural Earth world boundaries.
+                    SLNSW locality matches and hexagons
+                    were prepared before visualisation.
+                </p>
+
+                <p>
+                    Record counts measure collection holdings and metadata.
+                    They do not directly measure postcard production,
+                    circulation, readership or tourism.
                 </p>
 
                 <p>
                     <a href="https://github.com/limkianbong/Data-Visualisation-2"
                        target="_blank"
                        rel="noopener noreferrer">
-                        View GitHub repository
+                        View GitHub repository and visualisation source code
                     </a>
                 </p>
 
@@ -413,6 +648,10 @@
         var specVis5 = "json/chart5_slnsw_treemap.vg.json";
         var specVis6 = "json/chart6_slnsw_format_colour.vg.json";
         var specVis7 = "json/chart7_akon_country_bump.vg.json";
+        var specVis8 = "json/chart8_nma_top_places.vg.json";
+        var specVis9 = "json/chart9_akon_feature_upset.vg.json";
+        var specVis10 = "json/chart10_akon_year_area.vg.json";
+        var specVis12 = "json/chart12_collection_colour_comparison.vg.json";
 
         vegaEmbed('#vis1', specVis1);
         vegaEmbed('#vis2', specVis2);
@@ -421,6 +660,10 @@
         vegaEmbed('#vis5', specVis5);
         vegaEmbed('#vis6', specVis6);
         vegaEmbed('#vis7', specVis7);
+        vegaEmbed('#vis8', specVis8);
+        vegaEmbed('#vis9', specVis9);
+        vegaEmbed('#vis10', specVis10);
+        vegaEmbed('#vis12', specVis12);
 
     </script>
 

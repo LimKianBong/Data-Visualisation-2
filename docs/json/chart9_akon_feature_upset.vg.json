@@ -1,0 +1,301 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {
+    "url": "data/akon_feature_combinations.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "building": "string",
+        "mountain": "string",
+        "water": "string",
+        "postcard_records": "number",
+        "share_percent": "number",
+        "feature_count": "number",
+        "rank": "number"
+      }
+    }
+  },
+
+  "params": [
+    {
+      "name": "combination_view",
+      "value": "All combinations",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All combinations",
+          "Tagged combinations only"
+        ],
+        "name": "Display: "
+      }
+    }
+  ],
+
+  "transform": [
+    {
+      "filter": "combination_view == 'All combinations' || datum.feature_count > 0"
+    }
+  ],
+
+  "spacing": 8,
+
+  "vconcat": [
+    {
+      "width": "container",
+      "height": 290,
+
+      "mark": {
+        "type": "bar",
+        "color": "#537889",
+        "size": 45
+      },
+
+      "encoding": {
+        "x": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending",
+          "axis": null
+        },
+
+        "y": {
+          "field": "postcard_records",
+          "type": "quantitative",
+          "title": "AKON catalogue records",
+
+          "scale": {
+            "domainMin": 0
+          },
+
+          "axis": {
+            "tickCount": 5,
+            "format": "~s",
+            "grid": true,
+            "gridColor": "#e5e5e5",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titlePadding": 15
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "combination",
+            "type": "nominal",
+            "title": "Metadata tag combination"
+          },
+          {
+            "field": "postcard_records",
+            "type": "quantitative",
+            "title": "AKON postcard records",
+            "format": ","
+          },
+          {
+            "field": "share_percent",
+            "type": "quantitative",
+            "title": "Share of entire collection (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "feature_count",
+            "type": "quantitative",
+            "title": "Number of selected tags present",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+
+    {
+      "width": "container",
+      "height": 150,
+
+      "encoding": {
+        "x": {
+          "field": "rank",
+          "type": "ordinal",
+          "sort": "ascending",
+          "title": "Tag combinations (ranked by record count)",
+
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titlePadding": 14,
+            "labelPadding": 8,
+            "ticks": false,
+            "domain": false
+          }
+        }
+      },
+
+      "layer": [
+        {
+          "transform": [
+            {
+              "filter": "datum.feature_count >= 2"
+            },
+            {
+              "calculate": "datum.building == 'True' ? 'Building' : datum.mountain == 'True' ? 'Mountain' : 'Water'",
+              "as": "first_tag"
+            },
+            {
+              "calculate": "datum.water == 'True' ? 'Water' : datum.mountain == 'True' ? 'Mountain' : 'Building'",
+              "as": "last_tag"
+            }
+          ],
+
+          "mark": {
+            "type": "rule",
+            "color": "#354e5a",
+            "strokeWidth": 2.5
+          },
+
+          "encoding": {
+            "y": {
+              "field": "first_tag",
+              "type": "ordinal",
+              "sort": [
+                "Building",
+                "Mountain",
+                "Water"
+              ],
+
+              "axis": {
+                "title": null,
+                "labelFontSize": 12,
+                "labelPadding": 10,
+                "ticks": false,
+                "domain": false
+              }
+            },
+
+            "y2": {
+              "field": "last_tag"
+            }
+          }
+        },
+
+        {
+          "transform": [
+            {
+              "fold": [
+                "building",
+                "mountain",
+                "water"
+              ],
+              "as": [
+                "tag_key",
+                "tag_flag"
+              ]
+            },
+
+            {
+              "calculate": "datum.tag_key == 'building' ? 'Building' : datum.tag_key == 'mountain' ? 'Mountain' : 'Water'",
+              "as": "tag_name"
+            },
+
+            {
+              "calculate": "datum.tag_flag == 'True'",
+              "as": "is_present"
+            },
+
+            {
+              "calculate": "datum.is_present ? 'Present' : 'Absent'",
+              "as": "tag_status"
+            }
+          ],
+
+          "mark": {
+            "type": "circle",
+            "filled": true,
+            "size": 200,
+            "stroke": "#ffffff",
+            "strokeWidth": 1.2
+          },
+
+          "encoding": {
+            "y": {
+              "field": "tag_name",
+              "type": "ordinal",
+              "sort": [
+                "Building",
+                "Mountain",
+                "Water"
+              ],
+
+              "axis": {
+                "title": null,
+                "labelFontSize": 12,
+                "labelPadding": 10,
+                "ticks": false,
+                "domain": false
+              }
+            },
+
+            "color": {
+              "condition": {
+                "test": "datum.is_present",
+                "value": "#354e5a"
+              },
+              "value": "#dce3e7"
+            },
+
+            "tooltip": [
+              {
+                "field": "combination",
+                "type": "nominal",
+                "title": "Tag combination"
+              },
+              {
+                "field": "tag_name",
+                "type": "nominal",
+                "title": "Metadata tag"
+              },
+              {
+                "field": "tag_status",
+                "type": "nominal",
+                "title": "Tag status"
+              },
+              {
+                "field": "postcard_records",
+                "type": "quantitative",
+                "title": "Records in this combination",
+                "format": ","
+              },
+              {
+                "field": "share_percent",
+                "type": "quantitative",
+                "title": "Share of entire collection (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+
+  "resolve": {
+    "scale": {
+      "x": "shared"
+    }
+  },
+
+  "config": {
+    "background": "#ffffff",
+
+    "view": {
+      "stroke": null
+    },
+
+    "font": "Source Sans Pro",
+
+    "axis": {
+      "labelFont": "Source Sans Pro",
+      "titleFont": "Source Sans Pro"
+    }
+  }
+}
