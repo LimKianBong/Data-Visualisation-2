@@ -1,0 +1,291 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+
+  "description": "SLNSW catalogue record scope and format treemap.",
+
+  "width": 900,
+  "height": 480,
+  "padding": 5,
+  "autosize": "pad",
+
+  "signals": [
+    {
+      "name": "scope_filter",
+      "value": "All types",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All types",
+          "Individual item",
+          "Multi-item/group",
+          "Other",
+          "Unknown"
+        ],
+        "labels": [
+          "All catalogue records",
+          "Individual items",
+          "Multi-item and grouped records",
+          "Other records",
+          "Unknown records"
+        ],
+        "name": "Record scope: "
+      }
+    }
+  ],
+
+  "data": [
+    {
+      "name": "tree",
+      "url": "data/slnsw_format_summary.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "catalogue_records": "number",
+          "share_percent": "number",
+          "rank": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "scope_filter == 'All types' || datum.record_scope == scope_filter"
+        },
+        {
+          "type": "nest",
+          "keys": ["record_scope"],
+          "generate": true
+        },
+        {
+          "type": "treemap",
+          "field": "catalogue_records",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "method": "squarify",
+          "ratio": 1.4,
+          "round": true,
+          "paddingInner": 3,
+          "paddingOuter": 4,
+          "paddingTop": 24,
+          "size": [
+            {"signal": "width"},
+            {"signal": "height"}
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "leaves",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth == 2"
+        }
+      ]
+    },
+
+    {
+      "name": "scope_nodes",
+      "source": "tree",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.depth == 1 && datum.x1 - datum.x0 > 110"
+        }
+      ]
+    },
+
+    {
+      "name": "visible_labels",
+      "source": "leaves",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.x1 - datum.x0 >= 100 && datum.y1 - datum.y0 >= 45"
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "scope_color",
+      "type": "ordinal",
+      "domain": [
+        "Individual item",
+        "Multi-item/group",
+        "Other",
+        "Unknown"
+      ],
+      "range": [
+        "#9bb4c6",
+        "#c9ab7c",
+        "#baa8ca",
+        "#bfc4c6"
+      ]
+    }
+  ],
+
+  "legends": [
+    {
+      "fill": "scope_color",
+      "title": "Catalogue record scope",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "symbolType": "square",
+      "symbolSize": 180,
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "leaves"
+      },
+      "encode": {
+        "enter": {
+          "stroke": {"value": "#ffffff"},
+          "strokeWidth": {"value": 2}
+        },
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fill": {
+            "scale": "scope_color",
+            "field": "record_scope"
+          },
+          "fillOpacity": {"value": 1},
+          "tooltip": {
+            "signal": "{'Record scope': datum.record_scope, 'Catalogue format': datum.format_group, 'Catalogue records': format(datum.catalogue_records, ',d'), 'Share of all catalogue records': format(datum.share_percent, '.1f') + '%'}"
+          }
+        },
+        "hover": {
+          "fillOpacity": {"value": 0.75},
+          "stroke": {"value": "#45545c"},
+          "strokeWidth": {"value": 2}
+        }
+      }
+    },
+
+    {
+      "type": "rect",
+      "from": {
+        "data": "scope_nodes"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fillOpacity": {"value": 0},
+          "stroke": {"value": "#777777"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "from": {
+        "data": "scope_nodes"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 8"
+          },
+          "y": {
+            "signal": "datum.y0 + 5"
+          },
+          "text": {
+            "field": "key"
+          },
+          "font": {"value": "Source Sans Pro"},
+          "fontSize": {"value": 13},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#303030"},
+          "baseline": {"value": "top"},
+          "limit": {
+            "signal": "max(0, datum.x1 - datum.x0 - 16)"
+          }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "from": {
+        "data": "visible_labels"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "(datum.x0 + datum.x1) / 2"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2 - 9"
+          },
+          "text": {
+            "field": "format_group"
+          },
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "font": {"value": "Source Sans Pro"},
+          "fontSize": {"value": 13},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#263238"},
+          "limit": {
+            "signal": "max(0, datum.x1 - datum.x0 - 12)"
+          }
+        }
+      }
+    },
+
+    {
+      "type": "text",
+      "from": {
+        "data": "visible_labels"
+      },
+      "interactive": false,
+      "encode": {
+        "update": {
+          "x": {
+            "signal": "(datum.x0 + datum.x1) / 2"
+          },
+          "y": {
+            "signal": "(datum.y0 + datum.y1) / 2 + 11"
+          },
+          "text": {
+            "signal": "format(datum.catalogue_records, ',d') + ' records'"
+          },
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "font": {"value": "Source Sans Pro"},
+          "fontSize": {"value": 11},
+          "fill": {"value": "#37474f"},
+          "limit": {
+            "signal": "max(0, datum.x1 - datum.x0 - 12)"
+          }
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "background": "white",
+    "font": "Source Sans Pro"
+  }
+}

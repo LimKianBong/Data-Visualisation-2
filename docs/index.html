@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -23,7 +24,7 @@
         href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS file -->
     <link rel="stylesheet" type="text/css"
         href="css/style.css" media="all">
 
@@ -60,7 +61,7 @@
 
                 <p>
                     Compare how Australian states are represented<br>
-                    in the NMA and SLNSW collections.<br>
+                    in the NMA and SLNSW postcard collections.<br>
                     Colours show each state's share of mapped records.
                 </p>
 
@@ -69,9 +70,7 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1">
-
                 <div id="vis1" class="vis-container"></div>
-
             </div>
         </div>
 
@@ -81,7 +80,8 @@
                 <p>
                     Sources: National Museum of Australia and
                     State Library of New South Wales.
-                    Shares are calculated separately within each collection.
+                    Percentages are calculated separately
+                    within each collection.
                 </p>
 
             </div>
@@ -108,9 +108,7 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1">
-
                 <div id="vis2" class="vis-container"></div>
-
             </div>
         </div>
 
@@ -130,7 +128,7 @@
         <hr class="hr3">
 
 
-        <!-- Chart 3: AKON international point map -->
+        <!-- Chart 3: AKON world point-distribution map -->
 
         <div class="pure-g">
             <div class="pure-u-1-1">
@@ -140,7 +138,7 @@
                 <p>
                     Explore places represented in the AKON historical collection.<br>
                     Each dot represents one distinct mapped place.<br>
-                    Switch to Europe to inspect the denser clusters.
+                    Switch to Europe to inspect denser geographic clusters.
                 </p>
 
             </div>
@@ -148,9 +146,7 @@
 
         <div class="pure-g">
             <div class="pure-u-1-1">
-
                 <div id="vis3" class="vis-container"></div>
-
             </div>
         </div>
 
@@ -160,9 +156,8 @@
                 <p>
                     Source: Austrian National Library,
                     AKON Historical Postcards.
-                    Points represent geocoded collection places,
-                    not global postcard production.
-                    Dashed line indicates the prime meridian (0°).
+                    Points show geocoded collection places,
+                    not worldwide postcard production.
                 </p>
 
                 <p>
@@ -173,10 +168,106 @@
             </div>
         </div>
 
+        <hr class="hr3">
 
-        <!-- Footer -->
+
+        <!-- Chart 4: Australian equal-area hexbin map -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>Where Australian Postcards Cluster</h2>
+
+                <p>
+                    Discover geographic concentrations in the SLNSW collection.<br>
+                    Each hexagon covers approximately the same ground area.<br>
+                    Darker blue indicates more catalogue records in that cell.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis4" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+
+                <p>
+                    Source: State Library of New South Wales,
+                    Miscellaneous Australian Postcards.
+                    The map aggregates 1,195 mapped catalogue records
+                    into 145 occupied equal-area hexagons.
+                    Only high-confidence title-based locations are included.
+                </p>
+
+                <p>
+                    Hexagons were constructed in an Australian equal-area
+                    coordinate system at approximately 50 km width.
+                    Coastal cells may extend beyond the shoreline.
+                    Counts do not represent postcard production or population.
+                </p>
+
+            </div>
+        </div>
 
         <hr class="hr3">
+
+
+        <!-- Chart 5: SLNSW catalogue-format treemap -->
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+
+                <h2>How SLNSW Postcards Are Catalogued</h2>
+
+                <p>
+                    Explore how SLNSW records are organised by scope and format.<br>
+                    Each rectangle represents a catalogue format.<br>
+                    Larger rectangles contain more catalogue records.
+                </p>
+
+                <p>
+                    Select a record scope to examine its formats.<br>
+                    Hover over rectangles for exact counts and percentages.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis5" class="vis-container"></div>
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-1 small-font">
+
+                <p>
+                    Source: State Library of New South Wales,
+                    Miscellaneous Australian Postcards.
+                    The treemap covers 1,559 catalogue records.
+                    Counts are grouped using catalogue scope and format labels.
+                </p>
+
+                <p>
+                    A grouped or folder record may describe multiple postcards.
+                    Rectangle area therefore represents catalogue records,
+                    not the number of physical postcards.
+                    Tooltip percentages refer to all 1,559 records.
+                </p>
+
+            </div>
+        </div>
+
+        <hr class="hr3">
+
+
+        <!-- Footer -->
 
         <div class="pure-g">
             <div class="pure-u-1-1 small-font">
@@ -186,6 +277,12 @@
                     National Museum of Australia,
                     State Library of New South Wales,
                     and Austrian National Library AKON.
+                </p>
+
+                <p>
+                    Map boundaries:
+                    Australian states GeoJSON/TopoJSON;
+                    Natural Earth world boundaries.
                 </p>
 
                 <p>
@@ -206,17 +303,21 @@
     </div>
 
 
-    <!-- Vega-Lite visualisations -->
+    <!-- Vega and Vega-Lite visualisations -->
 
     <script type="text/javascript">
 
         var specVis1 = "json/map1_australia.vg.json";
         var specVis2 = "json/map2_slnsw_localities.vg.json";
         var specVis3 = "json/map3_akon_world.vg.json";
+        var specVis4 = "json/map4_slnsw_hexbin.vg.json";
+        var specVis5 = "json/chart5_slnsw_treemap.vg.json";
 
         vegaEmbed('#vis1', specVis1).catch(console.error);
         vegaEmbed('#vis2', specVis2).catch(console.error);
         vegaEmbed('#vis3', specVis3).catch(console.error);
+        vegaEmbed('#vis4', specVis4).catch(console.error);
+        vegaEmbed('#vis5', specVis5).catch(console.error);
 
     </script>
 
