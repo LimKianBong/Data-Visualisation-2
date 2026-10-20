@@ -1,9 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "width": 820,
   "height": 500,
-
   "params": [
     {
       "name": "map_extent",
@@ -50,7 +48,6 @@
       }
     }
   ],
-
   "projection": {
     "type": "equalEarth",
     "center": {
@@ -60,7 +57,6 @@
       "expr": "map_extent == 'Europe' ? 600 : 160"
     }
   },
-
   "layer": [
     {
       "data": {
@@ -71,11 +67,13 @@
         "fill": "#eaf3f5"
       }
     },
-
     {
       "data": {
         "graticule": {
-          "step": [30, 30]
+          "step": [
+            30,
+            30
+          ]
         }
       },
       "mark": {
@@ -85,7 +83,6 @@
         "strokeWidth": 0.6
       }
     },
-
     {
       "data": {
         "url": "data/world_countries.topojson",
@@ -101,7 +98,6 @@
         "strokeWidth": 0.6
       }
     },
-
     {
       "data": {
         "values": [
@@ -111,8 +107,14 @@
             "geometry": {
               "type": "LineString",
               "coordinates": [
-                [0, -80],
-                [0, 80]
+                [
+                  0,
+                  -80
+                ],
+                [
+                  0,
+                  80
+                ]
               ]
             }
           }
@@ -123,39 +125,36 @@
         "fill": null,
         "stroke": "#758c97",
         "strokeWidth": 1.2,
-        "strokeDash": [6, 4]
+        "strokeDash": [
+          6,
+          4
+        ]
       }
     },
-
     {
       "data": {
         "url": "data/akon_places.csv"
       },
-
       "transform": [
         {
           "filter": "country_select == 'ALL' || datum.country == country_select"
         }
       ],
-
       "mark": {
         "type": "circle",
         "color": "#873c59",
         "size": 25,
         "opacity": 0.5
       },
-
       "encoding": {
         "longitude": {
           "field": "longitude",
           "type": "quantitative"
         },
-
         "latitude": {
           "field": "latitude",
           "type": "quantitative"
         },
-
         "tooltip": [
           {
             "field": "place",
@@ -182,12 +181,23 @@
       }
     }
   ],
-
   "config": {
     "view": {
       "stroke": null
     },
     "background": "white",
-    "font": "Source Sans Pro"
+    "font": "DM Sans",
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    }
   }
 }

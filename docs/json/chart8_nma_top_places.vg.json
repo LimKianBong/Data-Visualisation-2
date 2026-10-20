@@ -1,10 +1,7 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "width": 650,
   "height": 600,
-
   "data": {
     "url": "data/nma_top_depicted_places.csv",
     "format": {
@@ -16,14 +13,18 @@
       }
     }
   },
-
   "params": [
     {
       "name": "minimum_records",
       "value": 0,
       "bind": {
         "input": "select",
-        "options": [0, 25, 50, 100],
+        "options": [
+          0,
+          25,
+          50,
+          100
+        ],
         "labels": [
           "All 20 places",
           "25 or more records",
@@ -34,47 +35,54 @@
       }
     }
   ],
-
   "transform": [
     {
       "filter": "datum.postcard_records >= minimum_records"
     }
   ],
-
   "encoding": {
     "x": {
       "field": "postcard_records",
       "type": "quantitative",
       "title": "NMA postcard records",
-
       "scale": {
-        "domain": [0, 150],
+        "domain": [
+          0,
+          150
+        ],
         "nice": false,
         "zero": true
       },
-
       "axis": {
-        "values": [0, 25, 50, 75, 100, 125, 150],
+        "values": [
+          0,
+          25,
+          50,
+          75,
+          100,
+          125,
+          150
+        ],
         "labelFontSize": 12,
         "titleFontSize": 13,
         "titlePadding": 15,
         "grid": true,
         "gridColor": "#e7e7e7",
-        "gridDash": [3, 3]
+        "gridDash": [
+          3,
+          3
+        ]
       }
     },
-
     "y": {
       "field": "display_place",
       "type": "nominal",
       "title": null,
-
       "sort": {
         "field": "postcard_records",
         "op": "max",
         "order": "descending"
       },
-
       "axis": {
         "labelFontSize": 12,
         "labelLimit": 230,
@@ -84,7 +92,6 @@
       }
     }
   },
-
   "layer": [
     {
       "mark": {
@@ -92,14 +99,12 @@
         "stroke": "#aebbc3",
         "strokeWidth": 2
       },
-
       "encoding": {
         "x2": {
           "datum": 0
         }
       }
     },
-
     {
       "mark": {
         "type": "circle",
@@ -110,7 +115,6 @@
         "stroke": "#ffffff",
         "strokeWidth": 1
       },
-
       "encoding": {
         "tooltip": [
           {
@@ -118,20 +122,17 @@
             "type": "nominal",
             "title": "Depicted place"
           },
-
           {
             "field": "state_clean",
             "type": "nominal",
             "title": "Australian state or territory"
           },
-
           {
             "field": "postcard_records",
             "type": "quantitative",
             "title": "NMA postcard records",
             "format": ","
           },
-
           {
             "field": "rank",
             "type": "quantitative",
@@ -140,21 +141,47 @@
           }
         ]
       }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.rank <= 3"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 9,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#294d5b"
+      },
+      "encoding": {
+        "text": {
+          "field": "postcard_records",
+          "type": "quantitative",
+          "format": ",d"
+        }
+      }
     }
   ],
-
   "config": {
     "background": "#ffffff",
-
     "view": {
       "stroke": null
     },
-
-    "font": "Source Sans Pro",
-
+    "font": "DM Sans",
     "axis": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro"
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
     }
   }
 }

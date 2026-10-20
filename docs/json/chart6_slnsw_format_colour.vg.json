@@ -1,10 +1,7 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "width": 630,
   "height": 550,
-
   "data": {
     "url": "data/slnsw_format_colour.csv",
     "format": {
@@ -15,14 +12,18 @@
       }
     }
   },
-
   "params": [
     {
       "name": "minimum_format_records",
       "value": 1,
       "bind": {
         "input": "select",
-        "options": [1, 20, 50, 100],
+        "options": [
+          1,
+          20,
+          50,
+          100
+        ],
         "labels": [
           "All catalogue formats",
           "20 or more records",
@@ -33,12 +34,13 @@
       }
     }
   ],
-
   "transform": [
     {
       "impute": "catalogue_records",
       "key": "colour_category",
-      "groupby": ["format_group"],
+      "groupby": [
+        "format_group"
+      ],
       "keyvals": [
         "Black and white",
         "Sepia",
@@ -49,7 +51,6 @@
       "method": "value",
       "value": 0
     },
-
     {
       "joinaggregate": [
         {
@@ -58,25 +59,23 @@
           "as": "format_total"
         }
       ],
-      "groupby": ["format_group"]
+      "groupby": [
+        "format_group"
+      ]
     },
-
     {
       "calculate": "datum.catalogue_records / datum.format_total * 100",
       "as": "within_format_pct"
     },
-
     {
       "filter": "datum.format_total >= minimum_format_records"
     }
   ],
-
   "encoding": {
     "x": {
       "field": "colour_category",
       "type": "nominal",
       "title": "Recorded visual style",
-
       "sort": [
         "Black and white",
         "Sepia",
@@ -84,7 +83,6 @@
         "Mixed",
         "Unknown"
       ],
-
       "axis": {
         "labelAngle": 0,
         "labelFontSize": 12,
@@ -95,18 +93,15 @@
         "grid": false
       }
     },
-
     "y": {
       "field": "format_group",
       "type": "nominal",
       "title": "Catalogue format",
-
       "sort": {
         "field": "format_total",
         "op": "max",
         "order": "descending"
       },
-
       "axis": {
         "labelFontSize": 12,
         "labelLimit": 190,
@@ -117,7 +112,6 @@
       }
     }
   },
-
   "layer": [
     {
       "mark": {
@@ -125,61 +119,62 @@
         "stroke": "#ffffff",
         "strokeWidth": 2
       },
-
       "encoding": {
         "color": {
           "field": "within_format_pct",
           "type": "quantitative",
-
-          "title": "Share within catalogue format (%)",
-
+          "title": "Share within each format (%)",
           "scale": {
-            "domain": [0, 100],
+            "domain": [
+              0,
+              100
+            ],
             "range": [
               "#f7f5fa",
               "#c4adda",
               "#583475"
             ]
           },
-
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
             "gradientLength": 330,
             "titleFontSize": 13,
             "labelFontSize": 12,
-            "values": [0, 25, 50, 75, 100],
-            "labelExpr": "datum.value + '%'"
+            "values": [
+              0,
+              25,
+              50,
+              75,
+              100
+            ],
+            "labelExpr": "datum.value + '%'",
+            "titleLimit": 400
           }
         },
-
         "tooltip": [
           {
             "field": "format_group",
             "type": "nominal",
             "title": "Catalogue format"
           },
-
           {
             "field": "colour_category",
             "type": "nominal",
             "title": "Recorded visual style"
           },
-
           {
             "field": "catalogue_records",
             "type": "quantitative",
             "title": "Records with this visual style",
             "format": ","
           },
-
           {
             "field": "format_total",
             "type": "quantitative",
             "title": "Total records in format",
             "format": ","
           },
-
           {
             "field": "within_format_pct",
             "type": "quantitative",
@@ -189,7 +184,6 @@
         ]
       }
     },
-
     {
       "transform": [
         {
@@ -200,7 +194,6 @@
           "as": "percentage_label"
         }
       ],
-
       "mark": {
         "type": "text",
         "fontSize": 12,
@@ -208,13 +201,11 @@
         "baseline": "middle",
         "align": "center"
       },
-
       "encoding": {
         "text": {
           "field": "percentage_label",
           "type": "nominal"
         },
-
         "color": {
           "condition": {
             "test": "datum.within_format_pct >= 55",
@@ -225,24 +216,23 @@
       }
     }
   ],
-
   "config": {
     "background": "#ffffff",
-
     "view": {
       "stroke": null
     },
-
-    "font": "Source Sans Pro",
-
+    "font": "DM Sans",
     "axis": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro"
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
     },
-
     "legend": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro"
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
     }
   }
 }

@@ -1,7 +1,5 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
   "data": {
     "url": "data/akon_feature_combinations.csv",
     "format": {
@@ -17,7 +15,6 @@
       }
     }
   },
-
   "params": [
     {
       "name": "combination_view",
@@ -32,43 +29,44 @@
       }
     }
   ],
-
   "transform": [
     {
       "filter": "combination_view == 'All combinations' || datum.feature_count > 0"
     }
   ],
-
   "spacing": 8,
-
   "vconcat": [
     {
       "width": 700,
       "height": 290,
-
       "mark": {
         "type": "bar",
         "color": "#537889",
         "size": 45
       },
-
       "encoding": {
         "x": {
           "field": "rank",
           "type": "ordinal",
-          "sort": "ascending",
+          "sort": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
           "axis": null
         },
-
         "y": {
           "field": "postcard_records",
           "type": "quantitative",
           "title": "AKON catalogue records",
-
           "scale": {
             "domainMin": 0
           },
-
           "axis": {
             "tickCount": 5,
             "format": "~s",
@@ -79,7 +77,6 @@
             "titlePadding": 15
           }
         },
-
         "tooltip": [
           {
             "field": "combination",
@@ -107,18 +104,24 @@
         ]
       }
     },
-
     {
-      "width": "container",
+      "width": 700,
       "height": 150,
-
       "encoding": {
         "x": {
           "field": "rank",
           "type": "ordinal",
-          "sort": "ascending",
+          "sort": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
           "title": "Tag combinations (ranked by record count)",
-
           "axis": {
             "labelAngle": 0,
             "labelFontSize": 12,
@@ -130,7 +133,6 @@
           }
         }
       },
-
       "layer": [
         {
           "transform": [
@@ -146,38 +148,35 @@
               "as": "last_tag"
             }
           ],
-
           "mark": {
             "type": "rule",
             "color": "#354e5a",
             "strokeWidth": 2.5
           },
-
           "encoding": {
             "y": {
               "field": "first_tag",
               "type": "ordinal",
-              "sort": [
-                "Building",
-                "Mountain",
-                "Water"
-              ],
-
               "axis": {
                 "title": null,
                 "labelFontSize": 12,
                 "labelPadding": 10,
                 "ticks": false,
                 "domain": false
+              },
+              "scale": {
+                "domain": [
+                  "Building",
+                  "Mountain",
+                  "Water"
+                ]
               }
             },
-
             "y2": {
               "field": "last_tag"
             }
           }
         },
-
         {
           "transform": [
             {
@@ -191,23 +190,19 @@
                 "tag_flag"
               ]
             },
-
             {
               "calculate": "datum.tag_key == 'building' ? 'Building' : datum.tag_key == 'mountain' ? 'Mountain' : 'Water'",
               "as": "tag_name"
             },
-
             {
               "calculate": "datum.tag_flag == 'True'",
               "as": "is_present"
             },
-
             {
               "calculate": "datum.is_present ? 'Present' : 'Absent'",
               "as": "tag_status"
             }
           ],
-
           "mark": {
             "type": "circle",
             "filled": true,
@@ -215,26 +210,25 @@
             "stroke": "#ffffff",
             "strokeWidth": 1.2
           },
-
           "encoding": {
             "y": {
               "field": "tag_name",
               "type": "ordinal",
-              "sort": [
-                "Building",
-                "Mountain",
-                "Water"
-              ],
-
               "axis": {
                 "title": null,
                 "labelFontSize": 12,
                 "labelPadding": 10,
                 "ticks": false,
                 "domain": false
+              },
+              "scale": {
+                "domain": [
+                  "Building",
+                  "Mountain",
+                  "Water"
+                ]
               }
             },
-
             "color": {
               "condition": {
                 "test": "datum.is_present",
@@ -242,7 +236,6 @@
               },
               "value": "#dce3e7"
             },
-
             "tooltip": [
               {
                 "field": "combination",
@@ -277,25 +270,28 @@
       ]
     }
   ],
-
   "resolve": {
     "scale": {
       "x": "shared"
     }
   },
-
   "config": {
     "background": "#ffffff",
-
     "view": {
       "stroke": null
     },
-
-    "font": "Source Sans Pro",
-
+    "font": "DM Sans",
     "axis": {
-      "labelFont": "Source Sans Pro",
-      "titleFont": "Source Sans Pro"
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelFontSize": 12,
+      "titleFontSize": 13
     }
   }
 }

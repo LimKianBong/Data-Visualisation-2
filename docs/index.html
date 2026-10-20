@@ -1,135 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#193d3b">
-  <meta name="description" content="An illustrated, data-led field guide to Australia's historical postcard collections, with international context from AKON.">
+  <meta name="description"
+    content="An illustrated, data-led field guide to Australia's historical postcard collections, with international context from AKON.">
   <title>Postmarked Australia — Places, Collections &amp; Visual Culture</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
   <script defer src="js/site.js"></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to the story</a>
   <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
     <div class="nav-inner">
-      <a class="brand" href="#top" aria-label="Postmarked Australia, back to top">
-        <span class="brand-seal" aria-hidden="true">PA</span>
-        <span class="brand-word">POSTMARKED<span class="brand-dot">.</span><small>AUSTRALIA / AN ARCHIVAL FIELD GUIDE</small></span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle section navigation">Sections <span aria-hidden="true">☰</span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav"
+        aria-label="Toggle section navigation">
+        Sections <span aria-hidden="true">☰</span>
+      </button>
+
       <nav class="site-nav" id="site-nav" aria-label="Story chapters">
-        <a href="#australia"><span>01</span> Places</a>
-        <a href="#collections"><span>02</span> Visual culture</a>
-        <a href="#international"><span>03</span> Beyond</a>
-        <a href="#takeaways"><span>04</span> Takeaways</a>
+        <a href="#australia">Australian Places</a>
+        <a href="#collections">Visual Culture</a>
+        <a href="#international">International Perspective</a>
+        <a href="#takeaways">Key Takeaways</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+
+
+
+<main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid content-width">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-line"></span> A FIELD GUIDE TO HISTORICAL POSTCARDS <span class="eyebrow-num">ISSUE 01 / 2026</span></div>
-          <h1 id="hero-title">A country<br>in <em>postcards.</em></h1>
-          <p class="hero-lede">What do Australia's archived postcards reveal about the places we remember—and the places our collections overlook?</p>
-          <p class="hero-sub">Explore geography, catalogue formats and visual culture through the National Museum of Australia and the State Library of New South Wales, then look beyond Australia with AKON.</p>
-          <a class="action-link" href="#australia">Open the field guide <span aria-hidden="true">↘</span></a>
-          <div class="hero-bottom"><span>AUSTRALIAN PLACES · ARCHIVAL EVIDENCE · VISUAL STORIES</span><span>SCROLL TO EXPLORE ↓</span></div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-vertical-label">AUSTRALIA / MEMORIES IN THE MAIL</div>
-          <div class="postcard-card">
-            <div class="postcard-image">
-              <div class="sunset-sun"></div>
-              <div class="sky-line sky-line-one"></div><div class="sky-line sky-line-two"></div>
-              <div class="ridge ridge-back"></div><div class="ridge ridge-mid"></div><div class="ridge ridge-front"></div>
-              <span class="image-caption">VINTAGE-INSPIRED · ORIGINAL ARTWORK</span>
+        <div class="hero-grid content-width">
+            <div class="hero-copy">
+
+                <h1 id="hero-title">
+                    A country in <em>postcards.</em>
+                </h1>
+
+                <p class="hero-lede">
+                    What do Australia's historical postcards reveal about<br>
+                    the places remembered, and those less visible in archives?
+                </p>
+
+                <p class="hero-sub">
+                    Explore Australia's places, catalogue formats, and visual culture<br>
+                    through the National Museum of Australia and the<br>
+                     State Library of New South Wales.<br>
+                    Then consider an international perspective through AKON.
+                </p>
+
             </div>
-            <div class="postcard-caption"><span>GREETINGS FROM</span><strong>AUSTRALIA</strong><span class="tiny-star">✳</span></div>
-            <div class="postcard-stamp"><strong>AU</strong><span>POST</span><small>05</small></div>
-            <div class="postmark-ring"><span>ARCHIVE</span><strong>20</strong><span>26</span></div>
-          </div>
-          <p class="art-note">AN ORIGINAL EDITORIAL ILLUSTRATION<br>NOT AN ARCHIVAL PHOTOGRAPH</p>
         </div>
-      </div>
-      <div class="hero-torn-edge" aria-hidden="true"></div>
-    </section>
-
-    <section class="guide-strip" aria-label="Collections in this story">
-      <div class="content-width guide-strip-grid">
-        <div class="strip-intro"><span class="micro">THE MATERIAL</span><strong>Three collections.<br>Different perspectives.</strong></div>
-        <div class="strip-stat"><strong>3,805</strong><span>NMA postcard records</span></div>
-        <div class="strip-stat"><strong>1,559</strong><span>SLNSW catalogue records</span></div>
-        <div class="strip-stat"><strong>34,846</strong><span>AKON reference records</span></div>
-      </div>
-    </section>
-
-    <section class="guide-opening content-width" aria-labelledby="guide-heading">
-      <div class="guide-index"><span class="micro">FIELD NOTES</span><span class="guide-index-line"></span><span class="micro">HOW TO READ</span></div>
-      <h2 id="guide-heading">What a collection shows<br>is not <em>everything that existed.</em></h2>
-      <div class="intro-columns">
-        <p>Postcards preserve glimpses of places and lives. But an archive reflects what was collected, catalogued and retained. A crowded spot on the map means <strong>more records in this collection</strong>—not necessarily more postcards produced there.</p>
-        <p>We follow the evidence from <strong>Australian states</strong> to <strong>individual places</strong>, then examine how cards are described. A European collection offers a final reminder that the institution itself shapes the story.</p>
-      </div>
-      <div class="chapter-jump-grid" aria-label="Jump to chapter">
-        <a href="#australia" class="jump-card"><span>01 / AUSTRALIA</span><strong>Where the records lead</strong><b aria-hidden="true">↗</b></a>
-        <a href="#collections" class="jump-card"><span>02 / THE ARCHIVE</span><strong>What the catalogue records</strong><b aria-hidden="true">↗</b></a>
-        <a href="#international" class="jump-card"><span>03 / BEYOND</span><strong>One international lens</strong><b aria-hidden="true">↗</b></a>
-      </div>
     </section>
 
     <section class="chapter chapter-australia" id="australia" aria-labelledby="australia-title">
       <div class="chapter-banner">
         <div class="content-width chapter-header">
           <div class="chapter-number" aria-hidden="true">01</div>
-          <div class="chapter-title-wrap"><span class="micro">CHAPTER ONE / ON THE MAP</span><h2 id="australia-title">Australia, one<br><em>place at a time.</em></h2><p>First, zoom out to state boundaries. Then follow the postcards into cities, towns and regional landscapes.</p></div>
-          <div class="chapter-aside"><span>THE QUESTION</span><strong>Which Australian places are most visible in these collections?</strong></div>
+          <div class="chapter-title-wrap"><span class="micro">CHAPTER ONE / ON THE MAP</span>
+            <h2 id="australia-title">Australia, one<br><em>place at a time.</em></h2>
+            <p>First, zoom out to state boundaries. Then follow the postcards into cities, towns and regional
+              landscapes.</p>
+          </div>
+          <div class="chapter-aside"><span>THE QUESTION</span><strong>Which Australian places are most visible in these
+              collections?</strong></div>
         </div>
       </div>
       <div class="content-width chapter-content">
-        <div class="insight-ribbon"><span class="micro">THE BIG PICTURE</span><strong>New South Wales dominates the mapped records in both Australian collections.</strong><span class="ribbon-arrow">↗</span></div>
+        <div class="insight-ribbon"><span class="micro">THE BIG PICTURE</span><strong>New South Wales dominates the
+            mapped records in both Australian collections.</strong><span class="ribbon-arrow">↗</span></div>
 
         <article class="figure-card" aria-labelledby="fig1-title">
           <div class="figure-topline"><span>FIG. 01</span><span>CHOROPLETH MAP · NMA / SLNSW</span></div>
-          <div class="figure-heading"><div><h3 id="fig1-title">Two collections. One dominant state.</h3><p>About <strong>68%</strong> of NMA's mapped records and <strong>87%</strong> of SLNSW's are linked to New South Wales. The difference reflects each collection's coverage rather than Australia's overall postcard history.</p></div><div class="figure-note"><span>EXPLORE</span>Switch collections to compare the share represented by each state.</div></div>
-          <div class="chart-frame"><div id="vis1" class="vis-container" role="group" aria-label="Australian states by share of mapped records, switchable between NMA and SLNSW"></div></div>
-          <p class="figure-foot"><span>01 / METHOD</span> Colour indicates each state's percentage of mapped records within the selected collection, using a full 0–100% scale. Not population-adjusted.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig1-title">Two collections. One dominant state.</h3>
+              <p>About <strong>68%</strong> of NMA's state-assigned counts and <strong>87%</strong> of SLNSW's are
+                linked to New South Wales. The difference reflects each collection's coverage rather than Australia's
+                overall postcard history.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Switch collections to compare the share represented by each
+              state.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis1" class="vis-container" role="group"
+              aria-label="Australian states by share of mapped records, switchable between NMA and SLNSW"></div>
+          </div>
+          <p class="figure-foot"><span>01 / METHOD</span> Colour shows the share of state-assigned records: 2,101 NMA
+            state counts or 1,195 SLNSW mapped records. NSW accounts for 1,425 and 1,036 respectively. The 0–100% scale
+            is not population-adjusted.</p>
         </article>
 
-        <div class="between-charts"><span>FROM STATES</span><span class="connecting-rule"></span><span>TO INDIVIDUAL PLACES ↓</span></div>
+        <div class="between-charts"><span>FROM STATES</span><span class="connecting-rule"></span><span>TO INDIVIDUAL
+            PLACES ↓</span></div>
 
         <article class="figure-card" aria-labelledby="fig2-title">
           <div class="figure-topline"><span>FIG. 02</span><span>PROPORTIONAL SYMBOL MAP · SLNSW</span></div>
-          <div class="figure-heading"><div><h3 id="fig2-title">Sydney leads—but the story spreads inland.</h3><p>Sydney has the most high-confidence mapped SLNSW locality records, followed by Newcastle and Albury. Smaller towns appear across the state, beyond the capital's familiar views.</p></div><div class="figure-note"><span>EXPLORE</span>Circle area represents record count. Use the map filter to find stronger concentrations.</div></div>
-          <div class="chart-frame"><div id="vis2" class="vis-container" role="group" aria-label="Proportional-symbol map of SLNSW postcard catalogue records by New South Wales locality"></div></div>
-          <p class="figure-foot"><span>02 / METHOD</span> High-confidence place names were identified from catalogue titles. Points indicate named localities, not exact camera positions; grouped catalogue records do not equal physical cards.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig2-title">Sydney leads—but the story spreads inland.</h3>
+              <p>Sydney has the most high-confidence mapped SLNSW locality records, followed by Newcastle and Albury.
+                Smaller towns appear across the state, beyond the capital's familiar views.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Circle area represents record count. Use the map filter to find
+              stronger concentrations.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis2" class="vis-container" role="group"
+              aria-label="Proportional-symbol map of SLNSW postcard catalogue records by New South Wales locality">
+            </div>
+          </div>
+          <p class="figure-foot"><span>02 / METHOD</span> This NSW-only view covers 1,036 records across 244 localities.
+            High-confidence place names were identified from catalogue titles. Points indicate named localities, not
+            exact camera positions; grouped catalogue records do not equal physical cards.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig4-title">
           <div class="figure-topline"><span>FIG. 03</span><span>EQUAL-AREA HEXBIN MAP · SLNSW</span></div>
-          <div class="figure-heading"><div><h3 id="fig4-title">When nearby places become a cluster.</h3><p>Individual symbols overlap in densely catalogued areas. Equal-area hexagons bring neighbouring records together, revealing concentrations without placing every locality on top of another.</p></div><div class="figure-note"><span>HOW TO READ</span>Darker cells contain more mapped catalogue records. Empty cells do not mean places had no postcards.</div></div>
-          <div class="chart-frame"><div id="vis4" class="vis-container" role="group" aria-label="Equal-area hexbin map aggregating the SLNSW mapped postcard catalogue records"></div></div>
-          <p class="figure-foot"><span>03 / METHOD</span> 1,195 high-confidence mapped records are aggregated into 145 occupied approximately 50-km-wide equal-area cells. Coastal hexagons may extend beyond the shoreline.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig4-title">When nearby places become a cluster.</h3>
+              <p>Individual symbols overlap in densely catalogued areas. Equal-area hexagons bring neighbouring records
+                together, revealing concentrations without placing every locality on top of another.</p>
+            </div>
+            <div class="figure-note"><span>HOW TO READ</span>Darker cells contain more mapped catalogue records. Empty
+              cells do not mean places had no postcards.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis4" class="vis-container" role="group"
+              aria-label="Equal-area hexbin map aggregating the SLNSW mapped postcard catalogue records"></div>
+          </div>
+          <p class="figure-foot"><span>03 / METHOD</span> This Australia-wide view covers 1,195 mapped records in 145
+            occupied cells, including records outside NSW. Cells are approximately 50 km wide; colour uses a square-root
+            count scale. Coastal cells may extend beyond the shoreline.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig8-title">
           <div class="figure-topline"><span>FIG. 04</span><span>LOLLIPOP CHART · NMA</span></div>
-          <div class="figure-heading"><div><h3 id="fig8-title">The museum's most depicted places.</h3><p>In NMA's records, <strong>Sydney (138)</strong> leads, followed by <strong>Mount Gambier (85)</strong> and <strong>Adelaide (63)</strong>. Famous landmarks appear alongside cities and natural sites.</p></div><div class="figure-note"><span>EXPLORE</span>Filter to the highest-count places or hover for details and rankings.</div></div>
-          <div class="chart-frame"><div id="vis8" class="vis-container" role="group" aria-label="Lollipop chart comparing the leading Australian places depicted in NMA postcard records"></div></div>
-          <p class="figure-foot"><span>04 / METHOD</span> A postcard record can be associated with multiple depicted places. Location counts therefore cannot be added to obtain a collection total.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig8-title">The museum's most depicted places.</h3>
+              <p>In NMA's records, <strong>Sydney (138)</strong> leads, followed by <strong>Mount Gambier (85)</strong>
+                and <strong>Adelaide (63)</strong>. Famous landmarks appear alongside cities and natural sites.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Filter to the highest-count places or hover for details and
+              rankings.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis8" class="vis-container" role="group"
+              aria-label="Lollipop chart comparing the leading Australian places depicted in NMA postcard records">
+            </div>
+          </div>
+          <p class="figure-foot"><span>04 / METHOD</span> A postcard record can be associated with multiple depicted
+            places. Location counts therefore cannot be added to obtain a collection total.</p>
         </article>
-        <div class="chapter-exit"><span>WHAT WE LEARNED</span><strong>Geography in an archive is a map of representation—not a map of everywhere postcards existed.</strong><a href="#collections">Next chapter: inside the catalogue <span aria-hidden="true">→</span></a></div>
+        <div class="chapter-exit"><span>WHAT WE LEARNED</span><strong>Geography in an archive is a map of
+            representation—not a map of everywhere postcards existed.</strong><a href="#collections">Next chapter:
+            inside the catalogue <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -137,34 +181,82 @@
       <div class="chapter-banner">
         <div class="content-width chapter-header">
           <div class="chapter-number" aria-hidden="true">02</div>
-          <div class="chapter-title-wrap"><span class="micro">CHAPTER TWO / THE MATERIAL</span><h2 id="collections-title">More than a<br><em>picture on a card.</em></h2><p>The formats and labels attached to postcards change how we compare them—and what we think we see.</p></div>
-          <div class="chapter-aside"><span>THE QUESTION</span><strong>How does cataloguing shape visual history?</strong></div>
+          <div class="chapter-title-wrap"><span class="micro">CHAPTER TWO / THE MATERIAL</span>
+            <h2 id="collections-title">More than a<br><em>picture on a card.</em></h2>
+            <p>The formats and labels attached to postcards change how we compare them—and what we think we see.</p>
+          </div>
+          <div class="chapter-aside"><span>THE QUESTION</span><strong>How does cataloguing shape visual
+              history?</strong></div>
         </div>
       </div>
       <div class="content-width chapter-content">
-        <div class="insight-ribbon"><span class="micro">INSIDE THE ARCHIVE</span><strong>Single cards, grouped folders and visual-style labels do not describe equivalent units.</strong><span class="ribbon-arrow">↗</span></div>
+        <div class="insight-ribbon"><span class="micro">INSIDE THE ARCHIVE</span><strong>Single cards, grouped folders
+            and visual-style labels do not describe equivalent units.</strong><span class="ribbon-arrow">↗</span></div>
 
         <article class="figure-card" aria-labelledby="fig5-title">
           <div class="figure-topline"><span>FIG. 05</span><span>TREEMAP · SLNSW</span></div>
-          <div class="figure-heading"><div><h3 id="fig5-title">One catalogue record isn't always one postcard.</h3><p>SLNSW includes <strong>602 Single card</strong> and <strong>582 Postcard</strong> records, alongside folders and grouped items. A folder can contain several cards even though it appears as a single record.</p></div><div class="figure-note"><span>EXPLORE</span>Select a record scope to examine how catalogue formats are distributed.</div></div>
-          <div class="chart-frame"><div id="vis5" class="vis-container" role="group" aria-label="Treemap of SLNSW catalogue records grouped by record scope and format"></div></div>
-          <p class="figure-foot"><span>05 / METHOD</span> Rectangle area represents catalogue record counts among 1,559 records—not physical postcard quantities. A group's size is a count of descriptions.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig5-title">One catalogue record isn't always one postcard.</h3>
+              <p>SLNSW includes <strong>602 Single card</strong> and <strong>582 Postcard</strong> records, alongside
+                folders and grouped items. A folder can contain several cards even though it appears as a single record.
+              </p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Select a record scope to examine how catalogue formats are
+              distributed.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis5" class="vis-container" role="group"
+              aria-label="Treemap of SLNSW catalogue records grouped by record scope and format"></div>
+          </div>
+          <p class="figure-foot"><span>05 / METHOD</span> Rectangle area represents catalogue record counts among 1,559
+            records—not physical postcard quantities. A group's size is a count of descriptions.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig6-title">
           <div class="figure-topline"><span>FIG. 06</span><span>HEATMAP · SLNSW</span></div>
-          <div class="figure-heading"><div><h3 id="fig6-title">Colour varies with catalogue format.</h3><p>Around <strong>42%</strong> of Single card records and <strong>49%</strong> of Folder records are classified as Colour. The label is part of the institution's metadata, not a universal description of historical printing.</p></div><div class="figure-note"><span>EXPLORE</span>Use the format-size dropdown to exclude small categories that yield unstable percentages.</div></div>
-          <div class="chart-frame"><div id="vis6" class="vis-container" role="group" aria-label="Heatmap of SLNSW format and colour classification with a full 0–100 percent legend"></div></div>
-          <p class="figure-foot"><span>06 / METHOD</span> Every cell's percentage uses its own format as the denominator. The sequential legend spans 0–100%. Unknown is a metadata classification.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig6-title">Colour varies with catalogue format.</h3>
+              <p>Around <strong>42%</strong> of Single card records and <strong>49%</strong> of Folder records are
+                classified as Colour. These project categories summarise catalogue descriptions; they do not identify
+                historical printing techniques.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Use the format-size dropdown to exclude small categories that
+              yield unstable percentages.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis6" class="vis-container" role="group"
+              aria-label="Heatmap of SLNSW format and colour classification with a full 0–100 percent legend"></div>
+          </div>
+          <p class="figure-foot"><span>06 / METHOD</span> Every cell uses its own format as the denominator. The legend
+            spans 0–100%; blank labels still have tooltips. Unknown means the project classification could not establish
+            a visual style.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig12-title">
           <div class="figure-topline"><span>FIG. 07</span><span>100% STACKED BAR CHART · THREE COLLECTIONS</span></div>
-          <div class="figure-heading"><div><h3 id="fig12-title">Different archives, different colour stories.</h3><p><strong>40.3%</strong> of SLNSW records are classified Colour, against <strong>20.2%</strong> at NMA and <strong>22.0%</strong> at AKON. Comparing the labels is useful—assuming they mean precisely the same thing is not.</p></div><div class="figure-note"><span>EXPLORE</span>Click a legend category to highlight that visual-style group across collections.</div></div>
-          <div class="chart-frame"><div id="vis12" class="vis-container" role="group" aria-label="100 percent stacked comparison of visual style metadata across NMA, SLNSW and AKON"></div></div>
-          <p class="figure-foot"><span>07 / METHOD</span> Percentages are calculated separately within each collection. Source labels were harmonised for comparison; AKON's binary Non-colour category is grouped under Monochrome / toned.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig12-title">Different archives, different colour stories.</h3>
+              <p><strong>40.3%</strong> of SLNSW records are classified Colour, against <strong>20.2%</strong> at NMA
+                and <strong>22.0%</strong> at AKON. Comparing the labels is useful—assuming they mean precisely the same
+                thing is not.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Click a legend category to highlight that visual-style group
+              across collections.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis12" class="vis-container" role="group"
+              aria-label="100 percent stacked comparison of visual style metadata across NMA, SLNSW and AKON"></div>
+          </div>
+          <p class="figure-foot"><span>07 / METHOD</span> Percentages are calculated separately within each collection.
+            Source labels were harmonised for comparison; AKON's binary Non-colour category is grouped under Monochrome
+            / toned.</p>
         </article>
-        <div class="chapter-exit"><span>WHAT WE LEARNED</span><strong>Collections preserve images, but their descriptions shape every comparison we make.</strong><a href="#international">Next chapter: beyond Australia <span aria-hidden="true">→</span></a></div>
+        <div class="chapter-exit"><span>WHAT WE LEARNED</span><strong>Collections preserve images, but their
+            descriptions shape every comparison we make.</strong><a href="#international">Next chapter: beyond Australia
+            <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -172,41 +264,102 @@
       <div class="chapter-banner">
         <div class="content-width chapter-header">
           <div class="chapter-number" aria-hidden="true">03</div>
-          <div class="chapter-title-wrap"><span class="micro">CHAPTER THREE / AN INTERNATIONAL LENS</span><h2 id="international-title">The world beyond<br><em>our postmark.</em></h2><p>AKON offers a European-centred reference point—not a universal record of global postcard history.</p></div>
-          <div class="chapter-aside"><span>THE QUESTION</span><strong>What changes when we look through another institution's collection?</strong></div>
+          <div class="chapter-title-wrap"><span class="micro">CHAPTER THREE / AN INTERNATIONAL LENS</span>
+            <h2 id="international-title">The world beyond<br><em>our postmark.</em></h2>
+            <p>AKON offers a European-centred reference point—not a universal record of global postcard history.</p>
+          </div>
+          <div class="chapter-aside"><span>THE QUESTION</span><strong>What changes when we look through another
+              institution's collection?</strong></div>
         </div>
       </div>
       <div class="content-width chapter-content">
-        <div class="insight-ribbon"><span class="micro">THE CONTRAST</span><strong>A multinational collection can still be strongly concentrated in one region.</strong><span class="ribbon-arrow">↗</span></div>
+        <div class="insight-ribbon"><span class="micro">THE CONTRAST</span><strong>A multinational collection can still
+            be strongly concentrated in one region.</strong><span class="ribbon-arrow">↗</span></div>
 
         <article class="figure-card" aria-labelledby="fig3-title">
           <div class="figure-topline"><span>FIG. 08</span><span>WORLD DOT MAP · AKON</span></div>
-          <div class="figure-heading"><div><h3 id="fig3-title">Beyond Australia, but centred on Europe.</h3><p>AKON documents places across many countries. Its geography, however, is concentrated around Austria and other European locations, reflecting the perspective of a particular holding institution.</p></div><div class="figure-note"><span>EXPLORE</span>Switch to the Europe view to examine the densest mapped place clusters.</div></div>
-          <div class="chart-frame"><div id="vis3" class="vis-container" role="group" aria-label="World map of AKON postcard place locations with Europe focus option"></div></div>
-          <p class="figure-foot"><span>08 / METHOD</span> One dot denotes a distinct geocoded catalogue place. World outlines from Natural Earth provide context. The dashed reference is the prime meridian.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig3-title">Beyond Australia, but centred on Europe.</h3>
+              <p>AKON documents places across many countries. Its geography, however, is concentrated around Austria and
+                other European locations, reflecting the perspective of a particular holding institution.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Switch to the Europe view to examine the densest mapped place
+              clusters.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis3" class="vis-container" role="group"
+              aria-label="World map of AKON postcard place locations with Europe focus option"></div>
+          </div>
+          <p class="figure-foot"><span>08 / METHOD</span> The supplied place summary has 5,788 rows representing 34,635
+            records, fewer than the 34,846-record collection. One dot represents one place row; dot size is constant.
+            The dashed line is the prime meridian.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig7-title">
           <div class="figure-topline"><span>FIG. 09</span><span>BUMP CHART · AKON</span></div>
-          <div class="figure-heading"><div><h3 id="fig7-title">Austria stays first as rankings shift.</h3><p>Austria ranks first across the selected decades of exactly dated AKON records. Other countries change positions, revealing shifts in the composition of the dated holdings—not in national postcard production.</p></div><div class="figure-note"><span>EXPLORE</span>Highlight a country to trace its rank while keeping competitors visible.</div></div>
-          <div class="chart-frame"><div id="vis7" class="vis-container" role="group" aria-label="Bump chart of selected country ranks by decade among AKON records"></div></div>
-          <p class="figure-foot"><span>09 / METHOD</span> Eight selected countries are shown with their original ranks among all AKON countries. The 1890s cover 1893–1899; the 1920s cover 1920–1925. Rank 1 is best represented.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig7-title">Austria stays first as rankings shift.</h3>
+              <p>Austria ranks first across the selected decades of exactly dated AKON records. Other countries change
+                positions, revealing shifts in the composition of the dated holdings—not in national postcard
+                production.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Highlight a country to trace its rank while keeping competitors
+              visible.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis7" class="vis-container" role="group"
+              aria-label="Bump chart of selected country ranks by decade among AKON records"></div>
+          </div>
+          <p class="figure-foot"><span>09 / METHOD</span> Eight selected countries retain their ranks from the supplied
+            country summary. Missing country–decade entries are not plotted; tied ranks can overlap. The 1890s cover
+            1893–1899 and the 1920s cover 1920–1925. Rank 1 is best represented.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig10-title">
           <div class="figure-topline"><span>FIG. 10</span><span>AREA CHART · AKON</span></div>
-          <div class="figure-heading"><div><h3 id="fig10-title">What the dated timeline can—and cannot—tell us.</h3><p>The series records <strong>1,100</strong> postcards for 1909, then <strong>445</strong> in 1919. World War I began in 1914, but this chart alone cannot identify the causes of the change.</p></div><div class="figure-note"><span>EXPLORE</span>Switch between all, Colour and Non-colour records. Hover annual points for counts.</div></div>
-          <div class="chart-frame"><div id="vis10" class="vis-container" role="group" aria-label="Area chart of AKON exactly dated postcard records by year"></div></div>
-          <p class="figure-foot"><span>10 / METHOD</span> Includes only exact dates, 1893–1925. The source has no observations for 1894 or 1896; drawn lines bridge these missing years. The 1914 marker is context, not a causal claim.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig10-title">What the dated timeline can—and cannot—tell us.</h3>
+              <p>The series records <strong>1,100</strong> postcards for 1909, then <strong>445</strong> in 1919. World
+                War I began in 1914, but this chart alone cannot identify the causes of the change.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Switch between all, Colour and Non-colour records. Hover annual
+              points for counts.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis10" class="vis-container" role="group"
+              aria-label="Area chart of AKON exactly dated postcard records by year"></div>
+          </div>
+          <p class="figure-foot"><span>10 / METHOD</span> The supplied exact-date summary contains 16,519 records (47.4%
+            of the collection), spanning 1893–1925. It has no rows for 1894 or 1896; lines bridge those years, whose
+            counts are not established here. The 1914 marker provides context, not a cause.</p>
         </article>
 
         <article class="figure-card" aria-labelledby="fig9-title">
           <div class="figure-topline"><span>FIG. 11</span><span>UPSET PLOT · AKON · FURTHER EXPLORATION</span></div>
-          <div class="figure-heading"><div><h3 id="fig9-title">Where buildings, mountains and water overlap.</h3><p>More than half of AKON records contain none of these three selected tags. When they do appear, the intersections are usually smaller than single-tag groups. A missing tag does not imply a postcard has no subject.</p></div><div class="figure-note"><span>EXPLORE</span>Remove the no-tag group to compare overlaps more clearly. Dark dots mark present tags.</div></div>
-          <div class="chart-frame"><div id="vis9" class="vis-container" role="group" aria-label="UpSet plot of overlapping Building Mountain and Water metadata tags in AKON"></div></div>
-          <p class="figure-foot"><span>11 / METHOD</span> The three tags are a limited selection from AKON's metadata. Combinations cover the collection's 34,846 records and are not an exhaustive taxonomy of postcard themes.</p>
+          <div class="figure-heading">
+            <div>
+              <h3 id="fig9-title">Where buildings, mountains and water overlap.</h3>
+              <p>More than half of AKON records contain none of these three selected tags. When they do appear, the
+                intersections are usually smaller than single-tag groups. A missing tag does not imply a postcard has no
+                subject.</p>
+            </div>
+            <div class="figure-note"><span>EXPLORE</span>Remove the no-tag group to compare overlaps more clearly. Dark
+              dots mark present tags.</div>
+          </div>
+          <div class="chart-frame">
+            <div id="vis9" class="vis-container" role="group"
+              aria-label="UpSet plot of overlapping Building Mountain and Water metadata tags in AKON"></div>
+          </div>
+          <p class="figure-foot"><span>11 / METHOD</span> The three tags are a limited selection from AKON's metadata.
+            Combinations cover the collection's 34,846 records and are not an exhaustive taxonomy of postcard themes.
+          </p>
         </article>
-        <div class="chapter-exit"><span>WHAT WE LEARNED</span><strong>Even a collection with worldwide locations is shaped by institutional history and incomplete metadata.</strong><a href="#takeaways">Read the final takeaways <span aria-hidden="true">→</span></a></div>
+        <div class="chapter-exit"><span>WHAT WE LEARNED</span><strong>Even a collection with worldwide locations is
+            shaped by institutional history and incomplete metadata.</strong><a href="#takeaways">Read the final
+            takeaways <span aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -215,56 +368,109 @@
         <p class="micro">04 / THE FINAL POSTMARK</p>
         <h2 id="takeaways-title">The story of Australia<br>is also the story of <em>what survives.</em></h2>
         <div class="takeaway-grid">
-          <div class="takeaway"><span>01</span><h3>Representation is uneven.</h3><p>New South Wales dominates the examined Australian holdings, with visible concentrations at both state and locality scales.</p></div>
-          <div class="takeaway"><span>02</span><h3>A record is not always a card.</h3><p>Some catalogue entries describe folders or groups. Record counts and physical postcard quantities are not interchangeable.</p></div>
-          <div class="takeaway"><span>03</span><h3>Labels carry institutional choices.</h3><p>Colour categories and dated coverage differ between collections, limiting historical generalisation.</p></div>
+          <div class="takeaway"><span>01</span>
+            <h3>Representation is uneven.</h3>
+            <p>New South Wales dominates the mapped subset of both Australian collections. The NSW locality view shows
+              concentrations within that state.</p>
+          </div>
+          <div class="takeaway"><span>02</span>
+            <h3>A record is not always a card.</h3>
+            <p>Some catalogue entries describe folders or groups. Record counts and physical postcard quantities are not
+              interchangeable.</p>
+          </div>
+          <div class="takeaway"><span>03</span>
+            <h3>Labels carry institutional choices.</h3>
+            <p>Colour categories and dated coverage differ between collections, limiting historical generalisation.</p>
+          </div>
         </div>
-        <div class="finale-statement"><span>REMEMBER THIS</span><strong>The archive shows us what was preserved and catalogued—not everything that was made, sent or seen.</strong></div>
-        <a class="action-link action-link-dark" href="#top">Return to the beginning <span aria-hidden="true">↑</span></a>
+        <div class="finale-statement"><span>REMEMBER THIS</span><strong>The archive shows us what was preserved and
+            catalogued—not everything that was made, sent or seen.</strong></div>
+        <a class="action-link action-link-dark" href="#top">Return to the beginning <span
+            aria-hidden="true">↑</span></a>
       </div>
     </section>
 
     <section class="sources-section" id="sources" aria-labelledby="sources-title">
       <div class="content-width sources-grid">
-        <div class="sources-intro"><p class="micro">COLOPHON / METHODS</p><h2 id="sources-title">Behind the<br><em>postcards.</em></h2><p>Sources, processing choices and limits of interpretation. The three institutions supplied the underlying metadata; the visual storytelling and derived datasets were prepared for this project.</p></div>
+        <div class="sources-intro">
+          <p class="micro">COLOPHON / METHODS</p>
+          <h2 id="sources-title">Behind the<br><em>postcards.</em></h2>
+          <p>Sources, processing choices and limits of interpretation. The three institutions supplied the underlying
+            metadata; the visual storytelling and derived datasets were prepared for this project.</p>
+        </div>
         <div class="sources-detail">
-          <details open><summary>01 — Collection sources <span aria-hidden="true">+</span></summary><div class="details-body"><p><strong>National Museum of Australia (NMA).</strong> Josef Lebovic Gallery collection no. 1; 3,805 cleaned item records. <a href="https://www.nma.gov.au/about/our-collection/museum-api" target="_blank" rel="noopener noreferrer">NMA Collection API ↗</a></p><p><strong>State Library of New South Wales (SLNSW).</strong> Miscellaneous Australian Postcards, Boxes 1–7 and 12; 1,559 catalogue records. <a href="https://content-lists.sl.nsw.gov.au/tabular-list/miscellaneous-australian-postcards-collection-box-3-nsw-k-n-including-lord-howe-island" target="_blank" rel="noopener noreferrer">SLNSW Box 3 catalogue example ↗</a></p><p><strong>Austrian National Library.</strong> AKON Historical Postcards; 34,846 cleaned records. <a href="https://labs.onb.ac.at/en/datasets/akon/" target="_blank" rel="noopener noreferrer">AKON dataset and terms ↗</a></p></div></details>
-          <details><summary>02 — Maps &amp; processing <span aria-hidden="true">+</span></summary><div class="details-body"><p>Australian state boundaries: <a href="https://github.com/rowanhogan/australian-states" target="_blank" rel="noopener noreferrer">Australian States GeoJSON ↗</a>, converted to TopoJSON. World boundaries: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth ↗</a>.</p><p>SLNSW mapped localities are high-confidence title-derived matches, not exact photographic coordinates. Hexbin cells were precomputed using an Australian equal-area projection and exported as geographic polygons. The NMA depicted-place analysis uses spatial metadata relationships.</p></div></details>
-          <details><summary>03 — Reading these numbers <span aria-hidden="true">+</span></summary><div class="details-body"><p>All counts describe records in particular museum or library collections. A grouped catalogue entry may represent multiple cards, and an NMA record may link to multiple depicted places. The different denominators must not be combined.</p><p>Style classes were harmonised from institution-specific fields; AKON uses a binary colour field. Exact AKON dates exclude approximate or inferred periods. No finding measures historical postcard production, tourism, popularity or postcard circulation.</p><p>No third-party historical postcard photographs are reproduced on this page; the opening illustration is original CSS artwork.</p></div></details>
-          <details><summary>04 — Credits &amp; source code <span aria-hidden="true">+</span></summary><div class="details-body"><p><strong>Lim Kian Bong</strong> · Monash University Malaysia · FIT3179 Data Visualisation 2 · October 2026.</p><p>Data visualisation and code: Vega, Vega-Lite, Vega-Embed and Pure.css. Typography: Google Fonts (DM Sans, DM Mono and Playfair Display).</p><p>AI acknowledgement: OpenAI ChatGPT assisted with webpage layout, prose revision, CSS and JavaScript authoring, Vega-Lite specification drafting and code review. The student remains responsible for checking results, understanding the implementation and complying with course requirements.</p><p><a href="https://github.com/limkianbong/Data-Visualisation-2" target="_blank" rel="noopener noreferrer">View the GitHub repository and chart source files ↗</a></p></div></details>
+          <details open>
+            <summary>01 — Collection sources <span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p><strong>National Museum of Australia (NMA).</strong> Josef Lebovic Gallery collection no. 1; 3,805
+                cleaned item records. <a href="https://www.nma.gov.au/about/our-collection/museum-api" target="_blank"
+                  rel="noopener noreferrer">NMA Collection API ↗</a></p>
+              <p><strong>State Library of New South Wales (SLNSW).</strong> Miscellaneous Australian Postcards, Boxes
+                1–7 and 12; 1,559 catalogue records. <a
+                  href="https://content-lists.sl.nsw.gov.au/tabular-list/miscellaneous-australian-postcards-collection-box-3-nsw-k-n-including-lord-howe-island"
+                  target="_blank" rel="noopener noreferrer">SLNSW Box 3 catalogue example ↗</a></p>
+              <p><strong>Austrian National Library.</strong> AKON Historical Postcards; 34,846 cleaned records. <a
+                  href="https://labs.onb.ac.at/en/datasets/akon/" target="_blank" rel="noopener noreferrer">AKON dataset
+                  and terms ↗</a></p>
+            </div>
+          </details>
+          <details>
+            <summary>02 — Maps &amp; processing <span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p>Australian state boundaries: <a href="https://github.com/rowanhogan/australian-states" target="_blank"
+                  rel="noopener noreferrer">Australian States GeoJSON ↗</a>, converted to TopoJSON. World boundaries: <a
+                  href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth
+                  ↗</a>.</p>
+              <p>SLNSW mapped localities are high-confidence title-derived matches, not exact photographic coordinates.
+                Hexbin cells are supplied as precomputed geographic polygons. The original preparation notes describe an
+                Australian equal-area grid; the projection identifier and generation script are not included in this
+                extract. The NMA depicted-place analysis uses spatial metadata relationships.</p>
+            </div>
+          </details>
+          <details>
+            <summary>03 — Reading these numbers <span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p>All counts describe records in particular museum or library collections. A grouped catalogue entry may
+                represent multiple cards, and an NMA record may link to multiple depicted places. The different
+                denominators must not be combined.</p>
+              <p>Style classes were harmonised from institution-specific fields; AKON uses a binary colour field. Exact
+                AKON dates exclude approximate or inferred periods. No finding measures historical postcard production,
+                tourism, popularity or postcard circulation.</p>
+              <p>The downloadable <a href="data/README.md">data notes and summary-file index</a> describe the supplied
+                extracts and denominators. Collection totals describe this project snapshot, not current institutional
+                holdings.</p>
+              <p>No third-party historical postcard photographs are reproduced on this page; the opening illustration is
+                original CSS artwork.</p>
+            </div>
+          </details>
+          <details>
+            <summary>04 — Credits &amp; source code <span aria-hidden="true">+</span></summary>
+            <div class="details-body">
+              <p><strong>Lim Kian Bong</strong> · Monash University Malaysia · FIT3179 Data Visualisation 2 · October
+                2026.</p>
+              <p>Data visualisation and code: Vega, Vega-Lite, Vega-Embed and Pure.css. Typography: Google Fonts (DM
+                Sans, DM Mono and Playfair Display).</p>
+              <p>AI acknowledgement: OpenAI ChatGPT and Codex assisted with webpage layout, prose revision, CSS and
+                JavaScript authoring, Vega and Vega-Lite specification drafting, source auditing and browser testing.
+                The student remains responsible for checking results, understanding the implementation and complying
+                with course requirements.</p>
+              <p><a href="https://github.com/limkianbong/Data-Visualisation-2" target="_blank"
+                  rel="noopener noreferrer">View the GitHub repository and chart source files ↗</a></p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="content-width footer-inner"><span class="footer-brand">POSTMARKED<span>.</span> AUSTRALIA</span><span>A FIT3179 DATA STORY · MONASH UNIVERSITY MALAYSIA · 2026</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <footer class="site-footer">
+    <div class="content-width footer-inner"><span class="footer-brand">POSTMARKED<span>.</span> AUSTRALIA</span><span>A
+        FIT3179 DATA STORY · MONASH UNIVERSITY MALAYSIA · 2026</span><a href="#top">BACK TO TOP ↑</a></div>
+  </footer>
   <a href="#top" class="floating-top" id="floating-top" aria-label="Back to top">↑</a>
 
-  <!-- Existing chart IDs, JSON files, and Vega validation menus are preserved. -->
-  <script type="text/javascript">
-    var specVis1 = "json/map1_australia.vg.json";
-    var specVis2 = "json/map2_slnsw_localities.vg.json";
-    var specVis3 = "json/map3_akon_world.vg.json";
-    var specVis4 = "json/map4_slnsw_hexbin.vg.json";
-    var specVis5 = "json/chart5_slnsw_treemap.vg.json";
-    var specVis6 = "json/chart6_slnsw_format_colour.vg.json";
-    var specVis7 = "json/chart7_akon_country_bump.vg.json";
-    var specVis8 = "json/chart8_nma_top_places.vg.json";
-    var specVis9 = "json/chart9_akon_feature_upset.vg.json";
-    var specVis10 = "json/chart10_akon_year_area.vg.json";
-    var specVis12 = "json/chart12_collection_colour_comparison.vg.json";
-
-    vegaEmbed('#vis1', specVis1);
-    vegaEmbed('#vis2', specVis2);
-    vegaEmbed('#vis3', specVis3);
-    vegaEmbed('#vis4', specVis4);
-    vegaEmbed('#vis5', specVis5);
-    vegaEmbed('#vis6', specVis6);
-    vegaEmbed('#vis7', specVis7);
-    vegaEmbed('#vis8', specVis8);
-    vegaEmbed('#vis9', specVis9);
-    vegaEmbed('#vis10', specVis10);
-    vegaEmbed('#vis12', specVis12);
-  </script>
+  <!-- Load each chart independently and provide a visible fallback if loading fails. -->
+  <script defer src="js/charts.js"></script>
 </body>
+
 </html>
