@@ -1,10 +1,14 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
+
   "description": "SLNSW catalogue record scope and format treemap.",
-  "width": 820,
-  "height": 480,
+
+"width": 820,
+"height": 480,
   "padding": 5,
   "autosize": "pad",
+
   "signals": [
     {
       "name": "scope_filter",
@@ -14,21 +18,18 @@
         "options": [
           "All types",
           "Individual item",
-          "Multi-item/group",
-          "Other",
-          "Unknown"
+          "Multi-item/group"
         ],
         "labels": [
-          "All catalogue records",
+          "Both record scopes",
           "Individual items",
-          "Multi-item and grouped records",
-          "Other records",
-          "Unknown records"
+          "Multi-item and grouped records"
         ],
         "name": "Record scope: "
       }
     }
   ],
+
   "data": [
     {
       "name": "tree",
@@ -44,13 +45,15 @@
       "transform": [
         {
           "type": "filter",
+          "expr": "datum.record_scope != 'Other' && datum.record_scope != 'Unknown' && datum.format_group != 'Other' && datum.format_group != 'Unknown'"
+        },
+        {
+          "type": "filter",
           "expr": "scope_filter == 'All types' || datum.record_scope == scope_filter"
         },
         {
           "type": "nest",
-          "keys": [
-            "record_scope"
-          ],
+          "keys": ["record_scope"],
           "generate": true
         },
         {
@@ -67,16 +70,13 @@
           "paddingOuter": 4,
           "paddingTop": 24,
           "size": [
-            {
-              "signal": "width"
-            },
-            {
-              "signal": "height"
-            }
+            {"signal": "width"},
+            {"signal": "height"}
           ]
         }
       ]
     },
+
     {
       "name": "leaves",
       "source": "tree",
@@ -87,6 +87,7 @@
         }
       ]
     },
+
     {
       "name": "scope_nodes",
       "source": "tree",
@@ -97,6 +98,7 @@
         }
       ]
     },
+
     {
       "name": "visible_labels",
       "source": "leaves",
@@ -108,24 +110,22 @@
       ]
     }
   ],
+
   "scales": [
     {
       "name": "scope_color",
       "type": "ordinal",
       "domain": [
         "Individual item",
-        "Multi-item/group",
-        "Other",
-        "Unknown"
+        "Multi-item/group"
       ],
       "range": [
         "#9bb4c6",
-        "#c9ab7c",
-        "#baa8ca",
-        "#bfc4c6"
+        "#c9ab7c"
       ]
     }
   ],
+
   "legends": [
     {
       "fill": "scope_color",
@@ -138,6 +138,7 @@
       "titleFontSize": 12
     }
   ],
+
   "marks": [
     {
       "type": "rect",
@@ -146,50 +147,31 @@
       },
       "encode": {
         "enter": {
-          "stroke": {
-            "value": "#ffffff"
-          },
-          "strokeWidth": {
-            "value": 2
-          }
+          "stroke": {"value": "#ffffff"},
+          "strokeWidth": {"value": 2}
         },
         "update": {
-          "x": {
-            "field": "x0"
-          },
-          "y": {
-            "field": "y0"
-          },
-          "x2": {
-            "field": "x1"
-          },
-          "y2": {
-            "field": "y1"
-          },
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
           "fill": {
             "scale": "scope_color",
             "field": "record_scope"
           },
-          "fillOpacity": {
-            "value": 1
-          },
+          "fillOpacity": {"value": 1},
           "tooltip": {
             "signal": "{'Record scope': datum.record_scope, 'Catalogue format': datum.format_group, 'Catalogue records': format(datum.catalogue_records, ',d'), 'Share of all catalogue records': format(datum.share_percent, '.1f') + '%'}"
           }
         },
         "hover": {
-          "fillOpacity": {
-            "value": 0.75
-          },
-          "stroke": {
-            "value": "#45545c"
-          },
-          "strokeWidth": {
-            "value": 2
-          }
+          "fillOpacity": {"value": 0.75},
+          "stroke": {"value": "#45545c"},
+          "strokeWidth": {"value": 2}
         }
       }
     },
+
     {
       "type": "rect",
       "from": {
@@ -198,30 +180,17 @@
       "interactive": false,
       "encode": {
         "update": {
-          "x": {
-            "field": "x0"
-          },
-          "y": {
-            "field": "y0"
-          },
-          "x2": {
-            "field": "x1"
-          },
-          "y2": {
-            "field": "y1"
-          },
-          "fillOpacity": {
-            "value": 0
-          },
-          "stroke": {
-            "value": "#777777"
-          },
-          "strokeWidth": {
-            "value": 1
-          }
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fillOpacity": {"value": 0},
+          "stroke": {"value": "#777777"},
+          "strokeWidth": {"value": 1}
         }
       }
     },
+
     {
       "type": "text",
       "from": {
@@ -239,27 +208,18 @@
           "text": {
             "field": "key"
           },
-          "font": {
-            "value": "DM Sans"
-          },
-          "fontSize": {
-            "value": 13
-          },
-          "fontWeight": {
-            "value": "bold"
-          },
-          "fill": {
-            "value": "#303030"
-          },
-          "baseline": {
-            "value": "top"
-          },
+          "font": {"value": "Source Sans Pro"},
+          "fontSize": {"value": 13},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#303030"},
+          "baseline": {"value": "top"},
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 16)"
           }
         }
       }
     },
+
     {
       "type": "text",
       "from": {
@@ -277,30 +237,19 @@
           "text": {
             "field": "format_group"
           },
-          "align": {
-            "value": "center"
-          },
-          "baseline": {
-            "value": "middle"
-          },
-          "font": {
-            "value": "DM Sans"
-          },
-          "fontSize": {
-            "value": 13
-          },
-          "fontWeight": {
-            "value": "bold"
-          },
-          "fill": {
-            "value": "#263238"
-          },
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "font": {"value": "Source Sans Pro"},
+          "fontSize": {"value": 13},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "#263238"},
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 12)"
           }
         }
       }
     },
+
     {
       "type": "text",
       "from": {
@@ -318,21 +267,11 @@
           "text": {
             "signal": "format(datum.catalogue_records, ',d') + ' records'"
           },
-          "align": {
-            "value": "center"
-          },
-          "baseline": {
-            "value": "middle"
-          },
-          "font": {
-            "value": "DM Sans"
-          },
-          "fontSize": {
-            "value": 11
-          },
-          "fill": {
-            "value": "#37474f"
-          },
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "font": {"value": "Source Sans Pro"},
+          "fontSize": {"value": 11},
+          "fill": {"value": "#37474f"},
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 12)"
           }
@@ -340,20 +279,9 @@
       }
     }
   ],
+
   "config": {
     "background": "white",
-    "font": "DM Sans",
-    "axis": {
-      "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
-    },
-    "legend": {
-      "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
-    }
+    "font": "Source Sans Pro"
   }
 }
