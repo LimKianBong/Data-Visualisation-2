@@ -18,16 +18,12 @@
         "options": [
           "All types",
           "Individual item",
-          "Multi-item/group",
-          "Other",
-          "Unknown"
+          "Multi-item/group"
         ],
         "labels": [
-          "All catalogue records",
+          "Both record scopes",
           "Individual items",
-          "Multi-item and grouped records",
-          "Other records",
-          "Unknown records"
+          "Multi-item and grouped records"
         ],
         "name": "Record scope: "
       }
@@ -47,6 +43,10 @@
         }
       },
       "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.record_scope != 'Other' && datum.record_scope != 'Unknown' && datum.format_group != 'Other' && datum.format_group != 'Unknown'"
+        },
         {
           "type": "filter",
           "expr": "scope_filter == 'All types' || datum.record_scope == scope_filter"
@@ -117,15 +117,11 @@
       "type": "ordinal",
       "domain": [
         "Individual item",
-        "Multi-item/group",
-        "Other",
-        "Unknown"
+        "Multi-item/group"
       ],
       "range": [
         "#9bb4c6",
-        "#c9ab7c",
-        "#baa8ca",
-        "#bfc4c6"
+        "#c9ab7c"
       ]
     }
   ],
