@@ -106,11 +106,11 @@ button { cursor: pointer; }
   color: #fff8ea;
 }
 .hero-grid {
-  min-height: 75vh;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 24px;
+  padding: 65px 24px;
 }
 .hero-copy {
   width: 100%;
@@ -152,141 +152,6 @@ button { cursor: pointer; }
   text-align: center;
 }
 
-/* Collection overview and introductory links */
-
-.guide-strip {
-  background: #eadfcd;
-  border-bottom: 1px solid #d9c8af;
-}
-
-.guide-strip-grid {
-  display: grid;
-  grid-template-columns: 1.5fr repeat(3,1fr);
-  padding: 27px 0;
-  gap: 26px;
-  align-items: center;
-}
-
-.strip-intro {
-  border-right: 1px solid #c9baa4;
-  padding-right: 30px;
-}
-
-.strip-intro .micro {
-  color: #987158;
-  margin-bottom: 7px;
-}
-
-.strip-intro strong {
-  font: 600 17px/1.32 var(--font-display);
-}
-
-.strip-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.strip-stat strong {
-  font: 600 32px/1.1 var(--font-display);
-  color: var(--deep);
-  letter-spacing: -.03em;
-}
-
-.strip-stat span {
-  color: #69706a;
-  font: 11px/1.4 var(--font-mono);
-}
-
-.guide-opening {
-  padding-top: 100px;
-  padding-bottom: 106px;
-}
-
-.guide-index {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  color: #8e6e50;
-  max-width: 320px;
-}
-
-.guide-index-line {
-  height: 1px;
-  flex: 1;
-  background: #bcab91;
-}
-
-.guide-opening h2 {
-  font: 600 clamp(37px,4.6vw,60px)/1.25 var(--font-display);
-  letter-spacing: -.035em;
-  margin: 23px 0 25px;
-}
-
-.guide-opening h2 em, .sources-intro h2 em {
-  font-weight: 500;
-  color: #a3644c;
-}
-
-.intro-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-}
-
-.intro-columns p {
-  max-width: 48ch;
-  margin: 0;
-  color: #51615e;
-  font-size: 15px;
-  line-height: 1.85;
-}
-
-.intro-columns strong {
-  color: var(--deep);
-}
-
-.chapter-jump-grid {
-  margin-top: 44px;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 12px;
-}
-
-.jump-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px 16px;
-  min-height: 137px;
-  text-decoration: none;
-  padding: 20px 21px;
-  background: #e6e0d4;
-  border: 1px solid #d9cdb7;
-  transition: transform .2s, background .2s, border-color .2s;
-}
-
-.jump-card:hover {
-  transform: translateY(-4px);
-  background: #fff8eb;
-  border-color: #b99c79;
-}
-
-.jump-card span {
-  grid-column: 1/3;
-  font: 10px var(--font-mono);
-  letter-spacing: .11em;
-  color: #996e51;
-}
-
-.jump-card strong {
-  font: 600 18px/1.35 var(--font-display);
-}
-
-.jump-card b {
-  font: 24px var(--font-display);
-  color: #a46d55;
-}
-
 /* Chapter sections and figure cards */
 
 .chapter {
@@ -294,25 +159,25 @@ button { cursor: pointer; }
   --banner-bg: #d9e4dc;
   --number: #bacdc2;
   background: var(--chapter-bg);
-  padding-bottom: 102px;
+  padding-bottom: 52px;
 }
 
 .chapter-australia {
   --chapter-bg: #f3eee3;
   --banner-bg: #dae7de;
-  --number: #bdcfc4;
+  --number: #406b60;
 }
 
 .chapter-archive {
   --chapter-bg: #e6eee7;
   --banner-bg: #ccdfd3;
-  --number: #b8d1c2;
+  --number: #355d51;
 }
 
 .chapter-world {
   --chapter-bg: #eee6db;
   --banner-bg: #dfd3c4;
-  --number: #cfc0ad;
+  --number: #8b5947;
 }
 
 .chapter-banner {
@@ -334,17 +199,17 @@ button { cursor: pointer; }
 .chapter-header {
   position: relative;
   display: grid;
-  grid-template-columns: 160px 1fr 240px;
+  grid-template-columns: 110px 1fr 220px;
   align-items: center;
   gap: 25px;
-  min-height: 380px;
-  padding: 80px 0 70px;
+  min-height: 0;
+  padding: 40px 0;
 }
 
 .chapter-number {
-  font: 500 clamp(106px,12vw,180px)/1 var(--font-display);
+  font: 500 clamp(80px,8vw,110px)/1 var(--font-display);
   letter-spacing: -.1em;
-  color: var(--deep);
+  color: var(--number);
   align-self: start;
   margin-left: -12px;
 }
@@ -369,7 +234,7 @@ button { cursor: pointer; }
   color: #455b53;
   line-height: 1.7;
   font-size: 15px;
-  max-width: 48ch;
+  max-width: 64ch;
 }
 
 .chapter-aside {
@@ -393,12 +258,12 @@ button { cursor: pointer; }
 }
 
 .chapter-content {
-  padding-top: 56px;
+  padding-top: 32px;
 }
 
 .insight-ribbon {
   display: grid;
-  grid-template-columns: 160px 1fr auto;
+  grid-template-columns: 140px 1fr;
   align-items: center;
   gap: 24px;
   padding: 21px 27px;
@@ -414,11 +279,6 @@ button { cursor: pointer; }
 
 .insight-ribbon strong {
   font: 500 17px/1.55 var(--font-display);
-}
-
-.ribbon-arrow {
-  color: #ead0a6;
-  font-size: 28px;
 }
 
 .figure-card {
@@ -444,7 +304,7 @@ button { cursor: pointer; }
 
 .figure-heading p {
   margin: 0;
-  max-width: 48ch;
+  max-width: 64ch;
   color: #51615c;
   font-size: 14px;
   line-height: 1.75;
@@ -459,50 +319,27 @@ button { cursor: pointer; }
 .chart-frame {
   border: 1px solid #ebe4d9;
   background: #fff;
-  padding: 24px 16px 18px;
+  padding: 18px 12px 14px;
   min-height: 200px;
   position: relative;
-}
-
-.chart-frame::before, .chart-frame::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border: 1px solid #d7c4ad;
-}
-
-.chart-frame::before {
-  top: 8px;
-  left: 8px;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.chart-frame::after {
-  right: 8px;
-  bottom: 8px;
-  border-left: 0;
-  border-top: 0;
 }
 
 .vis-container {
   width: 100%;
   min-width: 0;
   margin: 0 auto;
-  overflow-x: auto;
+  overflow: visible;
   text-align: center;
 }
 
-.vis-container .vega-embed {
-  display: inline-block;
+.vis-container.vega-embed {
+  display: block;
   max-width: 100%;
   text-align: left;
 }
 
 .vis-container canvas, .vis-container svg {
-  max-width: none;
+  max-width: 100%;
 }
 
 
@@ -594,18 +431,12 @@ button { cursor: pointer; }
   max-width: 100%;
 }
 
-.chart-status {
-  padding: 18px;
-  font-size: 14px;
-  text-align: left;
-}
-
 /* Conclusion, credits, footer, and back-to-top */
 
 .finale {
   background: linear-gradient(125deg,#123733 0%,#1c4742 100%);
   color: #f6f0e4;
-  padding: 105px 0 100px;
+  padding: 60px 0;
 }
 
 .finale .micro {
@@ -671,39 +502,8 @@ button { cursor: pointer; }
   font: 500 22px/1.46 var(--font-display);
 }
 
-.action-link {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  min-width: 240px;
-  padding: 13px 18px;
-  background: var(--gold);
-  color: var(--deepest);
-  font-size: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: background .2s, transform .2s;
-}
-
-.action-link:hover {
-  background: #efd0a0;
-  transform: translateY(-2px);
-}
-
-.action-link span {
-  font-size: 20px;
-  line-height: 1;
-}
-
-.action-link-dark {
-  background: #e7d7bd;
-}
-
 .sources-section {
-  padding: 85px 0 105px;
+  padding: 55px 0;
   background: #e7e2d7;
 }
 
@@ -785,33 +585,6 @@ button { cursor: pointer; }
   color: var(--deep);
 }
 
-.site-footer {
-  background: #102e2d;
-  color: #c0d0c7;
-  padding: 24px 0;
-}
-
-.footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 18px;
-  font: 10px/1.5 var(--font-mono);
-  letter-spacing: .05em;
-}
-
-.footer-brand {
-  font: 700 13px var(--font-body);
-  letter-spacing: .08em;
-  color: #fff7eb;
-}
-
-.footer-inner a {
-  color: #e5c6a1;
-  text-decoration: none;
-}
-
 .floating-top {
   position: fixed;
   z-index: 95;
@@ -838,10 +611,6 @@ button { cursor: pointer; }
   transform: translateY(0);
 }
 
-.footer-brand span { color: var(--terracotta); }
-
-.site-footer .footer-inner { padding-right: 64px; }
-
 /* Small-laptop layout */
 
 @media (max-width: 1050px) {
@@ -856,7 +625,7 @@ button { cursor: pointer; }
   }
 
   .chapter-number {
-    font-size: 126px;
+    font-size: 100px;
   }
 
 
@@ -905,36 +674,11 @@ button { cursor: pointer; }
 
   .hero h1 { font-size: clamp(48px, 9vw, 72px); }
 
-  .guide-strip-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .strip-intro {
-    border-right: 0;
-  }
-
-  .guide-opening {
-    padding: 70px 0;
-  }
-
-  .intro-columns {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .chapter-jump-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .jump-card {
-    min-height: 96px;
-  }
-
   .chapter-header {
     grid-template-columns: 80px 1fr;
     gap: 15px;
     min-height: 0;
-    padding: 60px 0;
+    padding: 36px 0;
   }
 
   .chapter-number {
@@ -1008,4 +752,148 @@ button { cursor: pointer; }
     animation-duration: .01ms !important;
   }
 
+}
+
+
+/* -----------------------------------------------
+   Editorial variation: evidence tiles + paired views
+   ----------------------------------------------- */
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: -2px 0 30px;
+}
+.evidence-tile {
+  min-width: 0;
+  padding: 20px 23px 19px;
+  background: #fffaf1;
+  border: 1px solid #d5c9b7;
+  border-top: 3px solid #6a887a;
+}
+.evidence-kicker {
+  display: block;
+  font: 500 10px/1.5 var(--font-mono);
+  letter-spacing: .10em;
+  color: #7a6c5e;
+}
+.evidence-tile strong {
+  display: block;
+  margin: 7px 0 2px;
+  color: var(--deep);
+  font: 600 clamp(32px, 3.6vw, 46px)/1.15 var(--font-display);
+}
+.evidence-tile p {
+  margin: 0;
+  color: #52615b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* A smaller standalone card adds rhythm after the full-width maps. */
+.figure-card--inset {
+  max-width: 975px;
+  margin-inline: auto;
+}
+
+.comparison-intro {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: end;
+  gap: 28px;
+  margin: 35px 0 18px;
+  padding: 21px 25px;
+  border-left: 4px solid #6e9588;
+  background: #f8f5ed;
+}
+.comparison-intro .micro { color: #7c6856; }
+.comparison-intro h3 {
+  margin: 5px 0 0;
+  font: 600 clamp(23px,2.6vw,32px)/1.2 var(--font-display);
+  color: var(--deep);
+}
+.comparison-intro p { margin: 0; font-size: 14px; line-height: 1.7; color: #52615b; }
+.comparison-intro p strong { color: var(--deep); }
+
+/* Pair only the two charts that remain legible in half-width cards. */
+.figure-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+.figure-card--paired {
+  min-width: 0;
+  margin: 0;
+  padding: 0 17px 20px;
+}
+.figure-card--paired .figure-heading {
+  display: block;
+  padding: 23px 4px 16px;
+}
+.figure-card--paired .figure-heading h3 {
+  font-size: clamp(20px, 2.1vw, 27px);
+  line-height: 1.28;
+  max-width: 100%;
+}
+.figure-card--paired .figure-heading p {
+  font-size: 13px;
+  max-width: 64ch;
+}
+.figure-card--paired .chart-frame {
+  padding: 15px 5px 13px;
+  min-height: 0;
+}
+.figure-card--paired .vis-container {
+  overflow: visible;
+  text-align: center;
+}
+.pair-reading-note {
+  margin: 18px 0 0;
+  padding: 17px 19px;
+  background: #eaf0e9;
+  border-left: 3px solid #779a89;
+}
+.pair-reading-note .micro { color: #547260; }
+.pair-reading-note p {
+  margin: 7px 0 0;
+  color: #455f53;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1200px) {
+  /* Full-width is more readable on narrow laptop and tablet displays. */
+  .figure-pair { grid-template-columns: 1fr; }
+  .figure-card--paired { padding: 0 23px 24px; }
+  .figure-card--paired .figure-heading h3 { font-size: clamp(22px, 2.7vw, 29px); }
+  .figure-card--paired .chart-frame { padding: 20px 10px; }
+}
+@media (max-width: 760px) {
+  .evidence-grid { grid-template-columns: 1fr; }
+  .comparison-intro { grid-template-columns: 1fr; gap: 12px; }
+  .figure-card--paired { padding: 0 15px 20px; }
+}
+
+/* Chart wrappers share the card width; Vega handles actual plot layout. */
+.figure-heading > div { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px; align-items: start; }
+.figure-card--paired .figure-heading > div { display: block; }
+.chart-source { margin: 10px 0 0; text-align: right; font-size: 11px; color: #52665f; }
+.chart-source a { text-underline-offset: 3px; }
+.vega-bind label { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.vega-bind select { min-width: 0; }
+.pair-reading-note p { max-width: 80ch; }
+@media (max-width: 760px) {
+ .figure-heading > div { display: block; }
+ .chapter-header { grid-template-columns: 55px 1fr; }
+ .chapter-number { font-size: 65px; }
+ .chapter-title-wrap h2 { font-size: 34px; }
+ .figure-card { padding-inline: 10px; }
+ .chart-frame { padding-inline: 4px; }
+ .insight-ribbon { grid-template-columns: 1fr; }
+ .insight-ribbon .micro { grid-column: auto; }
+ .vis-container .vega-bindings { justify-content: flex-start; font-size: 12px; }
+ .vis-container select { font-size: 12px; }
 }

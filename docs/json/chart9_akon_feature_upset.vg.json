@@ -37,91 +37,117 @@
   "spacing": 8,
   "vconcat": [
     {
-      "width": 700,
-      "height": 290,
-      "mark": {
-        "type": "bar",
-        "color": "#537889",
-        "size": 45
-      },
-      "encoding": {
-        "x": {
-          "field": "rank",
-          "type": "ordinal",
-          "sort": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8
-          ],
-          "axis": null
-        },
-        "y": {
-          "field": "postcard_records",
-          "type": "quantitative",
-          "title": "AKON catalogue records",
-          "scale": {
-            "domainMin": 0
+      "width": "container",
+      "height": 240,
+      "layer": [
+        {
+          "mark": {
+            "type": "bar",
+            "color": "#537889",
+            "size": {
+              "expr": "max(12, min(44, width / 12))"
+            }
           },
-          "axis": {
-            "tickCount": 5,
-            "format": "~s",
-            "grid": true,
-            "gridColor": "#e5e5e5",
-            "labelFontSize": 12,
-            "titleFontSize": 13,
-            "titlePadding": 15
+          "encoding": {
+            "x": {
+              "field": "rank",
+              "type": "ordinal",
+              "sort": "ascending",
+              "axis": null
+            },
+            "y": {
+              "field": "postcard_records",
+              "type": "quantitative",
+              "title": "AKON catalogue records",
+              "scale": {
+                "domainMin": 0
+              },
+              "axis": {
+                "tickCount": 5,
+                "format": "~s",
+                "grid": true,
+                "gridColor": "#e5e5e5",
+                "labelFontSize": 12,
+                "titleFontSize": 13,
+                "titlePadding": 15
+              }
+            },
+            "tooltip": [
+              {
+                "field": "combination",
+                "type": "nominal",
+                "title": "Metadata tag combination"
+              },
+              {
+                "field": "postcard_records",
+                "type": "quantitative",
+                "title": "AKON postcard records",
+                "format": ","
+              },
+              {
+                "field": "share_percent",
+                "type": "quantitative",
+                "title": "Share of entire collection (%)",
+                "format": ".1f"
+              },
+              {
+                "field": "feature_count",
+                "type": "quantitative",
+                "title": "Number of selected tags present",
+                "format": ".0f"
+              }
+            ]
           }
         },
-        "tooltip": [
-          {
-            "field": "combination",
-            "type": "nominal",
-            "title": "Metadata tag combination"
+        {
+          "mark": {
+            "type": "text",
+            "dy": -8,
+            "fontSize": 11,
+            "color": "#304943"
           },
-          {
-            "field": "postcard_records",
-            "type": "quantitative",
-            "title": "AKON postcard records",
-            "format": ","
-          },
-          {
-            "field": "share_percent",
-            "type": "quantitative",
-            "title": "Share of entire collection (%)",
-            "format": ".1f"
-          },
-          {
-            "field": "feature_count",
-            "type": "quantitative",
-            "title": "Number of selected tags present",
-            "format": ".0f"
+          "encoding": {
+            "x": {
+              "field": "rank",
+              "type": "ordinal",
+              "sort": "ascending",
+              "axis": null
+            },
+            "y": {
+              "field": "postcard_records",
+              "type": "quantitative",
+              "title": "AKON catalogue records",
+              "scale": {
+                "domainMin": 0
+              },
+              "axis": {
+                "tickCount": 5,
+                "format": "~s",
+                "grid": true,
+                "gridColor": "#e5e5e5",
+                "labelFontSize": 12,
+                "titleFontSize": 13,
+                "titlePadding": 15
+              }
+            },
+            "text": {
+              "field": "postcard_records",
+              "type": "quantitative",
+              "format": ","
+            }
           }
-        ]
-      }
+        }
+      ]
     },
     {
-      "width": 700,
-      "height": 150,
+      "width": "container",
+      "height": 100,
       "encoding": {
         "x": {
           "field": "rank",
           "type": "ordinal",
-          "sort": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8
-          ],
-          "title": "Tag combinations (ranked by record count)",
+          "sort": "ascending",
+          "title": "Filled dots = tags present; joined dots = tags recorded together",
           "axis": {
             "labelAngle": 0,
             "labelFontSize": 12,
@@ -129,7 +155,8 @@
             "titlePadding": 14,
             "labelPadding": 8,
             "ticks": false,
-            "domain": false
+            "domain": false,
+            "labelExpr": "datum.value == 1 ? 'None' : datum.label"
           }
         }
       },
@@ -283,15 +310,18 @@
     "font": "DM Sans",
     "axis": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
-    },
-    "legend": {
-      "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFont": "DM Sans"
     }
+  },
+  "title": {
+    "text": [
+      "19,130 records (54.9%) have none of these tags; absence of a tag is",
+      "not absence of a feature."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
   }
 }

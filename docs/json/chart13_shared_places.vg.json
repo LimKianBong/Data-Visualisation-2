@@ -1,0 +1,233 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": [
+      "15 of 98 matched names, ranked by the largest absolute percentage-",
+      "point gap."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
+  },
+  "width": "container",
+  "height": 435,
+  "data": {
+    "url": "data/nma_slnsw_shared_places.csv"
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "row_number",
+          "as": "place_rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "gap_pp",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.place_rank <= 15"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "place",
+      "type": "nominal",
+      "sort": {
+        "field": "gap_pp",
+        "op": "max",
+        "order": "descending"
+      },
+      "title": null,
+      "axis": {
+        "labelFontSize": 12,
+        "labelLimit": 110,
+        "ticks": false,
+        "domain": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#aebbb4",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "nma_pct",
+          "type": "quantitative",
+          "title": "Share of NSW records (%)",
+          "scale": {
+            "domain": [
+              0,
+              14
+            ]
+          },
+          "axis": {
+            "grid": true,
+            "tickCount": 6,
+            "title": "Share of each archive’s NSW records (%)"
+          }
+        },
+        "x2": {
+          "field": "slnsw_pct"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "fold": [
+            "nma_pct",
+            "slnsw_pct"
+          ],
+          "as": [
+            "source_field",
+            "percentage"
+          ]
+        },
+        {
+          "calculate": "datum.source_field === 'nma_pct' ? 'NMA' : 'SLNSW'",
+          "as": "collection"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 120,
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "percentage",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              14
+            ]
+          }
+        },
+        "color": {
+          "field": "collection",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "NMA",
+              "SLNSW"
+            ],
+            "range": [
+              "#326c60",
+              "#c17c58"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "symbolSize": 120,
+            "labelFontSize": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "place",
+            "title": "Locality"
+          },
+          {
+            "field": "collection",
+            "title": "Collection"
+          },
+          {
+            "field": "percentage",
+            "title": "Share of NSW records (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "nma_count",
+            "title": "NMA records"
+          },
+          {
+            "field": "slnsw_count",
+            "title": "SLNSW records"
+          },
+          {
+            "field": "gap_pp",
+            "title": "Difference (pp)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "indexof(['Newcastle','Sydney','Albury'],datum.place)>=0"
+        },
+        {
+          "calculate": "max(datum.nma_pct,datum.slnsw_pct)+0.28",
+          "as": "label_x"
+        },
+        {
+          "calculate": "datum.nma_pct > datum.slnsw_pct ? 'NMA +' + format(datum.gap_pp,'.2f') + ' pp' : 'SLNSW +' + format(datum.gap_pp,'.2f') + ' pp'",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 12,
+        "color": "#39574d"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              14
+            ]
+          }
+        },
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white",
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    },
+    "legend": {
+      "labelFont": "DM Sans"
+    },
+    "title": {
+      "font": "DM Sans",
+      "subtitleFont": "DM Sans"
+    },
+    "font": "DM Sans"
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  }
+}

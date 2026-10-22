@@ -1,15 +1,20 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-
   "description": "SLNSW catalogue record scope and format treemap.",
-
-"width": 820,
-"height": 480,
+  "height": 360,
   "padding": 5,
   "autosize": "pad",
-
   "signals": [
+    {
+      "name": "width",
+      "init": "max(220, containerSize()[0] - 12)",
+      "on": [
+        {
+          "events": "window:resize",
+          "update": "max(220, containerSize()[0] - 12)"
+        }
+      ]
+    },
     {
       "name": "scope_filter",
       "value": "All types",
@@ -29,7 +34,6 @@
       }
     }
   ],
-
   "data": [
     {
       "name": "tree",
@@ -53,7 +57,9 @@
         },
         {
           "type": "nest",
-          "keys": ["record_scope"],
+          "keys": [
+            "record_scope"
+          ],
           "generate": true
         },
         {
@@ -70,13 +76,16 @@
           "paddingOuter": 4,
           "paddingTop": 24,
           "size": [
-            {"signal": "width"},
-            {"signal": "height"}
+            {
+              "signal": "width"
+            },
+            {
+              "signal": "height"
+            }
           ]
         }
       ]
     },
-
     {
       "name": "leaves",
       "source": "tree",
@@ -87,7 +96,6 @@
         }
       ]
     },
-
     {
       "name": "scope_nodes",
       "source": "tree",
@@ -98,7 +106,6 @@
         }
       ]
     },
-
     {
       "name": "visible_labels",
       "source": "leaves",
@@ -110,7 +117,6 @@
       ]
     }
   ],
-
   "scales": [
     {
       "name": "scope_color",
@@ -125,7 +131,6 @@
       ]
     }
   ],
-
   "legends": [
     {
       "fill": "scope_color",
@@ -138,7 +143,6 @@
       "titleFontSize": 12
     }
   ],
-
   "marks": [
     {
       "type": "rect",
@@ -147,31 +151,50 @@
       },
       "encode": {
         "enter": {
-          "stroke": {"value": "#ffffff"},
-          "strokeWidth": {"value": 2}
+          "stroke": {
+            "value": "#ffffff"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
         },
         "update": {
-          "x": {"field": "x0"},
-          "y": {"field": "y0"},
-          "x2": {"field": "x1"},
-          "y2": {"field": "y1"},
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
           "fill": {
             "scale": "scope_color",
             "field": "record_scope"
           },
-          "fillOpacity": {"value": 1},
+          "fillOpacity": {
+            "value": 1
+          },
           "tooltip": {
             "signal": "{'Record scope': datum.record_scope, 'Catalogue format': datum.format_group, 'Catalogue records': format(datum.catalogue_records, ',d'), 'Share of all catalogue records': format(datum.share_percent, '.1f') + '%'}"
           }
         },
         "hover": {
-          "fillOpacity": {"value": 0.75},
-          "stroke": {"value": "#45545c"},
-          "strokeWidth": {"value": 2}
+          "fillOpacity": {
+            "value": 0.75
+          },
+          "stroke": {
+            "value": "#45545c"
+          },
+          "strokeWidth": {
+            "value": 2
+          }
         }
       }
     },
-
     {
       "type": "rect",
       "from": {
@@ -180,17 +203,30 @@
       "interactive": false,
       "encode": {
         "update": {
-          "x": {"field": "x0"},
-          "y": {"field": "y0"},
-          "x2": {"field": "x1"},
-          "y2": {"field": "y1"},
-          "fillOpacity": {"value": 0},
-          "stroke": {"value": "#777777"},
-          "strokeWidth": {"value": 1}
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fillOpacity": {
+            "value": 0
+          },
+          "stroke": {
+            "value": "#777777"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
         }
       }
     },
-
     {
       "type": "text",
       "from": {
@@ -208,18 +244,27 @@
           "text": {
             "field": "key"
           },
-          "font": {"value": "Source Sans Pro"},
-          "fontSize": {"value": 13},
-          "fontWeight": {"value": "bold"},
-          "fill": {"value": "#303030"},
-          "baseline": {"value": "top"},
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#303030"
+          },
+          "baseline": {
+            "value": "top"
+          },
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 16)"
           }
         }
       }
     },
-
     {
       "type": "text",
       "from": {
@@ -237,19 +282,30 @@
           "text": {
             "field": "format_group"
           },
-          "align": {"value": "center"},
-          "baseline": {"value": "middle"},
-          "font": {"value": "Source Sans Pro"},
-          "fontSize": {"value": 13},
-          "fontWeight": {"value": "bold"},
-          "fill": {"value": "#263238"},
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#263238"
+          },
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 12)"
           }
         }
       }
     },
-
     {
       "type": "text",
       "from": {
@@ -267,11 +323,21 @@
           "text": {
             "signal": "format(datum.catalogue_records, ',d') + ' records'"
           },
-          "align": {"value": "center"},
-          "baseline": {"value": "middle"},
-          "font": {"value": "Source Sans Pro"},
-          "fontSize": {"value": 11},
-          "fill": {"value": "#37474f"},
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#37474f"
+          },
           "limit": {
             "signal": "max(0, datum.x1 - datum.x0 - 12)"
           }
@@ -279,9 +345,19 @@
       }
     }
   ],
-
   "config": {
     "background": "white",
-    "font": "Source Sans Pro"
+    "font": "DM Sans"
+  },
+  "title": {
+    "text": [
+      "Area shows records, not physical cards. 35 Other/Unknown records are",
+      "excluded."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
   }
 }

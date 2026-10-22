@@ -1,0 +1,219 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 420,
+  "params": [
+    {
+      "name": "map_view",
+      "value": "World",
+      "bind": {
+        "input": "select",
+        "options": [
+          "World",
+          "Australia",
+          "Europe"
+        ],
+        "labels": [
+          "World overview",
+          "Focus on Australia",
+          "Focus on Europe"
+        ],
+        "name": "Map view: "
+      }
+    },
+    {
+      "name": "archive_filter",
+      "value": "Both",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Both",
+          "SLNSW",
+          "AKON"
+        ],
+        "labels": [
+          "Both archives",
+          "SLNSW (Australia)",
+          "AKON (international)"
+        ],
+        "name": "Archive: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equalEarth",
+    "center": {
+      "expr": "map_view == 'Australia' ? [134,-25] : map_view == 'Europe' ? [14,49] : [0,0]"
+    },
+    "scale": {
+      "expr": "map_view == 'Australia' ? min(width * 1.7, 700) : map_view == 'Europe' ? min(width * 1.2, 520) : min(width / 5.5, 145)"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "sphere": true
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#edf4f3",
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "graticule": {
+          "step": [
+            30,
+            30
+          ]
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#c6d3cf",
+        "strokeWidth": 0.6,
+        "fill": null,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/world_countries.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "ne_110m_admin_0_countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e8e7e2",
+        "stroke": "white",
+        "strokeWidth": 0.5,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "url": "data/combined_mapped_places.csv"
+      },
+      "transform": [
+        {
+          "filter": "archive_filter == 'Both' || datum.source == archive_filter"
+        },
+        {
+          "calculate": "datum.source == 'SLNSW' ? 1 : 0",
+          "as": "draw_priority"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "size": 35,
+        "opacity": 0.62,
+        "stroke": "white",
+        "strokeWidth": 0.25,
+        "clip": true,
+        "filled": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "source",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "SLNSW",
+              "AKON"
+            ],
+            "range": [
+              "#c17c58",
+              "#537889"
+            ]
+          },
+          "legend": {
+            "title": "Archive",
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "place",
+            "title": "Mapped place"
+          },
+          {
+            "field": "source",
+            "title": "Archive"
+          },
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "records",
+            "title": "Place-record count",
+            "format": ","
+          }
+        ],
+        "order": {
+          "field": "draw_priority",
+          "type": "quantitative",
+          "sort": "ascending"
+        },
+        "shape": {
+          "field": "source",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "SLNSW",
+              "AKON"
+            ],
+            "range": [
+              "diamond",
+              "circle"
+            ]
+          },
+          "legend": {
+            "title": "Archive",
+            "orient": "bottom"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    },
+    "font": "DM Sans"
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": [
+      "One symbol is one mapped place; symbol area does not represent",
+      "postcard totals."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
+  }
+}

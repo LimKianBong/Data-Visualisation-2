@@ -1,7 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 650,
-  "height": 600,
+  "width": "container",
+ "autosize": {
+  "type": "fit-x",
+  "contains": "padding",
+  "resize": true
+},
   "data": {
     "url": "data/nma_top_depicted_places.csv",
     "format": {
@@ -85,7 +89,7 @@
       },
       "axis": {
         "labelFontSize": 12,
-        "labelLimit": 230,
+        "labelLimit": 155,
         "labelPadding": 9,
         "ticks": false,
         "domain": false
@@ -183,5 +187,15 @@
       "labelFontSize": 12,
       "titleFontSize": 13
     }
+  },
+  "title": {
+    "text": [
+      "Sydney: 138 records, compared with 85 for Mount Gambier."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
   }
 }

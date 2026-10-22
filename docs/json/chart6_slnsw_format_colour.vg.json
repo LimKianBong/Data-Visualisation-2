@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 630,
-  "height": 550,
+  "width": "container",
+  "height": 390,
   "data": {
     "url": "data/slnsw_format_colour.csv",
     "format": {
@@ -84,10 +84,10 @@
         "Unknown"
       ],
       "axis": {
-        "labelAngle": 0,
-        "labelFontSize": 12,
-        "labelLimit": 160,
-        "titleFontSize": 13,
+        "labelAngle": -35,
+        "labelFontSize": 10,
+        "labelLimit": 100,
+        "titleFontSize": 11,
         "titlePadding": 14,
         "labelPadding": 8,
         "grid": false
@@ -96,17 +96,17 @@
     "y": {
       "field": "format_group",
       "type": "nominal",
-      "title": "Catalogue format",
+      "title": null,
       "sort": {
         "field": "format_total",
         "op": "max",
         "order": "descending"
       },
       "axis": {
-        "labelFontSize": 12,
-        "labelLimit": 190,
+        "labelFontSize": 10,
+        "labelLimit": 110,
         "labelPadding": 7,
-        "titleFontSize": 13,
+        "titleFontSize": 11,
         "titlePadding": 14,
         "grid": false
       }
@@ -123,7 +123,7 @@
         "color": {
           "field": "within_format_pct",
           "type": "quantitative",
-          "title": "Share within each format (%)",
+          "title": "Share within catalogue format (%)",
           "scale": {
             "domain": [
               0,
@@ -138,9 +138,9 @@
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 330,
-            "titleFontSize": 13,
-            "labelFontSize": 12,
+            "gradientLength": 215,
+            "titleFontSize": 11,
+            "labelFontSize": 10,
             "values": [
               0,
               25,
@@ -149,7 +149,7 @@
               100
             ],
             "labelExpr": "datum.value + '%'",
-            "titleLimit": 400
+            "title": "Share within format (%)"
           }
         },
         "tooltip": [
@@ -224,15 +224,27 @@
     "font": "DM Sans",
     "axis": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFont": "DM Sans"
     },
     "legend": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFont": "DM Sans"
     }
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": [
+      "Rows total 100%. Labels show common styles",
+      "with at least 20 records in that cell."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
   }
 }

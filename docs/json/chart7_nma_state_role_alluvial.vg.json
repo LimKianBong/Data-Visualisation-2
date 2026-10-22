@@ -1,0 +1,323 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "NMA state-to-spatial-relationship alluvial diagram. Each link is drawn as a separate native Vega area mark from the existing flow samples.",
+  "height": 480,
+  "padding": {
+    "left": 4,
+    "right": 3,
+    "top": 8,
+    "bottom": 5
+  },
+  "background": "#fffdf9",
+  "data": [
+    {
+      "name": "flows",
+      "url": "data/nma_state_role_flows.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "count": "number",
+          "x": "number",
+          "lower": "number",
+          "upper": "number"
+        }
+      }
+    },
+    {
+      "name": "nodes",
+      "url": "data/nma_state_role_nodes.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "count": "number",
+          "x0": "number",
+          "x1": "number",
+          "y0": "number",
+          "y1": "number",
+          "center_y": "number",
+          "label_x": "number"
+        }
+      }
+    },
+    {
+      "name": "stateNodes",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.side === 'state'"
+        }
+      ]
+    },
+    {
+      "name": "roleNodes",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.side === 'role'"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "linear",
+      "domain": [
+        0,
+        1
+      ],
+      "range": [
+        0,
+        {
+          "signal": "width"
+        }
+      ]
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "domain": [
+        0,
+        1
+      ],
+      "range": [
+        {
+          "signal": "height"
+        },
+        0
+      ]
+    },
+    {
+      "name": "roleColor",
+      "type": "ordinal",
+      "domain": [
+        "Depicted",
+        "Associated",
+        "Production/creation",
+        "Subject",
+        "Publication",
+        "Other roles"
+      ],
+      "range": [
+        "#2d7169",
+        "#cd7e58",
+        "#7d7798",
+        "#d0ae67",
+        "#7c9c84",
+        "#a8a59b"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "name": "flowGroups",
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "oneFlow",
+          "data": "flows",
+          "groupby": "link_id"
+        }
+      },
+      "encode": {
+        "update": {
+          "width": {
+            "signal": "width"
+          },
+          "height": {
+            "signal": "height"
+          }
+        }
+      },
+      "marks": [
+        {
+          "type": "area",
+          "from": {
+            "data": "oneFlow"
+          },
+          "sort": {
+            "field": "datum.x",
+            "order": "ascending"
+          },
+          "encode": {
+            "hover": {
+              "fillOpacity": {
+                "value": 0.9
+              }
+            },
+            "update": {
+              "orient": {
+                "value": "vertical"
+              },
+              "interpolate": {
+                "value": "monotone"
+              },
+              "x": {
+                "scale": "x",
+                "field": "x"
+              },
+              "y": {
+                "scale": "y",
+                "field": "lower"
+              },
+              "y2": {
+                "scale": "y",
+                "field": "upper"
+              },
+              "fill": {
+                "scale": "roleColor",
+                "field": "role"
+              },
+              "fillOpacity": {
+                "value": 0.69
+              },
+              "tooltip": {
+                "signal": "datum.state + ' → ' + datum.role + ': ' + format(datum.count, ',') + ' spatial relationships'"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "nodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "x0"
+          },
+          "x2": {
+            "scale": "x",
+            "field": "x1"
+          },
+          "y": {
+            "scale": "y",
+            "field": "y1"
+          },
+          "y2": {
+            "scale": "y",
+            "field": "y0"
+          },
+          "fill": {
+            "field": "fill"
+          },
+          "stroke": {
+            "value": "#fffdf9"
+          },
+          "strokeWidth": {
+            "value": 1
+          },
+          "tooltip": {
+            "signal": "datum.label + ': ' + format(datum.count, ',') + ' relationship entries'"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "stateNodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "label_x"
+          },
+          "y": {
+            "scale": "y",
+            "field": "center_y"
+          },
+          "text": {
+            "signal": "datum.label + ' · ' + format(datum.count, ',')"
+          },
+          "align": {
+            "value": "right"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "signal": "width < 600 ? 10 : 12"
+          },
+          "fill": {
+            "value": "#244441"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "roleNodes"
+      },
+      "encode": {
+        "update": {
+          "x": {
+            "scale": "x",
+            "field": "label_x"
+          },
+          "y": {
+            "scale": "y",
+            "field": "center_y"
+          },
+          "text": {
+            "signal": "datum.label + ' · ' + format(datum.count, ',')"
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "signal": "width < 600 ? 10 : 12"
+          },
+          "fill": {
+            "value": "#244441"
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "DM Sans"
+  },
+  "signals": [
+    {
+      "name": "width",
+      "init": "max(240, containerSize()[0] - 12)",
+      "on": [
+        {
+          "events": "window:resize",
+          "update": "max(240, containerSize()[0] - 12)"
+        }
+      ]
+    }
+  ],
+  "title": {
+    "text": [
+      "NSW → Depicted is the largest link: 1,570 of 3,598 relationship",
+      "entries (43.6%).",
+      "Colours identify relationship types; widths count entries, not",
+      "journeys."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
+  }
+}

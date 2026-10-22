@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
-  "height": 560,
+  "width": "container",
+  "height": 430,
   "params": [
     {
       "name": "minimum_records",
@@ -25,12 +25,23 @@
     }
   ],
   "projection": {
-    "type": "equirectangular",
-    "center": [
-      147,
-      -32.7
+    "type": "conicEqualArea",
+    "rotate": [
+      -147,
+      0,
+      0
     ],
-    "scale": 2550
+    "center": [
+      0,
+      -32.4
+    ],
+    "parallels": [
+      -30,
+      -36
+    ],
+    "scale": {
+      "expr": "min(width * 3.7, 2250)"
+    }
   },
   "layer": [
     {
@@ -90,7 +101,8 @@
             "range": [
               0,
               1400
-            ]
+            ],
+            "type": "linear"
           },
           "legend": {
             "title": "Catalogue records",
@@ -100,7 +112,8 @@
               25,
               50
             ],
-            "orient": "right"
+            "orient": "bottom",
+            "direction": "horizontal"
           }
         },
         "tooltip": [
@@ -145,16 +158,20 @@
           "filter": "datum.catalogue_records >= minimum_records"
         },
         {
-          "filter": "datum.locality_rank <= 4"
+          "filter": "datum.locality_rank <= 3"
+        },
+        {
+          "calculate": "datum.map_place_name + ' · ' + datum.catalogue_records",
+          "as": "label"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 7,
-        "dy": -7,
-        "fontSize": 10,
+        "dx": 10,
+        "dy": -12,
+        "fontSize": 12,
         "fontWeight": 600,
         "color": "#333333"
       },
@@ -168,7 +185,7 @@
           "type": "quantitative"
         },
         "text": {
-          "field": "map_place_name",
+          "field": "label",
           "type": "nominal"
         }
       }
@@ -191,5 +208,21 @@
       "labelFontSize": 12,
       "titleFontSize": 13
     }
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
+  "title": {
+    "text": [
+      "Circle area shows record count; labels identify the three leading",
+      "localities."
+    ],
+    "anchor": "start",
+    "fontSize": 12,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 16
   }
 }
