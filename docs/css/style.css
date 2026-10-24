@@ -22,7 +22,7 @@ html {
 }
 body {
   width: calc(100% - 48px);
-  max-width: 1280px;
+  max-width: 1120px;
   min-height: 100vh;
   margin: 0 auto;
   border-left: 2px solid #b9a98e;
@@ -43,7 +43,7 @@ a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visib
 }
 button { cursor: pointer; }
 ::selection { background: #edd4ae; color: var(--deep); }
-.content-width { width: min(1140px, calc(100% - 64px)); margin-left: auto; margin-right: auto; }
+.content-width { width: min(1040px, calc(100% - 64px)); margin-left: auto; margin-right: auto; }
 .micro { display: block; font-family: var(--font-mono); font-size: .68rem; line-height: 1.5; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; }
 .skip-link { position: fixed; z-index: 120; left: 16px; top: -80px; padding: 12px 18px; background: #fff; color: var(--deep); text-decoration: none; }
 .skip-link:focus { top: 12px; }
@@ -61,7 +61,7 @@ button { cursor: pointer; }
   box-shadow: 0 2px 16px rgba(12, 40, 39, .1);
 }
 .nav-inner {
-  width: min(1200px, calc(100% - 64px));
+  width: min(1040px, calc(100% - 64px));
   min-height: 74px;
   margin: 0 auto;
   display: flex;
@@ -147,8 +147,8 @@ button { cursor: pointer; }
   max-width: 750px;
   margin: 0 auto;
   color: #c5d7d0;
-  font-size: 17px;
-  line-height: 1.8;
+  font-size: 23px;
+  line-height: 1.5;
   text-align: center;
 }
 
@@ -228,13 +228,12 @@ button { cursor: pointer; }
   font-weight: 500;
   color: #a35d44;
 }
-
 .chapter-title-wrap p {
   margin: 0;
   color: #455b53;
-  line-height: 1.7;
-  font-size: 15px;
-  max-width: 64ch;
+  line-height: 1.65;
+  font-size: 19px;
+  max-width: 53ch;
 }
 
 .chapter-aside {
@@ -260,13 +259,12 @@ button { cursor: pointer; }
 .chapter-content {
   padding-top: 32px;
 }
-
 .insight-ribbon {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 205px minmax(0, 1fr);
   align-items: center;
-  gap: 24px;
-  padding: 21px 27px;
+  gap: 28px;
+  padding: 27px 32px;
   background: var(--deep);
   color: #fffaf0;
   margin-bottom: 30px;
@@ -276,9 +274,11 @@ button { cursor: pointer; }
 .insight-ribbon .micro {
   color: #c9b493;
 }
-
 .insight-ribbon strong {
-  font: 500 17px/1.55 var(--font-display);
+  display: block;
+  width: 100%;
+  max-width: 64ch;
+  font: 500 clamp(24px, 2.5vw, 30px)/1.32 var(--font-display);
 }
 
 .figure-card {
@@ -289,10 +289,9 @@ button { cursor: pointer; }
   padding: 0 32px 24px;
   position: relative;
 }
-
 .figure-heading {
   display: block;
-  padding: 27px 0 24px;
+  padding: 24px 0 17px;
 }
 
 .figure-heading h3 {
@@ -301,13 +300,12 @@ button { cursor: pointer; }
   margin: 0 0 11px;
   max-width: 30ch;
 }
-
 .figure-heading p {
   margin: 0;
-  max-width: 64ch;
+  max-width: 100%;
   color: #51615c;
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 20.5px;
+  line-height: 1.49;
 }
 
 .figure-heading p strong {
@@ -319,8 +317,8 @@ button { cursor: pointer; }
 .chart-frame {
   border: 1px solid #ebe4d9;
   background: #fff;
-  padding: 18px 12px 14px;
-  min-height: 200px;
+  padding: 8px 6px 8px;
+  min-height: 0;
   position: relative;
 }
 
@@ -359,15 +357,16 @@ button { cursor: pointer; }
   height: 1px;
   background: #bba992;
 }
-
 .chapter-exit {
+  border-left: 5px solid transparent;
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 8px 25px;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 28px;
   background: #e4dacf;
-  padding: 33px;
+  padding: 30px 32px;
   border-top: 1px solid #cbbca9;
-  margin-top: 54px;
+  margin-top: 38px;
 }
 
 .chapter-archive .chapter-exit {
@@ -383,25 +382,12 @@ button { cursor: pointer; }
   color: #91664d;
   letter-spacing: .13em;
 }
-
 .chapter-exit strong {
-  font: 500 21px/1.5 var(--font-display);
+  display: block;
+  max-width: 64ch;
+  font: 500 clamp(23px, 2.3vw, 29px)/1.37 var(--font-display);
 }
 
-.chapter-exit a {
-  grid-column: 2;
-  justify-self: start;
-  font-size: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  color: #976049;
-  margin-top: 10px;
-  border-bottom: 1px solid currentColor;
-}
-
-.chapter-exit a:hover {
-  color: #4f6b61;
-}
 
 /* Vega / Vega-Lite controls and chart loading messages */
 
@@ -477,18 +463,19 @@ button { cursor: pointer; }
 
 .takeaway p {
   color: #c7d8d0;
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.55;
   margin: 0;
 }
-
 .finale-statement {
+  border-left: 5px solid transparent;
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 18px;
-  margin: 45px 0 36px;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  margin: 44px 0 15px;
   border: 1px solid #638077;
-  padding: 25px 28px;
+  padding: 26px 32px;
   background: rgba(255,255,255,.045);
 }
 
@@ -497,30 +484,30 @@ button { cursor: pointer; }
   letter-spacing: .12em;
   color: #d5ac80;
 }
-
 .finale-statement strong {
-  font: 500 22px/1.46 var(--font-display);
+  display: block;
+  max-width: 64ch;
+  font: 500 clamp(23px, 2.4vw, 30px)/1.34 var(--font-display);
 }
 
 .sources-section {
   padding: 55px 0;
   background: #e7e2d7;
 }
-
 .sources-grid {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 75px;
+  grid-template-columns: 230px minmax(0, 1fr);
+  align-items: start;
+  gap: 36px;
 }
 
 .sources-intro .micro {
   color: #9c6f51;
 }
-
 .sources-intro h2 {
-  font: 600 49px/1.15 var(--font-display);
+  font: 600 clamp(30px,3vw,42px)/1.18 var(--font-display);
   letter-spacing: -.03em;
-  margin: 15px 0 20px;
+  margin: 13px 0 20px;
 }
 
 .sources-intro p:not(.micro) {
@@ -536,7 +523,6 @@ button { cursor: pointer; }
 .sources-detail details:first-child {
   border-top: 1px solid #c8bfae;
 }
-
 .sources-detail summary {
   list-style: none;
   display: flex;
@@ -544,8 +530,8 @@ button { cursor: pointer; }
   align-items: center;
   gap: 20px;
   cursor: pointer;
-  padding: 20px 0;
-  font-size: 14px;
+  padding: 18px 0;
+  font-size: 16px;
   font-weight: 700;
   color: var(--deep);
 }
@@ -568,11 +554,10 @@ button { cursor: pointer; }
 .details-body {
   padding: 0 15px 17px 0;
 }
-
 .details-body p {
-  font-size: 12px;
-  line-height: 1.85;
-  margin: 0 0 12px;
+  font-size: 17px;
+  line-height: 1.54;
+  margin: 0;
   color: #51615c;
 }
 
@@ -616,7 +601,7 @@ button { cursor: pointer; }
 @media (max-width: 1050px) {
 
   .content-width {
-    width: min(100% - 44px, 1140px);
+    width: min(100% - 44px, 1040px);
   }
 
   .chapter-header {
@@ -716,10 +701,6 @@ button { cursor: pointer; }
     grid-template-columns: 1fr;
   }
 
-  .chapter-exit a {
-    grid-column: 1;
-  }
-
   .takeaway-grid {
     grid-template-columns: 1fr;
   }
@@ -787,7 +768,7 @@ button { cursor: pointer; }
 .evidence-tile p {
   margin: 0;
   color: #52615b;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -796,24 +777,40 @@ button { cursor: pointer; }
   max-width: 975px;
   margin-inline: auto;
 }
-
 .comparison-intro {
   display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
-  align-items: end;
-  gap: 28px;
-  margin: 35px 0 18px;
-  padding: 21px 25px;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px 28px;
+  margin: 30px 0 20px;
+  padding: 27px 32px;
   border-left: 4px solid #6e9588;
   background: #f8f5ed;
 }
-.comparison-intro .micro { color: #7c6856; }
+/* Put the label on the same editorial sightline as other section labels. */
+.comparison-intro > div { display: contents; }
+.comparison-intro .micro {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: #7c6856;
+}
 .comparison-intro h3 {
-  margin: 5px 0 0;
-  font: 600 clamp(23px,2.6vw,32px)/1.2 var(--font-display);
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font: 600 clamp(26px,2.6vw,32px)/1.25 var(--font-display);
   color: var(--deep);
 }
-.comparison-intro p { margin: 0; font-size: 14px; line-height: 1.7; color: #52615b; }
+.comparison-intro p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  max-width: 53ch;
+  font-size: 20.5px;
+  line-height: 1.5;
+  color: #52615b;
+}
 .comparison-intro p strong { color: var(--deep); }
 
 /* Pair only the two charts that remain legible in half-width cards. */
@@ -839,11 +836,11 @@ button { cursor: pointer; }
   max-width: 100%;
 }
 .figure-card--paired .figure-heading p {
-  font-size: 13px;
+  font-size: 20px;
   max-width: 64ch;
 }
 .figure-card--paired .chart-frame {
-  padding: 15px 5px 13px;
+  padding: 8px 5px 9px;
   min-height: 0;
 }
 .figure-card--paired .vis-container {
@@ -851,17 +848,18 @@ button { cursor: pointer; }
   text-align: center;
 }
 .pair-reading-note {
-  margin: 18px 0 0;
-  padding: 17px 19px;
+  margin: 12px 0 0;
+  padding: 15px 19px;
   background: #eaf0e9;
   border-left: 3px solid #779a89;
 }
 .pair-reading-note .micro { color: #547260; }
 .pair-reading-note p {
   margin: 7px 0 0;
+  max-width: 100%;
   color: #455f53;
-  font-size: 12px;
-  line-height: 1.7;
+  font-size: 23.5px;
+  line-height: 1.49;
 }
 
 @media (max-width: 1200px) {
@@ -869,7 +867,7 @@ button { cursor: pointer; }
   .figure-pair { grid-template-columns: 1fr; }
   .figure-card--paired { padding: 0 23px 24px; }
   .figure-card--paired .figure-heading h3 { font-size: clamp(22px, 2.7vw, 29px); }
-  .figure-card--paired .chart-frame { padding: 20px 10px; }
+  .figure-card--paired .chart-frame { padding: 9px 7px; }
 }
 @media (max-width: 760px) {
   .evidence-grid { grid-template-columns: 1fr; }
@@ -878,13 +876,15 @@ button { cursor: pointer; }
 }
 
 /* Chart wrappers share the card width; Vega handles actual plot layout. */
-.figure-heading > div { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px; align-items: start; }
+.figure-heading > div {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  column-gap: 24px;
+  align-items: start;
+}
 .figure-card--paired .figure-heading > div { display: block; }
-.chart-source { margin: 10px 0 0; text-align: right; font-size: 11px; color: #52665f; }
-.chart-source a { text-underline-offset: 3px; }
 .vega-bind label { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .vega-bind select { min-width: 0; }
-.pair-reading-note p { max-width: 80ch; }
 @media (max-width: 760px) {
  .figure-heading > div { display: block; }
  .chapter-header { grid-template-columns: 55px 1fr; }
@@ -896,4 +896,278 @@ button { cursor: pointer; }
  .insight-ribbon .micro { grid-column: auto; }
  .vis-container .vega-bindings { justify-content: flex-start; font-size: 12px; }
  .vis-container select { font-size: 12px; }
+}
+
+/* Shared editorial sightlines: label column + expanded finding column. */
+.insight-ribbon .micro,
+.chapter-exit span,
+.finale-statement span { align-self: center; }
+
+/* Methodology notes use the same label-to-body alignment as the insight banners.
+   The paired colour chart uses a smaller one-column note instead. */
+.figure-card:not(.figure-card--paired) > .pair-reading-note {
+  display: grid;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 28px;
+  padding: 23px 31px;
+}
+.figure-card:not(.figure-card--paired) > .pair-reading-note p {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 23px;
+  line-height: 1.49;
+}
+.figure-card:not(.figure-card--paired) > .pair-reading-note .micro {
+  margin-top: 4px;
+}
+
+/* Two aligned columns in Sources & Credits; labels never float in prose. */
+.sources-detail { width: 100%; max-width: none; min-width: 0; }
+.source-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: 22px;
+  padding: 13px 0;
+}
+.source-row + .source-row { border-top: 1px solid rgba(50, 75, 66, .10); }
+.source-row strong {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--deep);
+}
+.source-row p { max-width: 59ch; }
+
+/* Keep caption text from being stranded in half-width cards. */
+.figure-card--paired .pair-reading-note p { max-width: 100%; }
+
+@media (max-width: 1050px) {
+  .comparison-intro { grid-template-columns: 175px minmax(0, 1fr); gap: 9px 20px; }
+  .sources-grid { grid-template-columns: 210px minmax(0, 1fr); gap: 23px; }
+  .source-row { grid-template-columns: 175px minmax(0, 1fr); gap: 16px; }
+  .insight-ribbon, .chapter-exit, .finale-statement,
+  .figure-card:not(.figure-card--paired) > .pair-reading-note {
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .insight-ribbon, .chapter-exit, .finale-statement,
+  .figure-card:not(.figure-card--paired) > .pair-reading-note {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+  }
+  .insight-ribbon, .chapter-exit { padding: 22px 20px; }
+  .finale-statement { padding: 23px 20px; }
+  .insight-ribbon strong { font-size: clamp(22px, 5.6vw, 27px); }
+  .chapter-exit strong, .finale-statement strong { font-size: 23px; }
+  .comparison-intro { grid-template-columns: 1fr; gap: 9px; padding: 23px 20px; }
+  .comparison-intro .micro,
+  .comparison-intro h3,
+  .comparison-intro p { grid-column: 1; grid-row: auto; }
+  .sources-grid { grid-template-columns: 1fr; gap: 16px; }
+  .source-row { grid-template-columns: 1fr; align-items: start; gap: 5px; }
+  .source-row p { max-width: 58ch; }
+  .figure-card:not(.figure-card--paired) > .pair-reading-note { padding: 19px 15px; }
+}
+
+/* Narrower editorial page and predictable short hero lines. */
+.hero-copy { max-width: 850px; }
+.hero-lede { max-width: 710px; }
+.hero-sub { max-width: 670px; }
+.hero-lede .hero-line,
+.hero-sub .hero-line { display: block; }
+
+/* On narrow screens, allow natural wrapping instead of overflow. */
+@media (max-width: 760px) {
+  .hero-lede .hero-line,
+  .hero-sub .hero-line { display: inline; }
+  .hero-lede .hero-line + .hero-line::before,
+  .hero-sub .hero-line + .hero-line::before { content: " "; }
+  .hero-lede { max-width: 34ch; }
+  .hero-sub { max-width: 38ch; }
+}
+
+/* Shared compact layout for Charts 1 and 2.
+   Heading, map, legend, and controls share one visual centre. */
+
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* One left-aligned text column instead of an unnecessarily split heading. */
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .figure-heading > div {
+  display: block;
+  max-width: 780px;
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .figure-heading {
+  padding-bottom: 14px;
+}
+
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .figure-heading h3 {
+  max-width: 100%;
+  margin-bottom: 9px;
+}
+
+ .figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .figure-heading p {
+  max-width: 52ch;
+  font-size: 20.5px;
+}
+
+/* Make the canvas and all accompanying guides share one visual centre. */
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .chart-frame {
+  max-width: 780px;
+  margin-inline: auto;
+  padding: 7px 6px 8px;
+  min-height: 0;
+}
+
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) :is(#vis1, #vis2) {
+  width: 100%;
+  max-width: 740px;
+  margin-inline: auto;
+}
+
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) :is(#vis1, #vis2).vega-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) :is(#vis1, #vis2) .vega-bindings {
+  width: 100%;
+  justify-content: center;
+  margin: 10px 0 0;
+}
+
+@media (max-width: 760px) {
+  .figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .chart-frame {
+    padding: 5px 4px 8px;
+  }
+  .figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) .figure-heading {
+    padding-bottom: 10px;
+  }
+  .figure-card:is([aria-labelledby="fig1-title"], [aria-labelledby="fig2-title"]) :is(#vis1, #vis2) .vega-bindings {
+    justify-content: center;
+  }
+}
+
+
+/* =======================================================================
+   Chapter title hierarchy : shared by Chapters 1, 2, and 3
+   Number aligned with title; question promoted beneath title.
+   ======================================================================= */
+.chapter-header {
+  grid-template-columns: 98px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 26px;
+  padding: 39px 0 40px;
+}
+.chapter-number {
+  align-self: start;
+  margin: 34px 0 0 -3px;
+  font: 500 clamp(82px, 8.3vw, 106px)/.94 var(--font-display);
+  letter-spacing: -.085em;
+  font-variant-numeric: lining-nums;
+}
+.chapter-title-wrap { min-width: 0; }
+.chapter-title-wrap > .micro {
+  color: #805743;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .15em;
+  line-height: 1.45;
+}
+.chapter-title-wrap h2 {
+  margin: 10px 0 0;
+  font: 600 clamp(44px, 5.2vw, 62px)/1.12 var(--font-display);
+  letter-spacing: -.042em;
+}
+.chapter-question {
+  margin-top: 18px;
+  padding: 13px 19px 15px;
+  max-width: 760px;
+  border-left: 3px solid #ad7457;
+  background: rgba(255, 252, 246, .47);
+}
+.chapter-question .micro {
+  display: block;
+  margin: 0 0 5px;
+  color: #8d5943;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.chapter-question strong {
+  display: block;
+  color: #1d3c39;
+  font: 600 clamp(20px, 2.15vw, 24px)/1.42 var(--font-display);
+  max-width: 45ch;
+  text-wrap: pretty;
+}
+.chapter-title-wrap > p {
+  margin: 16px 0 0;
+  max-width: 53ch;
+  font-size: 19px;
+  line-height: 1.55;
+}
+@media (max-width: 1050px) {
+  .chapter-header { grid-template-columns: 82px minmax(0, 1fr); gap: 22px; }
+  .chapter-number { margin-top: 35px; font-size: 90px; }
+}
+@media (max-width: 760px) {
+  .chapter-header {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 13px;
+    padding: 32px 0;
+  }
+  .chapter-number { margin: 29px 0 0 -2px; font-size: 61px; }
+  .chapter-title-wrap > .micro { font-size: 12px; }
+  .chapter-title-wrap h2 { font-size: clamp(32px, 6.5vw, 44px); }
+  .chapter-question { margin-top: 15px; padding: 12px 13px 13px; }
+  .chapter-question strong { font-size: clamp(18px, 3.9vw, 21px); }
+  .chapter-title-wrap > p { margin-top: 12px; font-size: 17px; }
+}
+@media (max-width: 430px) {
+  .chapter-header { grid-template-columns: 43px minmax(0, 1fr); gap: 10px; }
+  .chapter-number { margin-top: 27px; font-size: 50px; }
+  .chapter-title-wrap > .micro { font-size: 11px; }
+  .chapter-title-wrap h2 { font-size: clamp(29px, 7.8vw, 34px); }
+  .chapter-question .micro { font-size: 10px; }
+  .chapter-question strong { font-size: 18px; }
+}
+
+/* Typography uses natural wrapping; no manual breaks are inserted for word counts. */
+.hero-sub { text-wrap: pretty; }
+.figure-heading p,
+.pair-reading-note p,
+.chapter-title-wrap p,
+.takeaway p,
+.evidence-tile p,
+.details-body p { overflow-wrap: normal; text-wrap: pretty; }
+.figure-heading p { max-width: 49ch; }
+.figure-card--paired .figure-heading p { max-width: 49ch; }
+.figure-card:not(.figure-card--paired) > .pair-reading-note {
+  align-items: center;
+}
+.figure-card:not(.figure-card--paired) > .pair-reading-note .micro { margin-top: 0; }
+.vis-container.vega-embed { text-align: center; }
+.vis-container .vega-bindings { width: 100%; justify-content: center; align-items: center; }
+.vis-container .vega-bind label { justify-content: center; }
+.vis-container canvas, .vis-container svg { vertical-align: middle; }
+@media (max-width: 760px) {
+  .hero-sub { font-size: 18px; line-height: 1.55; }
+  .figure-heading p { font-size: 17px; }
+  .figure-card--paired .figure-heading p { font-size: 17px; }
+  .figure-card:not(.figure-card--paired) > .pair-reading-note p { font-size: 17px; }
+  .vis-container .vega-bindings { justify-content: center; }
 }

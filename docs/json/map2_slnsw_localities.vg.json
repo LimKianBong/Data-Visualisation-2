@@ -1,26 +1,29 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "SLNSW mapped NSW localities shown as proportional symbols. A slider filters small localities to reduce overlap.",
   "width": "container",
-  "height": 430,
+  "height": 400,
+  "padding": {
+    "left": 2,
+    "right": 2,
+    "top": 2,
+    "bottom": 2
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
   "params": [
     {
       "name": "minimum_records",
       "value": 1,
       "bind": {
-        "input": "select",
-        "options": [
-          1,
-          3,
-          5,
-          10
-        ],
-        "labels": [
-          "All mapped localities",
-          "3 or more records",
-          "5 or more records",
-          "10 or more records"
-        ],
-        "name": "Show: "
+        "input": "range",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "name": "Minimum records: "
       }
     }
   ],
@@ -40,7 +43,7 @@
       -36
     ],
     "scale": {
-      "expr": "min(width * 3.7, 2250)"
+      "expr": "min(width * 3.45, 2140)"
     }
   },
   "layer": [
@@ -60,7 +63,7 @@
       "mark": {
         "type": "geoshape",
         "fill": "#f1efe9",
-        "stroke": "#777777",
+        "stroke": "#8b8b8b",
         "strokeWidth": 0.8
       }
     },
@@ -76,7 +79,7 @@
       "mark": {
         "type": "circle",
         "color": "#2f6f73",
-        "opacity": 0.6,
+        "opacity": 0.58,
         "stroke": "white",
         "strokeWidth": 0.7
       },
@@ -95,12 +98,12 @@
           "title": "Catalogue records",
           "scale": {
             "domain": [
-              0,
+              1,
               65
             ],
             "range": [
-              0,
-              1400
+              18,
+              1300
             ],
             "type": "linear"
           },
@@ -113,7 +116,13 @@
               50
             ],
             "orient": "bottom",
-            "direction": "horizontal"
+            "direction": "horizontal",
+            "offset": 6,
+            "titleLimit": 220,
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "symbolFillColor": "#2f6f73",
+            "symbolStrokeColor": "#ffffff"
           }
         },
         "tooltip": [
@@ -143,7 +152,7 @@
           {
             "field": "multi_item_records",
             "type": "quantitative",
-            "title": "Multi-item or grouped records",
+            "title": "Grouped or multi-item records",
             "format": ","
           }
         ]
@@ -169,9 +178,9 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 10,
-        "dy": -12,
-        "fontSize": 12,
+        "dx": 12,
+        "dy": -10,
+        "fontSize": 13,
         "fontWeight": 600,
         "color": "#333333"
       },
@@ -191,10 +200,15 @@
       }
     }
   ],
+  "title": {
+    "text": "Larger circles represent more records; filter to reduce overlap.",
+    "anchor": "middle",
+    "fontSize": 13,
+    "fontWeight": "normal",
+    "color": "#39574d",
+    "offset": 8
+  },
   "config": {
-    "view": {
-      "stroke": null
-    },
     "font": "DM Sans",
     "axis": {
       "labelFont": "DM Sans",
@@ -206,23 +220,23 @@
       "labelFont": "DM Sans",
       "titleFont": "DM Sans",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 13,
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      },
+      "offset": 7
+    },
+    "view": {
+      "stroke": null
     }
-  },
-  "autosize": {
-    "type": "fit-x",
-    "contains": "padding",
-    "resize": true
-  },
-  "title": {
-    "text": [
-      "Circle area shows record count; labels identify the three leading",
-      "localities."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
-    "fontWeight": "normal",
-    "color": "#39574d",
-    "offset": 16
   }
 }

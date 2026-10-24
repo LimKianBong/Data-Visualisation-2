@@ -138,9 +138,9 @@
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 215,
-            "titleFontSize": 11,
-            "labelFontSize": 10,
+            "gradientLength": 270,
+            "titleFontSize": 13,
+            "labelFontSize": 12,
             "values": [
               0,
               25,
@@ -149,7 +149,10 @@
               100
             ],
             "labelExpr": "datum.value + '%'",
-            "title": "Share within format (%)"
+            "title": "Share within format (%)",
+            "gradientThickness": 14,
+            "offset": 6,
+            "titleLimit": 300
           }
         },
         "tooltip": [
@@ -228,7 +231,22 @@
     },
     "legend": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans"
+      "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "offset": 7,
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      }
     }
   },
   "autosize": {
@@ -237,14 +255,11 @@
     "resize": true
   },
   "title": {
-    "text": [
-      "Rows total 100%. Labels show common styles",
-      "with at least 20 records in that cell."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "Rows total 100%; labels highlight frequent colour categories.",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   }
 }

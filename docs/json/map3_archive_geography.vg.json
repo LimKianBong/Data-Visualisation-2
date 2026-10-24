@@ -138,8 +138,13 @@
             ]
           },
           "legend": {
-            "title": "Archive",
-            "orient": "bottom"
+            "title": "Collection",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "offset": 6,
+            "symbolSize": 155,
+            "labelFontSize": 13,
+            "titleFontSize": 13
           }
         },
         "tooltip": [
@@ -152,7 +157,7 @@
             "title": "Archive"
           },
           {
-            "field": "country",
+            "field": "country_name",
             "title": "Country"
           },
           {
@@ -180,8 +185,13 @@
             ]
           },
           "legend": {
-            "title": "Archive",
-            "orient": "bottom"
+            "title": "Collection",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "offset": 6,
+            "symbolSize": 155,
+            "labelFontSize": 13,
+            "titleFontSize": 13
           }
         }
       }
@@ -196,7 +206,22 @@
     },
     "legend": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans"
+      "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "offset": 7,
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      }
     },
     "font": "DM Sans"
   },
@@ -206,14 +231,11 @@
     "resize": true
   },
   "title": {
-    "text": [
-      "One symbol is one mapped place; symbol area does not represent",
-      "postcard totals."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "Each symbol represents a place, not a postcard count.",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   }
 }

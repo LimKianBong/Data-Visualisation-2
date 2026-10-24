@@ -1,7 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Compact, responsive comparison of state-assigned NMA counts and mapped SLNSW records across Australian states.",
   "width": "container",
-  "height": 400,
+  "height": 410,
+  "padding": {
+    "left": 2,
+    "right": 2,
+    "top": 2,
+    "bottom": 2
+  },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding",
+    "resize": true
+  },
   "params": [
     {
       "name": "collection_select",
@@ -36,7 +48,7 @@
       -36
     ],
     "scale": {
-      "expr": "min(width * 1.32, 650)"
+      "expr": "min(width * 1.23, 710)"
     }
   },
   "layer": [
@@ -91,7 +103,7 @@
         "color": {
           "field": "share_percent",
           "type": "quantitative",
-          "title": "Share of mapped records (%)",
+          "title": "State share (%)",
           "scale": {
             "domain": [
               0,
@@ -100,7 +112,11 @@
             "scheme": "oranges"
           },
           "legend": {
-            "title": "Share of mapped records (%)",
+            "title": "State share (%)",
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 260,
+            "gradientThickness": 12,
             "values": [
               0,
               25,
@@ -108,12 +124,10 @@
               75,
               100
             ],
-            "orient": "bottom",
-            "direction": "horizontal",
-            "gradientLength": {
-              "expr": "min(360, width - 10)"
-            },
-            "titleLimit": 400
+            "offset": 5,
+            "titleFontSize": 13,
+            "labelFontSize": 12,
+            "titleLimit": 220
           }
         },
         "tooltip": [
@@ -125,18 +139,18 @@
           {
             "field": "source_name",
             "type": "nominal",
-            "title": "Postcard collection"
+            "title": "Collection"
           },
           {
             "field": "postcard_records",
             "type": "quantitative",
-            "title": "Mapped postcard records",
+            "title": "Geographic record counts",
             "format": ","
           },
           {
             "field": "share_percent",
             "type": "quantitative",
-            "title": "Share of mapped collection (%)",
+            "title": "Share within collection (%)",
             "format": ".1f"
           },
           {
@@ -152,36 +166,24 @@
       },
       "transform": [
         {
-          "lookup": "state_clean",
-          "from": {
-            "data": {
-              "url": "data/australia_states.topojson",
-              "format": {
-                "type": "topojson",
-                "feature": "australia_states"
-              }
-            },
-            "key": "properties.STATE_NAME"
-          },
-          "as": "geo"
-        },
-        {
           "filter": "datum.source == collection_select"
         },
         {
           "filter": "datum.state_clean == 'New South Wales'"
         },
         {
-          "calculate": "'NSW: '+format(datum.share_percent,'.1f')+'%'",
+          "calculate": "'NSW: ' + format(datum.share_percent, '.1f') + '%'",
           "as": "note"
         }
       ],
       "mark": {
         "type": "text",
-        "fontSize": 13,
+        "fontSize": 15,
         "fontWeight": "bold",
         "color": "#54331f",
-        "dy": -7
+        "dy": -5,
+        "align": "center",
+        "baseline": "bottom"
       },
       "encoding": {
         "longitude": {
@@ -200,33 +202,29 @@
     "font": "DM Sans",
     "axis": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans",
-      "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFont": "DM Sans"
     },
     "legend": {
       "labelFont": "DM Sans",
       "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      },
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 13,
+      "offset": 7
     },
     "view": {
       "stroke": null
     }
-  },
-  "autosize": {
-    "type": "fit-x",
-    "contains": "padding",
-    "resize": true
-  },
-  "title": {
-    "text": [
-      "Darker shading means a larger share within the selected collection."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
-    "fontWeight": "normal",
-    "color": "#39574d",
-    "offset": 16
   }
 }

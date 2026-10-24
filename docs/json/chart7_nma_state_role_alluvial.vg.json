@@ -235,7 +235,7 @@
             "field": "center_y"
           },
           "text": {
-            "signal": "datum.label + ' · ' + format(datum.count, ',')"
+            "signal": "datum.label"
           },
           "align": {
             "value": "right"
@@ -293,7 +293,13 @@
     }
   ],
   "config": {
-    "font": "DM Sans"
+    "font": "DM Sans",
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441"
+    }
   },
   "signals": [
     {
@@ -308,16 +314,11 @@
     }
   ],
   "title": {
-    "text": [
-      "NSW → Depicted is the largest link: 1,570 of 3,598 relationship",
-      "entries (43.6%).",
-      "Colours identify relationship types; widths count entries, not",
-      "journeys."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "New South Wales to Depicted: 1,570 relationship entries (43.6%).",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   }
 }

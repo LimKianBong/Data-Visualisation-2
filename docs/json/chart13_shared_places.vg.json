@@ -1,15 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": [
-      "15 of 98 matched names, ranked by the largest absolute percentage-",
-      "point gap."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "The largest share gaps among 15 matched localities.",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   },
   "width": "container",
   "height": 435,
@@ -133,8 +130,10 @@
           "legend": {
             "title": null,
             "orient": "top",
-            "symbolSize": 120,
-            "labelFontSize": 13
+            "symbolSize": 130,
+            "labelFontSize": 13,
+            "direction": "horizontal",
+            "offset": 6
           }
         },
         "tooltip": [
@@ -161,7 +160,7 @@
           },
           {
             "field": "gap_pp",
-            "title": "Difference (pp)",
+            "title": "Difference (percentage points)",
             "format": ".2f"
           }
         ]
@@ -177,7 +176,7 @@
           "as": "label_x"
         },
         {
-          "calculate": "datum.nma_pct > datum.slnsw_pct ? 'NMA +' + format(datum.gap_pp,'.2f') + ' pp' : 'SLNSW +' + format(datum.gap_pp,'.2f') + ' pp'",
+          "calculate": "datum.nma_pct > datum.slnsw_pct ? 'NMA +' + format(datum.gap_pp,'.2f') + ' percentage points' : 'SLNSW +' + format(datum.gap_pp,'.2f') + ' percentage points'",
           "as": "note"
         }
       ],
@@ -188,7 +187,8 @@
         "font": "DM Sans",
         "fontWeight": "bold",
         "fontSize": 12,
-        "color": "#39574d"
+        "color": "#39574d",
+        "dx": 6
       },
       "encoding": {
         "x": {
@@ -218,7 +218,23 @@
       "titleFont": "DM Sans"
     },
     "legend": {
-      "labelFont": "DM Sans"
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "offset": 7,
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      }
     },
     "title": {
       "font": "DM Sans",

@@ -34,11 +34,11 @@
       "filter": "combination_view == 'All combinations' || datum.feature_count > 0"
     }
   ],
-  "spacing": 8,
+  "spacing": 10,
   "vconcat": [
     {
       "width": "container",
-      "height": 240,
+      "height": 210,
       "layer": [
         {
           "mark": {
@@ -141,7 +141,7 @@
     },
     {
       "width": "container",
-      "height": 100,
+      "height": 95,
       "encoding": {
         "x": {
           "field": "rank",
@@ -311,17 +311,33 @@
     "axis": {
       "labelFont": "DM Sans",
       "titleFont": "DM Sans"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "offset": 7,
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      }
     }
   },
   "title": {
-    "text": [
-      "19,130 records (54.9%) have none of these tags; absence of a tag is",
-      "not absence of a feature."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "Missing subject tags do not imply the feature is absent.",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   }
 }

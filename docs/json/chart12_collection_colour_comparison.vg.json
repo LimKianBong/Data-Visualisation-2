@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 300,
+  "height": 225,
   "data": {
     "url": "data/collection_colour_comparison.csv",
     "format": {
@@ -74,7 +74,22 @@
     },
     "legend": {
       "labelFont": "DM Sans",
-      "titleFont": "DM Sans"
+      "titleFont": "DM Sans",
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "offset": 7,
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      }
     }
   },
   "autosize": {
@@ -159,9 +174,11 @@
             "direction": "horizontal",
             "columns": 2,
             "symbolType": "square",
-            "symbolSize": 160,
-            "labelFontSize": 11,
-            "titleFontSize": 11
+            "symbolSize": 155,
+            "labelFontSize": 13,
+            "titleFontSize": 13,
+            "offset": 6,
+            "labelLimit": 190
           }
         },
         "order": {
@@ -283,14 +300,11 @@
     }
   ],
   "title": {
-    "text": [
-      "Labels show Colour shares.",
-      "Click a legend item to highlight; double-click to reset."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "Labels show colour shares; click legends to highlight categories.",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   }
 }

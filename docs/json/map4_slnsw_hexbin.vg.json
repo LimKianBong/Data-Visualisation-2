@@ -95,7 +95,7 @@
           },
           "legend": {
             "orient": "bottom",
-            "title": "Catalogue records per 50-km cell",
+            "title": "Records per 50-kilometre cell",
             "values": [
               0,
               10,
@@ -107,10 +107,12 @@
             "gradientLength": {
               "expr": "min(360, width - 10)"
             },
-            "titleFontSize": 12,
-            "labelFontSize": 11,
+            "titleFontSize": 13,
+            "labelFontSize": 12,
             "direction": "horizontal",
-            "titleLimit": 400
+            "titleLimit": 430,
+            "offset": 7,
+            "gradientThickness": 14
           }
         },
         "tooltip": [
@@ -167,7 +169,20 @@
       "labelFont": "DM Sans",
       "titleFont": "DM Sans",
       "labelFontSize": 12,
-      "titleFontSize": 13
+      "titleFontSize": 13,
+      "labelColor": "#39574d",
+      "titleColor": "#244441",
+      "offset": 7,
+      "layout": {
+        "bottom": {
+          "anchor": "middle",
+          "center": true
+        },
+        "top": {
+          "anchor": "middle",
+          "center": true
+        }
+      }
     }
   },
   "autosize": {
@@ -176,14 +191,11 @@
     "resize": true
   },
   "title": {
-    "text": [
-      "Darker cells contain more records; the square-root colour scale",
-      "lifts small counts."
-    ],
-    "anchor": "start",
-    "fontSize": 12,
+    "text": "Darker hexagons contain more records on a square-root scale.",
+    "anchor": "middle",
+    "fontSize": 13,
     "fontWeight": "normal",
     "color": "#39574d",
-    "offset": 16
+    "offset": 8
   }
 }
