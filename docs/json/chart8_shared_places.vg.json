@@ -97,11 +97,12 @@
         }
       ],
       "mark": {
-        "type": "point",
+        "type": "circle",
         "filled": true,
-        "size": 120,
-        "stroke": "white",
-        "strokeWidth": 1
+        "size": 150,
+        "stroke": "#263531",
+        "strokeWidth": 1.0,
+        "opacity": 1
       },
       "encoding": {
         "x": {
@@ -123,17 +124,19 @@
               "SLNSW"
             ],
             "range": [
-              "#326c60",
-              "#c17c58"
+              "#592B91",
+              "#E9BD28"
             ]
           },
           "legend": {
-            "title": null,
+            "title": "Collection",
             "orient": "top",
-            "symbolSize": 130,
+            "symbolSize": 160,
             "labelFontSize": 13,
             "direction": "horizontal",
-            "offset": 6
+            "offset": 6,
+            "symbolStrokeColor": "#263531",
+            "symbolStrokeWidth": 1
           }
         },
         "tooltip": [
@@ -157,11 +160,6 @@
           {
             "field": "slnsw_count",
             "title": "SLNSW records"
-          },
-          {
-            "field": "gap_pp",
-            "title": "Difference (percentage points)",
-            "format": ".2f"
           }
         ]
       }
@@ -176,7 +174,7 @@
           "as": "label_x"
         },
         {
-          "calculate": "datum.nma_pct > datum.slnsw_pct ? 'NMA +' + format(datum.gap_pp,'.2f') + ' percentage points' : 'SLNSW +' + format(datum.gap_pp,'.2f') + ' percentage points'",
+          "calculate": "datum.nma_pct > datum.slnsw_pct ? 'NMA: larger share' : 'SLNSW: larger share'",
           "as": "note"
         }
       ],

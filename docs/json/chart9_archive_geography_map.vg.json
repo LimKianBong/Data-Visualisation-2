@@ -107,11 +107,11 @@
         }
       ],
       "mark": {
-        "type": "point",
-        "size": 35,
-        "opacity": 0.62,
-        "stroke": "white",
-        "strokeWidth": 0.25,
+        "type": "circle",
+        "size": 46,
+        "opacity": 0.72,
+        "stroke": "#263531",
+        "strokeWidth": 0.42,
         "clip": true,
         "filled": true
       },
@@ -133,8 +133,8 @@
               "AKON"
             ],
             "range": [
-              "#c17c58",
-              "#537889"
+              "#E9BD28",
+              "#147D96"
             ]
           },
           "legend": {
@@ -144,7 +144,9 @@
             "offset": 6,
             "symbolSize": 155,
             "labelFontSize": 13,
-            "titleFontSize": 13
+            "titleFontSize": 13,
+            "symbolStrokeColor": "#263531",
+            "symbolStrokeWidth": 1
           }
         },
         "tooltip": [
@@ -170,29 +172,6 @@
           "field": "draw_priority",
           "type": "quantitative",
           "sort": "ascending"
-        },
-        "shape": {
-          "field": "source",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "SLNSW",
-              "AKON"
-            ],
-            "range": [
-              "diamond",
-              "circle"
-            ]
-          },
-          "legend": {
-            "title": "Collection",
-            "orient": "bottom",
-            "direction": "horizontal",
-            "offset": 6,
-            "symbolSize": 155,
-            "labelFontSize": 13,
-            "titleFontSize": 13
-          }
         }
       }
     }

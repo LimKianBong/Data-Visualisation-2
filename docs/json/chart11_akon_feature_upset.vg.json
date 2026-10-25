@@ -43,7 +43,7 @@
         {
           "mark": {
             "type": "bar",
-            "color": "#537889",
+            "color": "#147D96",
             "size": {
               "expr": "max(12, min(44, width / 12))"
             }

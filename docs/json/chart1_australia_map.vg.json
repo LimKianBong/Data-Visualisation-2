@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Compact, responsive comparison of state-assigned NMA counts and mapped SLNSW records across Australian states.",
   "width": "container",
-  "height": 410,
+  "height": 290,
   "padding": {
     "left": 2,
     "right": 2,
@@ -25,8 +25,8 @@
           "SLNSW"
         ],
         "labels": [
-          "National Museum of Australia",
-          "State Library of New South Wales"
+          "Museum",
+          "State library"
         ],
         "name": "Collection: "
       }
@@ -48,7 +48,7 @@
       -36
     ],
     "scale": {
-      "expr": "min(width * 1.23, 710)"
+      "expr": "min(width * 1.31, height * 2.05, 710)"
     }
   },
   "layer": [
@@ -178,7 +178,7 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 15,
+        "fontSize": 12,
         "fontWeight": "bold",
         "color": "#54331f",
         "dy": -5,

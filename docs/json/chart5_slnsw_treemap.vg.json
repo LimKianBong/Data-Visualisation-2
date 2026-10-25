@@ -112,7 +112,7 @@
       "transform": [
         {
           "type": "filter",
-          "expr": "datum.x1 - datum.x0 >= 100 && datum.y1 - datum.y0 >= 45"
+          "expr": "datum.x1 - datum.x0 >= max(110, length(datum.format_group) * 8) && datum.y1 - datum.y0 >= 50"
         }
       ]
     }

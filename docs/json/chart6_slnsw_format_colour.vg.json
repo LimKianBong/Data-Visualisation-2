@@ -138,7 +138,9 @@
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
-            "gradientLength": 270,
+            "gradientLength": {
+              "expr": "min(245, width - 115)"
+            },
             "titleFontSize": 13,
             "labelFontSize": 12,
             "values": [
@@ -255,7 +257,7 @@
     "resize": true
   },
   "title": {
-    "text": "Rows total 100%; labels highlight frequent colour categories.",
+    "text": "Rows total 100%; hover for exact percentages.",
     "anchor": "middle",
     "fontSize": 13,
     "fontWeight": "normal",

@@ -113,11 +113,11 @@
       "mark": {
         "type": "circle",
         "filled": true,
-        "color": "#376579",
+        "color": "#592B91",
         "size": 145,
         "opacity": 0.95,
-        "stroke": "#ffffff",
-        "strokeWidth": 1
+        "stroke": "#263531",
+        "strokeWidth": 0.8
       },
       "encoding": {
         "tooltip": [
@@ -158,7 +158,7 @@
         "dx": 9,
         "fontSize": 12,
         "fontWeight": "bold",
-        "color": "#294d5b"
+        "color": "#4a277b"
       },
       "encoding": {
         "text": {
