@@ -70,6 +70,19 @@
       },
       "transform": [
         {
+          "joinaggregate": [
+            {
+              "op": "max",
+              "field": "properties.catalogue_records",
+              "as": "max_hex_records"
+            }
+          ]
+        },
+        {
+          "calculate": "datum.max_hex_records > 0 ? datum.properties.catalogue_records / datum.max_hex_records : 0",
+          "as": "relative_intensity"
+        },
+        {
           "filter": "datum.properties.catalogue_records >= minimum_records"
         }
       ],
@@ -81,14 +94,14 @@
       },
       "encoding": {
         "color": {
-          "field": "properties.catalogue_records",
+          "field": "relative_intensity",
           "type": "quantitative",
-          "title": "Catalogue records per hexagon",
+          "title": "Relative intensity (busiest cell = 100%)",
           "scale": {
             "type": "linear",
             "domain": [
               0,
-              150
+              1
             ],
             "scheme": "blues",
             "nice": false,
@@ -96,16 +109,15 @@
           },
           "legend": {
             "orient": "bottom",
-            "title": "Records per 50-kilometre cell",
+            "title": "Relative intensity (%)",
             "values": [
               0,
-              25,
-              50,
-              75,
-              100,
-              125,
-              150
+              0.25,
+              0.5,
+              0.75,
+              1
             ],
+            "format": ".0%",
             "gradientLength": {
               "expr": "min(380, width - 20)"
             },
@@ -119,9 +131,21 @@
         },
         "tooltip": [
           {
+            "field": "relative_intensity",
+            "type": "quantitative",
+            "title": "Relative intensity (max = 100%)",
+            "format": ".1%"
+          },
+          {
             "field": "properties.catalogue_records",
             "type": "quantitative",
-            "title": "Catalogue records in hexagon",
+            "title": "Records in 50-km hexagon",
+            "format": ","
+          },
+          {
+            "field": "max_hex_records",
+            "type": "quantitative",
+            "title": "Busiest hexagon count",
             "format": ","
           },
           {
@@ -129,12 +153,6 @@
             "type": "quantitative",
             "title": "Distinct mapped localities",
             "format": ","
-          },
-          {
-            "field": "properties.share_percent",
-            "type": "quantitative",
-            "title": "Share of mapped collection (%)",
-            "format": ".1f"
           }
         ]
       }
@@ -193,7 +211,7 @@
     "resize": true
   },
   "title": {
-    "text": "Zoom out for Australia or zoom in on New South Wales.",
+    "text": "Darker blue indicates more records relative to the busiest 50-km hexagon.",
     "anchor": "middle",
     "color": "#39574d",
     "fontSize": 12,
